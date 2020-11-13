@@ -1,0 +1,17 @@
+<div class="wng chat-card" data-actor-id="{{actorId}}" data-hide = {{hideData}}>
+
+    {{> systems/wng/templates/chat/test-card.html}}
+
+
+    {{#if testData.overcasts}}
+    <div class="card-content">
+    {{testData.overcasts}} {{localize "Overcasts"}}
+    </div>
+    {{/if}}
+
+   <!-- {{#if opposed}}
+    <div class ="card-buttons">
+        <button class = "oppose-button">Oppose</button>
+    </div>
+    {{/if}}-->
+</div>
