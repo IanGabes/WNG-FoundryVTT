@@ -37,7 +37,9 @@ Hooks.once('init', async function() {
             ItemWNG
         }
     }
+
     initializeWNG();
+
     // Define custom Entity classes. This will override the default Actor and
     // Item classes to instead use our extended versions.
     CONFIG.Actor.entityClass = ActorWNG;

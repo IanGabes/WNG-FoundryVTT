@@ -13,7 +13,7 @@ export class ActorSheetWNGCharacter extends ActorSheetWNG {
     const options = super.defaultOptions;
     mergeObject(options,
         {
-          classes: (["wng", "sheet", "actor", "character"]),
+          classes: options.classes.concat(["sheet", "wng", "actor", "character-sheet"]),
           width: 610,
           height: 740,
         });
@@ -28,7 +28,6 @@ export class ActorSheetWNGCharacter extends ActorSheetWNG {
   get template() {
     if (!game.user.isGM && this.actor.limited) return "systems/wng/assets/templates/actors/actor-limited.html";
     return "/systems/wng/assets/templates/actors/actor-sheet.html";
-
   }
 
 
