@@ -7,7 +7,7 @@
  * interactivity and events are handled here.
  */
 
-class ItemSheetWNG extends ItemSheet
+export class ItemSheetWNG extends ItemSheet
 {
   constructor(item, options)
   {

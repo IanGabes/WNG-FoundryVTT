@@ -13,7 +13,7 @@
  * @see   ActorSheetWNGNPC - NPC sheet class
  * @see   ActorSheetWNGCreature - Creature sheet class
  */
-class ActorSheetWNG extends ActorSheet {
+export class ActorSheetWNG extends ActorSheet {
 
 
   /**
@@ -26,7 +26,7 @@ class ActorSheetWNG extends ActorSheet {
   
   static get defaultOptions() {
     const options = super.defaultOptions;
-    options.classes = options.classes.concat(["BIGGUS-DICKUS"])
+    options.classes = options.classes.concat(["wng", "character"])
     options.tabs = [{navSelector: ".tabs", contentSelector: ".content", initial: "main"}]
     options.width = 576;
 	  return options;
@@ -1512,9 +1512,3 @@ class ActorSheetWNG extends ActorSheet {
 
   /* -------------------------------------------- */
 }
-
-Actors.unregisterSheet("core", ActorSheet);
-
-Hooks.on("popout:renderSheet", (sheet) => {
-  sheet.element.css({ width: "610px", height: "740px", padding: "0px"})
-})

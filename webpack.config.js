@@ -5,13 +5,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 module.exports = {
+  watch: true,
   entry: [
     './src/wng.js',
     './assets/sass/wng.scss'],
   context: path.join(__dirname, "./"),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'wnj.js'
+    filename: 'wng.js'
   },
   /* SASS --> CSS */ 
   module: {

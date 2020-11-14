@@ -1,6 +1,6 @@
 {
   "Actor" : {
-    "types" : ["Character", "Threat"],
+    "types" : ["character", "threat"],
     "templates" : {
       "attributes" :{
         "attributes" : {

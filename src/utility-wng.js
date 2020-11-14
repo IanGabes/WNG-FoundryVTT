@@ -6,7 +6,9 @@
  * involve retrieving data from the configuration values or the compendia.
  *
  */
-class WNG_Utility
+import {WNG} from "./config-wng";
+
+export class WNG_Utility
 {
   /**
    * Augments the spell item's description with the lore effect

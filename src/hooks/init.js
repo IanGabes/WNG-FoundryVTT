@@ -1,7 +1,10 @@
 /**
  * Init function loads tables, registers settings, and loads templates
  */
-Hooks.once("init", () => {
+import {WNG_Tables} from "../tables-wng";
+
+export default function initializeWNG(){
+//Hooks.once("init", () => {
 
     // load tables from system folder
     FilePicker.browse("data", "systems/wng/tables").then(resp => {
@@ -318,31 +321,32 @@ Hooks.once("init", () => {
   
     // Pre-load templates
     loadTemplates([
-      "systems/wng/templates/actors/actor-attributes.html",
-      "systems/wng/templates/actors/actor-abilities.html",
-      "systems/wng/templates/actors/actor-main.html",
-      "systems/wng/templates/actors/actor-combat.html",
-      "systems/wng/templates/actors/actor-biography.html",
-      "systems/wng/templates/actors/actor-inventory.html",
-      "systems/wng/templates/actors/actor-skills.html",
-      "systems/wng/templates/actors/actor-magic.html",
-      "systems/wng/templates/actors/actor-religion.html",
-      "systems/wng/templates/actors/actor-talents.html",
-      "systems/wng/templates/actors/actor-classes.html",
-      "systems/wng/templates/actors/actor-notes.html",
-      "systems/wng/templates/actors/npc-main.html",
-      "systems/wng/templates/actors/npc-notes.html",
-      "systems/wng/templates/actors/creature-main.html",
-      "systems/wng/templates/actors/creature-notes.html",
-      "systems/wng/templates/actors/creature-main.html",
-      "systems/wng/templates/chat/dialog-constant.html",
-      "systems/wng/templates/chat/test-card.html",
-      "systems/wng/templates/items/item-header.html",
-      "systems/wng/templates/items/item-description.html",
+      //"systems/wng/assets/templates/actors/actor-attributes.html",
+      //"systems/wng/assets/templates/actors/actor-abilities.html",
+      "systems/wng/assets/templates/actors/actor-main.html",
+      "systems/wng/assets/templates/actors/actor-combat.html",
+      "systems/wng/assets/templates/actors/actor-biography.html",
+      "systems/wng/assets/templates/actors/actor-inventory.html",
+      "systems/wng/assets/templates/actors/actor-skills.html",
+      "systems/wng/assets/templates/actors/actor-magic.html",
+      "systems/wng/assets/templates/actors/actor-religion.html",
+      "systems/wng/assets/templates/actors/actor-talents.html",
+      //"systems/wng/assets/templates/actors/actor-classes.html",
+      "systems/wng/assets/templates/actors/actor-notes.html",
+      "systems/wng/assets/templates/actors/npc-main.html",
+      //"systems/wng/assets/templates/actors/npc-notes.html",
+      "systems/wng/assets/templates/actors/creature-main.html",
+      "systems/wng/assets/templates/actors/creature-notes.html",
+      "systems/wng/assets/templates/actors/creature-main.html",
+      "systems/wng/assets/templates/chat/dialog-constant.html",
+      "systems/wng/assets/templates/chat/test-card.html",
+      "systems/wng/assets/templates/items/item-header.html",
+      "systems/wng/assets/templates/items/item-description.html",
     ]);
 
     // Load name construction from files
-    NameGenWfrp._loadNames();
-    CONFIG.Morrslieb = new PIXI.filters.AdjustmentFilter({green: 0.7137, red: 0.302, blue: 0.2275})
+    //TODO: What are these?
+    //NameGenWfrp._loadNames();
+    //CONFIG.Morrslieb = new PIXI.filters.AdjustmentFilter({green: 0.7137, red: 0.302, blue: 0.2275})
 
-  });
+  };

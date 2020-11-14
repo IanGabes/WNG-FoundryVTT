@@ -6,7 +6,9 @@
  * is where chat listeners are defined, which add interactivity to chat, usually in the form of button clickss.
  */
 
-class DiceWNG
+import {WNG_Utility} from "./utility-wng";
+
+export class DiceWNG
 {
   /**
    * Prepare Test is called by the setup functions for the actors (see setupCharacteristic() for info on their usage)

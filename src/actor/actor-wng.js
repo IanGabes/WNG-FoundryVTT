@@ -14,9 +14,12 @@
  * @see   DiceWNG4e - Sends test data to roll tests.
  */
 
-class ActorWNG extends Actor {
+import {DiceWNG} from "../dice-wng";
+import {OpposedWNG} from "../opposed-wng";
+import {WNG_Utility} from "../utility-wng";
+import {WNG} from "../config-wng";
 
-
+export class ActorWNG extends Actor {
   /**
    * Calculates simple dynamic data when actor is updated.
    *
@@ -151,8 +154,8 @@ class ActorWNG extends Actor {
     };
 
     // Default a WS, BS, Melee, or Ranged to have hit location checked
-    if (skill.data.characteristic.value == "ws" ||
-        skill.data.characteristic.value == "bs" ||
+    if (skill.data.characteristic.value === "ws" ||
+        skill.data.characteristic.value === "bs" ||
         skill.name.includes("Melee") ||
         skill.name.includes("Ranged"))
     {
@@ -1113,7 +1116,10 @@ class ActorWNG extends Actor {
 
 
     // Update spell to reflect SL from channelling resetting to 0
-    WNG_Utility.getSpeaker(cardOptions.speaker).updateEmbeddedEntity("OwnedItem", {_id: testData.extra.spell._id, 'data.cn.SL' : 0});
+    await WNG_Utility.getSpeaker(cardOptions.speaker).updateEmbeddedEntity("OwnedItem", {
+      _id: testData.extra.spell._id,
+      'data.cn.SL': 0
+    });
 
     await DiceWNG.renderRollCard(cardOptions, result, rerenderMessage).then(msg => {
       OpposedWNG.handleOpposedTarget(msg) // Send to handleOpposed to determine opposed status, if any.
@@ -1725,15 +1731,3 @@ class ActorWNG extends Actor {
   }
 }
 
-// Assign the actor class to the CONFIG
-CONFIG.Actor.entityClass = ActorWNG;
-
-// Treat the custom default token as a true default token
-// If you change the actor image from the default token, it will automatically set the same image to be the token image
-Hooks.on("preUpdateActor", (data, updatedData) =>{
-  if (data.data.token.img == "systems/wng/tokens/unknown.png" && updatedData.img)
-  {
-    updatedData["token.img"] = updatedData.img;
-    data.data.token.img = updatedData.img;
-  }
-})

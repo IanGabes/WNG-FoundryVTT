@@ -7,7 +7,7 @@
  * added to WNG_Tables if possible. 
  */
 
-class WNG_Tables
+export class WNG_Tables
 {
 
   /**

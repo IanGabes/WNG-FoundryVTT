@@ -8,7 +8,7 @@
  * 
  */
 
-class ItemWNG extends Item
+export class ItemWNG extends Item
 {
   // Upon creation, assign a blank image if item is new (not duplicated) instead of mystery-man default
   static async create(data, options)

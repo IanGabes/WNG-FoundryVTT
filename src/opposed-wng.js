@@ -1,15 +1,17 @@
 /**
  * This class is where all opposed rolls are calculated, both targeted and manual.
- * 
- * Manual flow: 
+ *
+ * Manual flow:
  * First click - attacker test result and speaker are stored, opposedInProgress flag raised, opposed roll message created (and stored for editing)
  * Second click - defender test result and speaker stored, opposed values compared, roll message updated with result.
- * 
+ *
  * Targeted flow:
  * Every roll (see roll overrides, ActorWNG) checks to see if a target is selected, if so, handleOpposed is called. See this function for details
  * on how targeted opposed rolls are handled.
  */
-class OpposedWNG
+import {WNG_Utility} from "./utility-wng";
+
+export class OpposedWNG
 {
 
   /**
@@ -343,7 +345,6 @@ class OpposedWNG
               {
                 scene: target.scene.data._id,
                 token: target.data._id,
-                scene: target.actor.data._id,
                 alias: target.data.name
               }
             }
