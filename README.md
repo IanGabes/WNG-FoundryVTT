@@ -1,11 +1,19 @@
-### Start HEre
+### WnG Foundry
+
+A game system for Foundry VTT, codifying the Warhammer Wrath and Glory rules.
+
+This repository does not allow you to install this repository directly at the moment, it is still a work in progress :(
+
+### Installation
+
+If you aren't sure about how to set your dev environment up or want a more detailed explanation about some of the tools, please [click here](doc/install_walkthrough.md).
 
 1. Install dependencies
 ```
 npm install
 ```
 
-1. Compile system to `dist` folder
+2. Compile system to `dist` folder
 ```
 npm run build
 ```
@@ -17,5 +25,4 @@ npm run deploy-local -- '{path-to-target-foundry-system-folder}'
 #e.g.
 npm run deploy-local -- '/home/ian/.local/share/FoundryVTT/Data/systems/wng'
 ```
-
-This repository does not allow you to install using URIs, the usual Foundry config files are tucked into `config/`
+This repository does not allow you to install using URIs directly, the usual Foundry config files are tucked into `config/`
