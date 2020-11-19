@@ -172,7 +172,7 @@ export class OpposedWNG
       if (options.target)
       {
         opposeResult.hideData = true;
-        renderTemplate("systems/wng/templates/chat/opposed-result.html", opposeResult).then(html =>
+        renderTemplate("systems/wng/assets/templates/chat/opposed-result.html", opposeResult).then(html =>
         {
           let chatOptions = {
             user: game.user.id,
@@ -186,7 +186,7 @@ export class OpposedWNG
       else // If manual - update start message and clear opposed data
       {
         opposeResult.hideData = true;
-        renderTemplate("systems/wng/templates/chat/opposed-result.html", opposeResult).then(html =>
+        renderTemplate("systems/wng/assets/templates/chat/opposed-result.html", opposeResult).then(html =>
         {
           let chatOptions = {
             user: game.user.id,

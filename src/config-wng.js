@@ -1,6 +1,6 @@
 export const WNG = {};
 
-CONFIG.ChatMessage.template = "systems/wng/templates/chat/chat-message.html";
+CONFIG.ChatMessage.template = "systems/wng/assets/templates/chat/chat-message.html";
 // To be updated
 CONFIG.statusEffects = [
     "systems/wng/icons/conditions/bleeding.png",

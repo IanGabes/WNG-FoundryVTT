@@ -1,0 +1,1557 @@
+
+/*************************************************************/
+/*=============== VI. ACTOR SHEET (NPC) =====================*/
+/*************************************************************/
+
+/* ==================== (A) WINDOW FRAMEWORK ================== */
+.app.window-app.sheet.wng.actor.npc-sheet {
+  background: url(../img/ui/frames/actor-sheet-npc.png) no-repeat;
+  box-shadow: none;
+  margin: 0px;
+  max-height: none !important;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-resizable-handle {
+  display: none !important;
+}
+
+/* ==================== (B) WINDOW HEADER ===================== */
+.app.window-app.sheet.wng.actor.npc-sheet .window-header {
+  flex: 0 0 61px;
+  line-height: 30px;
+  border-bottom: none;
+  background: none;
+  margin: 0px 20px 0px 0px;
+  padding: 27px 13px 7px 13px;
+  border: none;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-header .window-title {
+  display: none !important;
+  padding: 0px;
+  margin: 0px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-header .configure-sheet {
+  color: #00e5ff00;
+  text-align: center;
+  background: url(../img/ui/buttons/button-configure-sheet.png);
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-header .configure-token {
+  color: #00e5ff00;
+  text-align: center;
+  background: url(../img/ui/buttons/button-configure-token.png);
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 25px;
+  right: 56px;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  /* background: var(--debug-background-color-red); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-header .close {
+  color: #00e5ff00;
+  text-align: center;
+  background: url(../img/ui/buttons/button-close.png);
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 25px;
+  right: 27px;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  /* background: var(--debug-background-color-blue); */
+}
+
+/* ==================== (C) WINDOW BODY ======================= */
+.app.window-app.sheet.wng.actor.npc-sheet .window-content {
+  font-size: 13px;
+  overflow-y: hidden;
+  box-shadow: none;
+  background: none;
+  overflow-y: hidden;
+  border: none;
+  margin: 3px 26px 65px 8px;
+  padding: 0px 0px 0px 0px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form {
+  display: inline-block;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: normal;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin: 45px 35px;
+  padding: 0px;
+  /* box-shadow: var(--debug-box-shadow-red); */
+}
+
+.app.window-app.sheet.wng.actor.npc-sheet input:hover,
+.app.window-app.sheet.wng.actor.npc-sheet input:focus {
+  border: 1px dotted #463a3a;
+  box-shadow: none;
+}
+
+/* ==================== (D) PERSONAL DETAILS ================== */
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form #header-personal-details {
+  position: absolute;
+  top: 74px;
+  left: 247px;
+  width: 97px;
+  height: 16px;
+  font-family: var(--tab-header-font-family);
+  font-size: var(--tab-header-font-size);
+  font-weight: var(--tab-header-font-weight);
+  color: var(--tab-header-color);
+  text-align: center;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form .sheet-header {
+  height: 34px;
+  order: 0;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: left;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form .sheet-header input[type="text"]:hover,
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form .sheet-header input[type="text"]:focus {
+  box-shadow: none;
+  box-shadow: none;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form .sheet-header input[type="number"]:hover,
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form .sheet-header input[type="number"]:focus {
+  box-shadow: none;
+  box-shadow: none;
+}
+
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form .sheet-header .charname.item {
+  height: inherit;
+  width: 275px;
+  border-bottom: none;
+  margin: 0px 15px 0px 0px;
+  padding: 0px;
+  color: white;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  /* background: var(--debug-background-color-blue); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form .sheet-header h1 .input.name {
+  padding: 0px;
+  margin: 0px;
+  width: inherit;
+  height: 18px;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  text-align: left;
+  line-height: normal;
+  border: none;
+  box-shadow: none;
+  background: none;
+  z-index: 2;
+  /* background: var(--debug-background-color-red); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form .sheet-header h1 .label.name {
+  height: 16px;
+  width: inherit;
+  position: relative;
+  top: -5px;
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  text-align: left;
+  border: none;
+  border-top: 1px solid #736953a6;
+  z-index: 1;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form .sheet-header .item {
+  height: inherit;
+  border-bottom: none;
+  margin: 0px 15px 0px 0px;
+  padding: 0px;
+  color: white;
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+  /* background: var(--debug-background-color-blue); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form .sheet-header .item .input.species {
+  padding: 0px;
+  margin: 0px;
+  width: inherit;
+  height: 18px;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  text-align: left;
+  line-height: normal;
+  border: none;
+  box-shadow: none;
+  background: none;
+  z-index: 2;
+  /* background: var(--debug-background-color-red); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form .sheet-header .item .label.species {
+  height: 16px;
+  width: inherit;
+  position: relative;
+  top: -5px;
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  text-align: left;
+  border: none;
+  border-top: 1px solid #736953a6;
+  z-index: 1;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form .sheet-header .item .input.gender {
+  padding: 0px;
+  margin: 0px;
+  width: inherit;
+  height: 18px;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  text-align: left;
+  line-height: normal;
+  border: none;
+  box-shadow: none;
+  background: none;
+  z-index: 2;
+  /* background: var(--debug-background-color-red); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form .sheet-header .item .label.gender {
+  height: 16px;
+  width: inherit;
+  position: relative;
+  top: -5px;
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  text-align: left;
+  border: none;
+  border-top: 1px solid #736953a6;
+  z-index: 1;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .window-content form .sheet-header #field-gender {
+  margin: 0px;
+  width: 63px;
+}
+
+.app.window-app.sheet.wng.actor.npc-sheet .general {
+  display: flex;
+  flex-direction: row;
+  height: 139px;
+  width: 100%;
+  margin: 0px 0px 0px 0px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .general input[type="text"]:hover,
+.app.window-app.sheet.wng.actor.npc-sheet .general input[type="text"]:focus {
+  box-shadow: none;
+  box-shadow: none;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .general input[type="number"]:hover,
+.app.window-app.sheet.wng.actor.npc-sheet .general input[type="number"]:focus {
+  box-shadow: none;
+  box-shadow: none;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .general .charimg {
+  flex-direction: row;
+  margin: 3px 8px 0px 0px;
+  border: none;
+  min-width: 95px;
+  min-height: 95px;
+  max-width: 95px;
+  max-height: 95px;
+}
+
+/* FIRST ROW */
+.limited .general .attributes,
+.app.window-app.sheet.wng.actor.npc-sheet .general .attributes {
+  border-top: none;
+  margin: 1px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  height: 49px;
+  width: 403px;
+  max-width: 400px
+}
+.limited .general .attributes .attributes-table,
+.app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table {
+  margin: 1px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  height: 49px;
+  width: 403px;
+  max-width: 506px;
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-gap: 0px;
+  background: none;
+  border: 1px solid #736953a6;
+}
+.limited .general .attributes .attributes-table .table-header,
+.app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-header {
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  box-shadow: 0 0 10px #00000052 inset;
+  text-align: center;
+  width: 100%;
+  border-bottom: none;
+  border-right: 1px solid #736953a6;
+}
+.limited .general .attributes .attributes-table .table-header:nth-of-type(10),
+.app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-header:nth-of-type(10)  {
+  border-right: none;
+  /* background: red; */
+}
+.limited .general .attributes .attributes-table .table-header .table-header .header-block,
+.app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-header .header-block {
+  padding-top: 0px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-header .header-block .advancement-indicator {
+  position: fixed;
+  margin-top: -3px;
+  margin-left: 3px;
+}
+.limited .general .attributes-table .table-data,
+.app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-data {
+  border-top: 1px solid #736953a6;
+  border-right: 1px solid #736953a6;
+}
+.limited .general .attributes-table .table-data:last-of-type,
+.app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-data:last-of-type {
+  border-right: none;
+}
+.limited .general .attributes-table .table-data input,
+.app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-data input {
+  min-width: unset;
+  width: 100%;
+  min-height: 26px;
+  max-height: 26px;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  text-align: center;
+  padding-top: 7px;
+}
+.limited .general .attributes-table .table-data.atr-value,
+.app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-data.atr-value {
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  padding-top: 8px;
+  text-align: center;
+}
+
+/* SECOND ROW */
+.app.window-app.sheet.wng.actor.npc-sheet .main-row {
+  display: flex;
+  height: 47px;
+  margin: 4px 0px 0px 0px;
+  width: 403px;
+  /* background: var(--debug-background-color-blue); */
+}
+
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section {
+  display: flex;
+  width: 51px;
+  margin: 0px 0px 0px 0px;
+  border: 1px solid #736953a6;
+  flex-grow: 1;
+  /* background: var(--debug-background-color-red); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section{
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  width: inherit;
+  margin: 0px 0px 0px 0px;
+  border-right: 1px solid #736953a6;
+  flex-grow: 1;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section div:last-of-type {
+  border-right: none;
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section .attribute-value {
+  border-right: none;
+  border: none;
+  height: 22px;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  /* background: red; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section .attribute-value > input {
+  width: inherit;
+  height: inherit;
+  margin: 0px;
+  padding: 5px 0px 0px 0px;
+  text-align: center;
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section .attribute-value .auto-calc-toggle {
+  padding: 5px 0px 0px 0px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section .attribute-name {
+  border: none;
+  border-top: 1px solid #736953a6;
+  height: 23px;
+  margin: 0px;
+  padding: 2px 0px 0px 0px;
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  text-align: center;
+  box-shadow: 0 0 10px #00000052 inset;
+  /* background: blue; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section .attribute-name h4 {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  box-shadow: none;
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  background: none;
+}
+
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .fate-resilience.row-section {
+  display: flex;
+  width: 60px;
+  margin: 0px 0px 0px 6px;
+  border: 1px solid #736953a6;
+  flex-grow: 1;
+  /* background: var(--debug-background-color-red); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .fate-resilience.row-section .fate-resilience-section {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  width: inherit;
+  margin: 0px 0px 0px 0px;
+  border-right: 1px solid #736953a6;
+  flex-grow: 1;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .fate-resilience.row-section .fate-resilience-section.values {
+  flex-basis: 25px;
+  max-width: 25px;
+  min-width: 25px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .fate-resilience.row-section div:last-of-type {
+  border-right: none;
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .fate-resilience.row-section .top.label {
+  border-right: none;
+  border: none;
+  height: 22px;
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  text-align: center;
+  box-shadow: 0 0 10px #00000052 inset;
+  margin: 0px;
+  padding: 2px 0px 0px 0px;
+  /* background: red; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .fate-resilience.row-section .top.value {
+  border-right: none;
+  border: none;
+  height: 22px;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  /* background: red; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .fate-resilience.row-section .top.value > input {
+  width: inherit;
+  height: inherit;
+  margin: 0px;
+  padding: 5px 0px 0px 0px;
+  text-align: center;
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .fate-resilience.row-section .bottom.label {
+  border: none;
+  border-top: 1px solid #736953a6;
+  height: 23px;
+  margin: 0px;
+  padding: 2px 0px 0px 0px;
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  text-align: center;
+  box-shadow: 0 0 10px #00000052 inset;
+  /* background: blue; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .fate-resilience.row-section .bottom.value {
+  border: none;
+  border-top: 1px solid #736953a6;
+  border-bottom: 1px solid #7369531c;
+  height: 22px;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  /* background: red; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .fate-resilience.row-section .bottom.value > input {
+  width: inherit;
+  height: inherit;
+  margin: 0px 0px 1px 0px;
+  padding: 5px 0px 0px 0px;
+  text-align: center;
+}
+
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .wounds.row-section {
+  display: flex;
+  width: 60px;
+  margin: 0px 0px 0px 6px;
+  border: 1px solid #736953a6;
+  flex-grow: 0;
+  flex-basis: 85px;
+  /* background: var(--debug-background-color-red); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .wounds.row-section .wounds-section {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  width: inherit;
+  margin: 0px 0px 0px 0px;
+  border-right: 1px solid #736953a6;
+  flex-grow: 1;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .wounds.row-section div:last-of-type {
+  border-right: none;
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .wounds.row-section .top.label {
+  border-right: none;
+  border: none;
+  height: 22px;
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  text-align: center;
+  box-shadow: 0 0 10px #00000052 inset;
+  margin: 0px;
+  padding: 2px 0px 0px 0px;
+  /* background: red; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .wounds.row-section .wounds-value-box {
+  border: none;
+  border-top: 1px solid #736953a6;
+  height: 23px;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  /* box-shadow: 0 0 10px #00000052 inset; */
+  /* background: red; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .wounds.row-section .wounds-value-box #value {
+  width: 100%;
+  min-width: 39px;
+  max-width: 39px;
+  height: 100%;
+  flex-grow: 1;
+  /* background: red; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .wounds.row-section .wounds-value-box #value > input {
+  width: inherit;
+  height: inherit;
+  margin: 0px 0px 0px 0px;
+  padding: 5px 0px 0px 0px;
+  text-align: center;
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .wounds.row-section .wounds-value-box #divisor {
+  width: fit-content;
+  height: 22px;
+  padding: 5px 0px 0px 0px;
+  /* background: green; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .wounds.row-section .wounds-value-box #wounds-max {
+  flex-grow: 1;
+  min-width: 39px;
+  max-width: 39px;
+  height: 22px;
+  padding: 0px 0px 0px 0px;
+  /* background: blue; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .wounds.row-section .wounds-value-box #wounds-max > a {
+  width: inherit;
+  height: inherit;
+  position: relative;
+  top: 5px;
+  text-align: center;
+}
+.app.window-app.sheet.wng.actor.npc-sheet  .main-row .wounds.row-section .wounds-value-box #wounds-max > input {
+  width: 100%;
+  height: 22px;
+  padding: 5px 0px 0px 0px;
+}
+
+.wng.actor.npc-sheet .randomize-buttons {
+  font-family: CaslonPro;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 0px 0px 0px;
+  margin: 0px 0px 0px 6px;
+  height: 47px;
+  width: 130px;
+  color: black;
+  border: 1px solid #736953a6;
+  text-align: center;
+}
+.wng.actor.npc-sheet .randomize-buttons .randomize {
+  display: inline-block;
+  font-family: CaslonPro;
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  margin: 1px 0px 0px 0px;
+  padding: 1px 0px 0px 0px;
+  height: 16px;
+  width: 18px;
+  vertical-align: middle;
+  position: relative;
+  top: -4px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 3px #6b0f0f87 inset;
+  border: 1px solid #7369538a;
+}
+.wng.actor.npc-sheet .randomize-buttons .randomize-label {
+  display: inline-block;
+  font-family: CaslonAntique;
+  font-weight: 700;
+  font-size: 16px;
+  color: #464331c4;
+  border-top: 1px solid #736953a6;
+  margin: 0px;
+  padding: 2px 0px 0px 0px;
+  height: 23px;
+  width: 100%;
+  vertical-align: middle;
+  box-shadow: 0 0 10px #00000052 inset;
+  position: relative;
+  top: -1px;
+}
+
+/* ==================== (E) TAB SELECTIONS ==================== */
+.app.window-app.sheet.wng.actor.npc-sheet #tab-sections {
+  height: 384px;
+  width: inherit;
+}
+.app.window-app.sheet.wng.actor.npc-sheet #wng-primarytabs {
+  font-family: var(--tab-header-font-family);
+  font-size: var(--tab-header-font-size);
+  font-weight: var(--tab-header-font-weight);
+  color: var(--tab-header-color);
+  width: 504px;
+  margin: 0px 0px 0px 1px;
+  height: 24px;
+  padding: 0px;
+  /* background: url(../img/ui/ActorSheet-TabBackground.png); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .sheet-tabs > .item {
+  line-height: 20px;
+  padding: 2px 0px 0px 0px;
+  border-radius: 0px;
+  border-radius: 0px;
+  background: none;
+  width: 72px;
+  /* padding: 0px; */
+  margin: 0px;
+  border: 1px solid;
+  border-image: url(../img/ui/actor-sheet-tab-border.png) 4 repeat;
+  border-image-width: 4px;
+  border-image-outset: 0px;
+  font-family: var(--tab-header-font-family);
+  font-size: var(--tab-header-font-size);
+  font-weight: var(--tab-header-font-weight);
+  color: var(--tab-header-color);
+  /* background: url(../img/ui/ActorSheet-TabBorder.png); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .sheet-tabs > .item.active {
+  border-radius: 0px;
+  border-bottom: none;
+  width: 72px;
+  color: var(--tab-header-color-active);
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.app.window-app.sheet.wng.actor.npc-sheet #tab-sections input[type="text"]:hover,
+.app.window-app.sheet.wng.actor.npc-sheet #tab-sections input[type="text"]:focus {
+  box-shadow: none;
+  border: 1px dotted black;
+  border-radius: 0px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet #tab-sections input[type="number"]:hover,
+.app.window-app.sheet.wng.actor.npc-sheet #tab-sections input[type="number"]:focus {
+  box-shadow: none;
+  border: 1px dotted black;
+  border-radius: 0px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet #tab-sections > div.tab input {
+  background: none;
+  border: none;
+  border-radius: 0px;
+}
+
+/* ==================== (F) MAIN TAB ========================== */
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active {
+  display: flex;
+  flex-direction: column;
+  height: 358px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /* background: blue; */
+}
+
+/* ================== 1. SKILLS LIST ======================== */
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  margin: 6px 0px 0px 0px;
+  /* background: red; */
+  min-height: 200px;
+  flex-grow: 1;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .skill-type {
+  display:flex;
+  flex-direction: column;
+  /* background: red; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section #basic-skills-list {
+  margin-right: 3px;
+  height: 100%;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section #advanced-skills-list {
+  margin-left: 3px;
+  height: 100%;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .skill-type > h3 {
+  border: 1px solid #736953a6;
+  border-bottom: none;
+  height: 24px;
+  min-height: 24px;
+  max-height: 24px;
+  width: 100%;
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  text-align: center;
+  box-shadow: 0 0 10px #00000052 inset;
+  margin: 0px;
+  padding: 2px 0px 0px 0px;
+  background: none;
+}
+
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .skill-type .inventory-header {
+  width: 100%;
+  height: 20px;
+  margin: 0px;
+  padding: 0px 6px;
+  border: 1px solid #736953a6;
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  background: none;
+  box-shadow: 0 0 10px #6b3a0f87 inset;
+  text-align: left;
+  display: inline-block;
+  flex-grow: 0;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .skill-type .inventory-header .name {
+  position: relative;
+  left: 0px;
+  height: 18px;
+  width: fit-content;
+  display: inline-block;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .skill-type .inventory-header .attr {
+  position: relative;
+  left: 95px;
+  height: 18px;
+  width: fit-content;
+  display: inline-block;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .skill-type .inventory-header .rating {
+  position: relative;
+  left: 89px;
+  height: 18px;
+  width: fit-content;
+  display: inline-block;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .skill-type .inventory-header .total {
+  position: relative;
+  left: 90px;
+  height: 18px;
+  width: fit-content;
+  display: inline-block;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .skill-type .inventory-header .item-controls {
+  position: relative;
+  top: -1px;
+  left: 104px;
+  height: fit-content;
+  width: fit-content;
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-size: 10px;
+  color: var(--actor-label-color);
+  margin: 0px;
+  padding: 0px;
+}
+
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .skill-type .inventory-list {
+  margin: 0px;
+  padding: 0px;
+  width: 250px;
+  height: 100%;
+  box-shadow: 0px 0px 1px inset black;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: 1px solid #736953a6;
+  border-top: none;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section  .inventory-list .item {
+  width: 100%;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0px 0px;
+  padding: 2px 2px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 0px 1px inset black;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  justify-content: space-between;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .inventory-list .item .skill-name {
+  display: flex;
+  flex-direction: row;
+  min-width: 100px;
+  max-width: 100px;
+  margin: 1px 0px 0px 0px;
+  /* background: blue; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .inventory-list .item .skill-name .name {
+  display: flex;
+  flex-direction: row;
+  flex: 1 0 0;
+  text-align: left;
+  /* background: red; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .inventory-list .item .skill-name .advancement-indicator {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 0;
+  /* background: green; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .inventory-list .item .row-label {
+  min-width: 26px;
+  max-width: 26px;
+  margin: 1px 0px 0px 0px;
+  padding: 0px;
+  text-align: center;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  background: none;
+  border: none;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .inventory-list .item .row-value {
+  min-width: 30px;
+  max-width: 30px;
+  margin: 1px 0px 0px 0px;
+  padding: 0px;
+  text-align: center;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  background: none;
+  border: none;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .inventory-list .item .input-field.skill-advances {
+  min-width: 30px;
+  max-width: 30px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .inventory-list .item .input-field.skill-advances input {
+  width: 100%;
+  height: 17px;
+  margin: 0px;
+  padding: 2px 0px 0px 0px;
+  text-align: center;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .inventory-list .item .skill-total {
+  min-width: 30px;
+  max-width: 30px;
+  margin: 1px 0px 0px 0px;
+  padding: 0px;
+  text-align: center;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .inventory-list .item .item-controls {
+  padding: 2px 2px 0px 0px;
+  margin: 0px;
+  font-family: "Font Awesome 5 Free";
+  font-size: 10px;
+  color: #504f48a6;
+  text-align: center;
+  min-width: 20px;
+  max-width: 20px;
+  flex-grow: 0;
+}
+
+/* ================== 2. CAREER LIST ======================== */
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list {
+  width: 100%;
+  height: 300px;
+  margin: 6px 0px 0px 0px;
+  padding: 0px;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-header {
+  width: 100%;
+  height: 20px;
+  margin: 0px;
+  padding: 0px 6px;
+  border: 1px solid #736953a6;
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  background: none;
+  box-shadow: 0 0 10px #6b3a0f87 inset;
+  text-align: left;
+  display: inline-block;
+  flex-grow: 0;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-header #career {
+  position: relative;
+  left: 0px;
+  height: 18px;
+  width: fit-content;
+  display: inline-block;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-header #current {
+  position: relative;
+  left: 213px;
+  height: 18px;
+  width: fit-content;
+  display: inline-block;
+  visibility: hidden;
+  /* background: bisque; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-header #complete {
+  position: relative;
+  left: 273px;
+  height: 18px;
+  width: fit-content;
+  display: inline-block;
+  /* background: bisque; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-header #level {
+  position: relative;
+  left: 289px;
+  height: 18px;
+  width: fit-content;
+  display: inline-block;
+  /* background: bisque; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-header .item-controls {
+  position: relative;
+  top: -1px;
+  left: 360px;
+  height: fit-content;
+  width: fit-content;
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-size: 10px;
+  color: var(--actor-label-color);
+  margin: 0px;
+  padding: 0px;
+}
+
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-list {
+  width: 100%;
+  text-align: center;
+  list-style-type: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 0px;
+  padding: 0px;
+  flex-grow: 1;
+  border: 1px solid #736953a6;
+  border-top: none;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-list .item {
+  width: 100%;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0px 0px;
+  padding: 2px 2px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 1px inset black;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  justify-content: space-between;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-list .item .content {
+  width: 100%;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  display: flex;
+  flex-direction: row;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  justify-content: space-between;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-list .item .content .item-name {
+  display: flex;
+  flex-direction: row;
+  min-width: 220px;
+  max-width: 220px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-list .item .content .image {
+  background-size: 32px;
+  background-repeat: no-repeat;
+  min-height: 32px;
+  max-height: 32px;
+  min-width: 32px;
+  max-width: 32px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-list .item .content .name {
+  text-align: left;
+  vertical-align: middle;
+  padding: 11px 0px 0px 4px;
+  overflow: hidden;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-list .item .content .career-toggle {
+  /* width: 80px; */
+  padding: 11px 0px 0px 0px;
+  text-align: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 0;
+  position: relative;
+  left: 45px;
+  /* background: aqua; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-list .item .content .career-level {
+  /* width: 80px; */
+  padding: 11px 0px 0px 0px;
+  text-align: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 0;
+  position: relative;
+  left: 22px;
+  /* background: aqua; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-list .item .content .item-controls {
+  padding: 5px 0px 0px 0px;
+  font-family: "Font Awesome 5 Free";
+  font-size: 10px;
+  color: #504f48a6;
+  text-align: center;
+  min-width: 30px;
+  max-width: 30px;
+  flex-grow: 0;
+}
+
+/* ================== 3. PENALTIES ========================== */
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .penalties {
+  height: 24px;
+  min-height: 24px;
+  max-height: 24px;
+  border: 1px solid #736953a6;
+  margin: 6px 0px 0px 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  /* background: green; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .penalties > h3 {
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  text-align: center;
+  border: 1px solid #736953a6;
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  margin: 0px;
+  padding: 3px 0px 0px 0px;
+  height: 22px;
+  min-width: 54px;
+  max-width: 54px;
+  box-shadow: 0 0 10px #00000052 inset;
+  background: none;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .penalties .penalties {
+  width: fit-content;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .penalties > div {
+  width: fit-content;
+  flex-shrink: 0;
+  margin: 4px 0px 0px 0px;
+  padding: 0px 2px 0px 2px;
+  overflow-wrap: unset;
+  text-overflow: unset;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .penalties .custom-penalty {
+  width: inherit;
+  /* background: bisque; */
+  display: inline-flex;
+  flex-direction: row;
+  flex-grow: 1;
+  overflow-wrap: unset;
+  text-overflow: unset;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0px 0px 0px 0px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .penalties .custom-penalty .penalties-input {
+  min-width: 20px;
+  padding: 3px 3px 0px 3px;
+  margin: 0;
+  border-radius: 0px;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: inherit;
+  line-height: inherit;
+  color: #111;
+  width: inherit;
+  display: inline-flex;
+  flex-direction: row;
+  flex-grow: 2;
+}
+
+/* ==================== (I) MAGIC TAB ========================= */
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active {
+  display: block;
+  height: 352px;
+  width: 100%;
+  margin: 6px 0px 0px 0px;
+  padding: 0px 3px 0px 0px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  /* background: blue; */
+}
+
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-header.petty-header {
+  width: 100%;
+  height: 20px;
+  margin: 0px;
+  padding: 0px 6px;
+  border: 1px solid #736953a6;
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  background: none;
+  box-shadow: 0 0 10px #6b3a0f87 inset;
+  text-align: left;
+  display: inline-block;
+  flex-grow: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-header.petty-header .name {
+  position: relative;
+  left: 0px;
+  height: 18px;
+  width: fit-content;
+  display: inline-block;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-header.petty-header .item-controls {
+  position: relative;
+  top: -1px;
+  left: 412px;
+  height: fit-content;
+  width: fit-content;
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-size: 10px;
+  color: var(--actor-label-color);
+  margin: 0px;
+  padding: 0px;
+}
+
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.petty-list {
+  overscroll-behavior-x: unset;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border: 1px solid #736953a6;
+  border-top: none;
+  list-style: none;
+  box-shadow: 0px 0px 1px inset black;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  height: fit-content;
+  width: 100%;
+  margin: -5px 0px 0px 0px;
+  padding: 0px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.petty-list .item {
+  width: 100%;
+  text-align: left;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0px 0px;
+  padding: 2px 2px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 1px inset black;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  justify-content: space-between;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.petty-list .item .content {
+  width: 100%;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  display: flex;
+  flex-direction: row;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  justify-content: space-between;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.petty-list .item .content .item-name {
+  display: flex;
+  flex-direction: row;
+  min-width: 180px;
+  max-width: 180px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.petty-list .item .content .image {
+  background-size: 32px;
+  background-repeat: no-repeat;
+  min-height: 32px;
+  max-height: 32px;
+  min-width: 32px;
+  max-width: 32px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.petty-list .item .content .name {
+  text-align: left;
+  vertical-align: middle;
+  padding: 11px 0px 0px 4px;
+  overflow: hidden;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.petty-list .item .content .item-controls {
+  padding: 5px 4px 0px 0px;
+  font-family: "Font Awesome 5 Free";
+  font-size: 10px;
+  color: #504f48a6;
+  text-align: right;
+  min-width: 30px;
+  max-width: 30px;
+  flex-grow: 0;
+}
+
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-header.lore-header {
+  width: 100%;
+  height: 20px;
+  margin: 6px 0px 0px 0px;
+  padding: 0px 6px;
+  border: 1px solid #736953a6;
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  background: none;
+  box-shadow: 0 0 10px #6b3a0f87 inset;
+  text-align: left;
+  display: inline-block;
+  flex-grow: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-header.lore-header .name {
+  position: relative;
+  left: 0px;
+  height: 18px;
+  width: fit-content;
+  display: inline-block;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-header.lore-header .ingredients {
+  position: relative;
+  left: 166px;
+  height: 18px;
+  width: fit-content;
+  display: inline-block;
+  /* background: beige; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-header.lore-header .casting-number {
+  position: relative;
+  left: 214px;
+  height: 18px;
+  width: fit-content;
+  display: inline-block;
+  /* background: beige; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-header.lore-header .success-lvl {
+  position: relative;
+  left: 231px;
+  height: 18px;
+  width: fit-content;
+  display: inline-block;
+  /* background: beige; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-header.lore-header .memorized {
+  position: relative;
+  left: 252px;
+  height: 18px;
+  width: fit-content;
+  display: inline-block;
+  /* background: beige; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-header.lore-header .item-controls {
+  position: relative;
+  top: -1px;
+  left: 293px;
+  height: fit-content;
+  width: fit-content;
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-size: 10px;
+  color: var(--actor-label-color);
+  margin: 0px;
+  padding: 0px;
+}
+
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.lore-list {
+  overscroll-behavior-x: unset;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border: 1px solid #736953a6;
+  border-top: none;
+  list-style: none;
+  box-shadow: 0px 0px 1px inset black;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  height: fit-content;
+  width: 100%;
+  margin: -5px 0px 0px 0px;
+  padding: 0px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.lore-list .item {
+  width: 100%;
+  text-align: left;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0px 0px;
+  padding: 2px 2px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 1px inset black;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  justify-content: space-between;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.lore-list .item .content {
+  width: 100%;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  display: flex;
+  flex-direction: row;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  justify-content: space-between;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.lore-list .item .content .item-name {
+  display: flex;
+  flex-direction: row;
+  min-width: 180px;
+  max-width: 180px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.lore-list .item .content .image {
+  background-size: 32px;
+  background-repeat: no-repeat;
+  min-height: 32px;
+  max-height: 32px;
+  min-width: 32px;
+  max-width: 32px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.lore-list .item .content .name {
+  text-align: left;
+  vertical-align: middle;
+  padding: 11px 0px 0px 4px;
+  overflow: hidden;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.lore-list .item .content .ingredient-selector {
+  min-width: 130px;
+  max-width: 130px;
+  padding: 7px 0px 0px 0px;
+  text-align: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 0;
+  /* background: aqua; */
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.lore-list .item .content .ingredient-selector > select {
+  background: none;
+  border: 1px solid #737373;
+  border-radius: 2px;
+  padding: 0px;
+  margin: 0px;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  height: 19px;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.lore-list .item .content .spell-attr {
+  min-width: 30px;
+  max-width: 30px;
+  padding: 11px 0px 0px 0px;
+  text-align: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 0;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.lore-list .item .content .memorized-toggle {
+  padding: 10px 0px 0px 0px;
+}
+.app.window-app.sheet.wng.actor.npc-sheet .tab.magic.active .inventory-list.lore-list .item .content .item-controls {
+  padding: 5px 4px 0px 0px;
+  font-family: "Font Awesome 5 Free";
+  font-size: 10px;
+  color: #504f48a6;
+  text-align: right;
+  min-width: 30px;
+  max-width: 30px;
+  flex-grow: 0;
+}
+
+/*************************************************************/
+/*************************************************************/

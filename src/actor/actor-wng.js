@@ -86,7 +86,7 @@ export class ActorWNG extends Actor {
     // Setup dialog data: title, template, buttons, prefilled data
     let dialogOptions = {
       title: title,
-      template : "/systems/wng/templates/chat/characteristic-dialog.html",
+      template : "/systems/wng/assets/templates/chat/characteristic-dialog.html",
       // Prefilled dialog data
       data : {
         hitLocation : testData.hitLocation,
@@ -123,7 +123,7 @@ export class ActorWNG extends Actor {
     }
 
     // Call the universal cardOptions helper
-    let cardOptions = this._setupCardOptions("systems/wng/templates/chat/characteristic-card.html", title)
+    let cardOptions = this._setupCardOptions("systems/wng/assets/templates/chat/characteristic-card.html", title)
 
     // Provide these 3 objects to prepareTest() to create the dialog and assign the roll function
     DiceWNG.prepareTest({
@@ -165,7 +165,7 @@ export class ActorWNG extends Actor {
     // Setup dialog data: title, template, buttons, prefilled data   
     let dialogOptions = {
       title: title,
-      template : "/systems/wng/templates/chat/skill-dialog.html",
+      template : "/systems/wng/assets/templates/chat/skill-dialog.html",
       // Prefilled dialog data
       data : {
         hitLocation : testData.hitLocation,
@@ -212,7 +212,7 @@ export class ActorWNG extends Actor {
     }
 
     // Call the universal cardOptions helper
-    let cardOptions = this._setupCardOptions("systems/wng/templates/chat/skill-card.html", title)
+    let cardOptions = this._setupCardOptions("systems/wng/assets/templates/chat/skill-card.html", title)
 
     // Provide these 3 objects to prepareTest() to create the dialog and assign the roll function
     DiceWNG.prepareTest({
@@ -347,7 +347,7 @@ export class ActorWNG extends Actor {
     // Setup dialog data: title, template, buttons, prefilled data
     let dialogOptions = {
       title: title,
-      template : "/systems/wng/templates/chat/weapon-dialog.html",
+      template : "/systems/wng/assets/templates/chat/weapon-dialog.html",
       // Prefilled dialog data
       data : {
         hitLocation : testData.hitLocation,
@@ -418,7 +418,7 @@ export class ActorWNG extends Actor {
     };
 
     // Call the universal cardOptions helper
-    let cardOptions = this._setupCardOptions("systems/wng/templates/chat/weapon-card.html", title)
+    let cardOptions = this._setupCardOptions("systems/wng/assets/templates/chat/weapon-card.html", title)
 
     // Provide these 3 objects to prepareTest() to create the dialog and assign the roll function
     DiceWNG.prepareTest({
@@ -443,7 +443,7 @@ export class ActorWNG extends Actor {
       this.setupCast(spell)
     else
     {
-      renderTemplate("systems/wng/templates/chat/cast-channel-dialog.html").then(dlg => {
+      renderTemplate("systems/wng/assets/templates/chat/cast-channel-dialog.html").then(dlg => {
         new Dialog({
           title: game.i18n.localize("ACTOR.CastOrChannel"),
           content: dlg,

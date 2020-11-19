@@ -1,0 +1,35 @@
+
+/*************************************************************/
+/*=============== V. MENU ===================================*/
+/*************************************************************/
+
+#menu {
+  position: fixed;
+  z-index: 101;
+  top: 45%;
+  left: calc(50% - 180px);
+  width: 341px;
+  background: none;
+  box-shadow: none;
+  font-family: CaslonAntique;
+  font-weight: normal;
+  font-size: 19px;
+  color: #ececec;
+  border: 1px solid blue;
+  border-image: url(../img/ui/menu-border.png) 21 repeat;
+  border-image-slice: 78 4 81 4;
+  border-image-width: 80px 6px 80px 6px;
+  border-image-outset: 76px 0px 76px 0px;
+  border-radius: 0px;
+  box-shadow: 3px 4px 11px #000;
+  background: #00000000;
+}
+#menu #menu-items {
+  list-style: none;
+  margin: 3px;
+  padding: 6px 32px 6px 32px;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 84px #000000 inset;
+  /* border-right: 3px groove #bf8d1c; */
+  /* border-left: 3px ridge #775300; */
+}
