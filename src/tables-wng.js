@@ -47,7 +47,7 @@ export class WNG_Tables
 
       let rollValue = options.lookup || roll.total; // options.lookup will ignore the rolled value for the input value
       let displayTotal = options.lookup || roll.result; // Roll value displayed to the user
-      if (modifier == 0)
+      if (modifier === 0)
         displayTotal = eval(displayTotal) // Clean up display value if modifier 0 (59 instead of 59 + 0)
       if (rollValue <= 0 && minOne) // Min one provides a lower bound of 1 on the result
         rollValue = 1;
@@ -61,7 +61,7 @@ export class WNG_Tables
         rollValue = tableSize;
 
       // Scatter is a special table - calculate distance and return
-      if (table == "scatter")
+      if (table === "scatter")
       {
         if (roll.total <= 8) // Rolls of 9 and 10 do not need distance calculated
         {
@@ -220,9 +220,9 @@ export class WNG_Tables
           "</td>" +
           "</tr>" +
           "</table>"
-        if (result.roll == 9)
+        if (result.roll === 9)
           tableHtml += game.i18n.localize("CHAT.ScatterYou");
-        else if (result.roll == 10)
+        else if (result.roll === 10)
           tableHtml += game.i18n.localize("CHAT.ScatterThem");
         else
           tableHtml += game.i18n.localize("CHAT.ScatterNote")
@@ -245,11 +245,11 @@ export class WNG_Tables
             let html = `<b>${this[table].name}</b><br>`;
             for (let part in result)
             {
-              if (part == "name")
+              if (part === "name")
                 html += `<b>${result[part]}</b><br>`
-              else if (part == "roll")
+              else if (part === "roll")
                 html += "<b>Roll</b>: " + eval(result[part])
-              else if (part != "range")
+              else if (part !== "range")
                 html += result[part] + "<br>"
             }
             return html;

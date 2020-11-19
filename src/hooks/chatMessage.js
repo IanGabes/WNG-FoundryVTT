@@ -5,6 +5,10 @@
  * /cond  - Lookup a condition
  * /name  - Generate a name
  */
+import {WNG_Tables} from "../tables-wng";
+import {WNG_Utility} from "../utility-wng";
+import {WNG} from "../config-wng";
+
 Hooks.on("chatMessage", (html, content, msg) => {
     // Setup new message's visibility
     let rollMode = game.settings.get("core", "rollMode");
@@ -17,10 +21,10 @@ Hooks.on("chatMessage", (html, content, msg) => {
       return item.trim();
     })
     // Roll on a table
-    if (command[0] == "/table")
+    if (command[0] === "/table")
     {
       // If no argument, display help menu
-      if (command.length == 1)
+      if (command.length === 1)
         msg.content = WNG_Tables.formatChatRoll("menu")
       else
       {
@@ -47,7 +51,7 @@ Hooks.on("chatMessage", (html, content, msg) => {
     }
     
     // Lookup a condition
-    else if (command[0] == "/cond")
+    else if (command[0] === "/cond")
     {
       // Only one argument possible [1]: condition to lookup
       let conditionInput = command[1].toLowerCase();
@@ -62,14 +66,14 @@ Hooks.on("chatMessage", (html, content, msg) => {
       return false;
     }
     // Character generation
-    else if (command[0] == "/char")
+    else if (command[0] === "/char")
     {
       // Begin character generation, return false to not display user input of `/char`
       GeneratorWNG.speciesStage()
       return false
     }
     // Name generation
-    else if (command[0] == "/name")
+    else if (command[0] === "/name")
     {
       // Possible arguments - [2]: gender, [1]: species
       let gender = (command[2] || "").toLowerCase()

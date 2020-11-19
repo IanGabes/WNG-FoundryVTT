@@ -1,6 +1,8 @@
 /**
  * Add Status right click option for combat tracker combatants
  */
+import {WNG_Utility} from "../utility-wng";
+
 Hooks.on("getCombatTrackerEntryContext", (html, options) => {
     options.push(
     {

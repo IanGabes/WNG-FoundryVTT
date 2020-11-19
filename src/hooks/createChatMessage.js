@@ -11,7 +11,7 @@ Hooks.on("createChatMessage", (html, content, msg) => {
     let winner = content.flags.opposeData.winner;
     let startMessage = game.messages.get(content.flags.startMessageId)
     // The loser is "attacker" or "defender"
-    let loser = winner == "attacker" ? "defender" : "attacker"
+    let loser = winner === "attacker" ? "defender" : "attacker"
     // forgive me but i'm too tired to deal with jquery
 
     // Replace "attacker" with "attacker winner" or "defender" with "defender winner" to apply the color coded borders

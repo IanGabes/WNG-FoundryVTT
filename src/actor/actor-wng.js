@@ -17,7 +17,7 @@
 import {DiceWNG} from "../dice-wng";
 import {OpposedWNG} from "../opposed-wng";
 import {WNG_Utility} from "../utility-wng";
-import {WNG} from "../config-wng";
+import {DAMAGE_TYPE, WNG} from "../config-wng";
 
 export class ActorWNG extends Actor {
   /**
@@ -1575,7 +1575,7 @@ export class ActorWNG extends Actor {
    *
    * @param {Object} victim       id of actor taking damage
    * @param {Object} opposedData  Test results, all the information needed to calculate damage
-   * @param {var}    damageType   enum for what the damage ignores, see config.js
+   * @param {number}    damageType   enum for what the damage ignores, see config.js
    */
   static applyDamage(victim, opposeData, damageType = DAMAGE_TYPE.NORMAL)
   {
@@ -1592,12 +1592,12 @@ export class ActorWNG extends Actor {
     // Start wound loss at the damage value
     let totalWoundLoss = opposeData.damage.value
     let newWounds = actor.data.data.status.wounds.value;
-    let applyAP = (damageType == DAMAGE_TYPE.IGNORE_TB || damageType == DAMAGE_TYPE.NORMAL)
-    let applyTB = (damageType == DAMAGE_TYPE.IGNORE_AP || damageType == DAMAGE_TYPE.NORMAL)
+    let applyAP = (damageType === DAMAGE_TYPE.IGNORE_TB || damageType === DAMAGE_TYPE.NORMAL)
+    let applyTB = (damageType === DAMAGE_TYPE.IGNORE_AP || damageType === DAMAGE_TYPE.NORMAL)
 
     // Start message update string
     let updateMsg = `<b>${game.i18n.localize("CHAT.DamageApplied")}</b><span class = 'hide-option'>: @TOTAL`;
-    if (damageType != DAMAGE_TYPE.IGNORE_ALL)
+    if (damageType !== DAMAGE_TYPE.IGNORE_ALL)
       updateMsg += " ("
 
     let weaponProperties
@@ -1628,8 +1628,8 @@ export class ActorWNG extends Actor {
         impale = weaponProperties.qualities.includes("Impale")
       }
       // see if armor flaws should be triggered
-      let ignorePartial = opposeData.attackerTestResult.roll % 2 == 0 || opposeData.attackerTestResult.extra.critical
-      let ignoreWeakpoints = (opposeData.attackerTestResult.roll % 2 == 0 || opposeData.attackerTestResult.extra.critical)
+      let ignorePartial = opposeData.attackerTestResult.roll % 2 === 0 || opposeData.attackerTestResult.extra.critical
+      let ignoreWeakpoints = (opposeData.attackerTestResult.roll % 2 === 0 || opposeData.attackerTestResult.extra.critical)
                               && impale
 
       // Mitigate damage with armor one layer at a time
@@ -1647,7 +1647,7 @@ export class ActorWNG extends Actor {
         {
           AP.ignored += layer.metal ? 1 : layer.value
         }
-        if (opposeData.attackerTestResult.roll % 2 != 0 && layer.impenetrable)
+        if (opposeData.attackerTestResult.roll % 2 !== 0 && layer.impenetrable)
         {
           impenetrable = true;
           break;
@@ -1723,7 +1723,7 @@ export class ActorWNG extends Actor {
 
 
     updateMsg +="</span>"
-    updateMsg = updateMsg.replace("@TOTAL", totalWoundLoss)
+    updateMsg = updateMsg.replace("@TOTAL", totalWoundLoss.toString())
 
     // Update actor wound value
     actor.update({"data.status.wounds.value" : newWounds})

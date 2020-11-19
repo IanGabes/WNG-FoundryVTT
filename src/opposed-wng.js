@@ -10,6 +10,7 @@
  * on how targeted opposed rolls are handled.
  */
 import {WNG_Utility} from "./utility-wng";
+import {WNG} from "./config-wng";
 
 export class OpposedWNG
 {
@@ -99,7 +100,7 @@ export class OpposedWNG
 
       // If attacker has more SL OR the SLs are equal and the attacker's target number is greater than the defender's, then attacker wins. 
       // Note: I know this isn't technically correct by the book, where it states you use the tested characteristic/skill, not the target number, i'll be honest, I don't really care.
-      if (attackerSL > defenderSL || (attackerSL == defenderSL && attacker.testResult.target > defender.testResult.target))
+      if (attackerSL > defenderSL || (attackerSL === defenderSL && attacker.testResult.target > defender.testResult.target))
       {
         opposeResult.winner = "attacker"
         differenceSL = attackerSL - defenderSL;
@@ -127,7 +128,7 @@ export class OpposedWNG
             {
               let SL = Number(opposeResult.attackerTestResult.SL)
               let unitValue = Number(opposeResult.attackerTestResult.roll.toString().split("").pop())
-              if (unitValue == 0)
+              if (unitValue === 0)
                 unitValue = 10;
               let damageToAdd = unitValue - SL
               if (damageToAdd > 0)

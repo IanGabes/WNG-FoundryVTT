@@ -7,6 +7,9 @@
  */
 
 import {WNG_Utility} from "./utility-wng";
+import {WNG_Tables} from "./tables-wng";
+import {OpposedWNG} from "./opposed-wng";
+import {ActorWNG} from "./actor/actor-wng";
 
 export class DiceWNG
 {
@@ -117,7 +120,7 @@ export class DiceWNG
     let slBonus = testData.slBonus;
     let targetNum = testData.target;
     let SL
-    if (testData.SL == 0)
+    if (testData.SL === 0)
       SL = testData.SL
     else
       SL = testData.SL || ((Math.floor(targetNum / 10) - Math.floor(roll.total / 10)) + slBonus); // Use input SL if exists, otherwise, calculate from roll (used for editing a test result)
@@ -164,7 +167,7 @@ export class DiceWNG
         description = game.i18n.localize("Marginal") + " " + game.i18n.localize("Failure");
         SL = "+" + SL.toString();
       }
-      if (SL == 0)
+      if (SL === 0)
         SL = "-" + SL.toString()
     }
 
@@ -175,7 +178,7 @@ export class DiceWNG
       if (game.settings.get("wng", "fastSL"))
       {
         let rollString = roll.total.toString();
-        if (rollString.length == 2)
+        if (rollString.length === 2)
           SL = Number(rollString.split('')[0])
         else
           SL = 0;
@@ -262,12 +265,12 @@ export class DiceWNG
     // If hit location is being ussed, we can assume we should lookup critical hits
     if (testData.hitLocation)
     {
-      if (roll.total > targetNum && roll.total % 11 == 0 || roll.total == 100)
+      if (roll.total > targetNum && roll.total % 11 === 0 || roll.total === 100)
       {
         rollResults.extra.color_red = true;
         rollResults.extra.fumble = game.i18n.localize("Fumble");
       }
-      else if (roll.total <= targetNum && roll.total % 11 == 0)
+      else if (roll.total <= targetNum && roll.total % 11 === 0)
       {
         rollResults.extra.color_green = true;
         rollResults.extra.critical = game.i18n.localize("Critical");
@@ -277,12 +280,12 @@ export class DiceWNG
     // If optional rule of criticals/fumbles on all tessts - assign Astounding Success/Failure accordingly
     if (game.settings.get("wng", "criticalsFumblesOnAllTests") && !testData.hitLocation)
     {
-      if (roll.total > targetNum && roll.total % 11 == 0 || roll.total == 100)
+      if (roll.total > targetNum && roll.total % 11 === 0 || roll.total === 100)
       {
         rollResults.extra.color_red = true;
         rollResults.description = game.i18n.localize("Astounding") + " " + game.i18n.localize("Failure")
       }
-      else if (roll.total <= targetNum && roll.total % 11 == 0)
+      else if (roll.total <= targetNum && roll.total % 11 === 0)
       {
         rollResults.extra.color_green = true;
         rollResults.description = game.i18n.localize("Astounding") + " " + game.i18n.localize("Success")
@@ -311,28 +314,28 @@ export class DiceWNG
     if (testResults.description.includes(game.i18n.localize("Failure")))
     {
       // Dangerous weapons fumble on any failed tesst including a 9
-      if (testResults.roll % 11 == 0 || testResults.roll == 100 || (weapon.properties.flaws.includes("Dangerous") && testResults.roll.toString().includes("9")))
+      if (testResults.roll % 11 === 0 || testResults.roll === 100 || (weapon.properties.flaws.includes("Dangerous") && testResults.roll.toString().includes("9")))
       {
         testResults.extra.fumble = game.i18n.localize("Fumble")
         // Blackpowder/engineering/explosive weapons misfire on an even fumble
-        if ((weapon.data.weaponGroup.value == "Blackpowder" ||
-            weapon.data.weaponGroup.value == "Engineering" ||
-            weapon.data.weaponGroup.value == "Explosives") && testResults.roll % 2 == 0)
+        if ((weapon.data.weaponGroup.value === "Blackpowder" ||
+            weapon.data.weaponGroup.value === "Engineering" ||
+            weapon.data.weaponGroup.value === "Explosives") && testResults.roll % 2 === 0)
         {
           testResults.extra.misfire = game.i18n.localize("Misfire")
           testResults.extra.misfireDamage = eval(testResults.roll.toString().split('').pop() + weapon.data.damage.value)
         }
       }
-      if (weapon.data.weaponGroup.value == "Throwing")
+      if (weapon.data.weaponGroup.value === "Throwing")
         testResults.extra.scatter = "Scatter";
     }
     else
     {
-      if (testResults.roll % 11 == 0)
+      if (testResults.roll % 11 === 0)
         testResults.extra.critical = game.i18n.localize("Critical")
 
       // Impale weapons crit on 10s numbers
-      if (weapon.properties.qualities.includes("Impale") && testResults.roll % 10 == 0)
+      if (weapon.properties.qualities.includes("Impale") && testResults.roll % 10 === 0)
         testResults.extra.critical = game.i18n.localize("Critical")
     }
 
@@ -346,7 +349,7 @@ export class DiceWNG
     let damageToUse = testResults.SL; // Start out normally, with SL being the basis of damage
 
     let unitValue = Number(testResults.roll.toString().split("").pop())
-    unitValue = unitValue == 0 ? 10 : unitValue; // If unit value == 0, use 10
+    unitValue = unitValue === 0 ? 10 : unitValue; // If unit value == 0, use 10
 
     if (weapon.properties.qualities.includes("Damaging") && unitValue > Number(testResults.SL))
       damageToUse = unitValue; // If damaging, instead use the unit value if it's higher
@@ -358,7 +361,7 @@ export class DiceWNG
       testResults.damage += unitValue;
 
     // If Tiring, instead provide both normal damage and increased damage as an option - clickable to select which damage is used
-    if (weapon.properties.flaws.includes("Tiring") && (damageToUse != testResults.SL || weapon.properties.qualities.includes("Impact")))
+    if (weapon.properties.flaws.includes("Tiring") && (damageToUse !== testResults.SL || weapon.properties.qualities.includes("Impact")))
     {
       testResults.damage = `<a class = "damage-select">${eval(weapon.data.damage.value + testResults.SL)}</a> | <a class = "damage-select">${testResults.damage}</a>`;
     }
@@ -397,11 +400,11 @@ export class DiceWNG
 
     // If malignant influence AND roll has an 8 in the ones digit, miscast
     if (testData.extra.malignantInfluence)
-      if (Number(testResults.roll.toString().split('').pop()) == 8)
+      if (Number(testResults.roll.toString().split('').pop()) === 8)
         miscastCounter++;
 
     // Witchcraft automatically miscast
-    if (spell.data.lore.value == "witchcraft")
+    if (spell.data.lore.value === "witchcraft")
       miscastCounter++;
 
     // slOver is the amount of SL over the CN achieved
@@ -412,7 +415,7 @@ export class DiceWNG
     {
       testResults.description = game.i18n.localize("ROLL.CastingFailed")
       // Miscast on fumble
-      if (testResults.roll % 11 == 0 || testResults.roll == 100)
+      if (testResults.roll % 11 === 0 || testResults.roll === 100)
       {
         testResults.extra.color_red = true;
         miscastCounter++;
@@ -423,7 +426,7 @@ export class DiceWNG
       testResults.description = game.i18n.localize("ROLL.CastingFailed")
 
       // Critical Casting - succeeds only if the user chooses Total Power option (which is assumed)
-      if (testResults.roll % 11 == 0)
+      if (testResults.roll % 11 === 0)
       {
         testResults.extra.color_green = true;
         testResults.description = game.i18n.localize("ROLL.CastingSuccess")
@@ -440,7 +443,7 @@ export class DiceWNG
       let overcasts = Math.floor(slOver / 2);
       testResults.overcasts = overcasts;
 
-      if (testResults.roll % 11 == 0)
+      if (testResults.roll % 11 === 0)
       {
         testResults.extra.critical = game.i18n.localize("ROLL.CritCast")
         testResults.extra.color_green = true;
@@ -518,23 +521,23 @@ export class DiceWNG
 
     // If malignant influence AND roll has an 8 in the ones digit, miscast
     if (testData.extra.malignantInfluence)
-      if (Number(testResults.roll.toString().split('').pop()) == 8)
+      if (Number(testResults.roll.toString().split('').pop()) === 8)
         miscastCounter++;
 
     // Witchcraft automatically miscast
-    if (spell.data.lore.value == "witchcraft")
+    if (spell.data.lore.value === "witchcraft")
       miscastCounter++;
 
     // Test itself was failed
     if (testResults.description.includes(game.i18n.localize("Failure")))
     {
       // Optional Rule: If SL in extended test is -/+0, counts as -/+1
-      if (Number(SL) == 0 && game.settings.get("wng", "extendedTests"))
+      if (Number(SL) === 0 && game.settings.get("wng", "extendedTests"))
         SL = -1;
 
       testResults.description = game.i18n.localize("ROLL.ChannelFailed")
       // Major Miscast on fumble
-      if (testResults.roll % 11 == 0 || testResults.roll % 10 == 0 || testResults.roll == 100)
+      if (testResults.roll % 11 === 0 || testResults.roll % 10 === 0 || testResults.roll === 100)
       {
         testResults.extra.color_red = true;
         miscastCounter += 2;
@@ -545,11 +548,11 @@ export class DiceWNG
       testResults.description = game.i18n.localize("ROLL.ChannelSuccess")
 
       // Optional Rule: If SL in extended test is -/+0, counts as -/+1
-      if (Number(SL) == 0 && game.settings.get("wng", "extendedTests"))
+      if (Number(SL) === 0 && game.settings.get("wng", "extendedTests"))
         SL = 1;
 
       // Critical Channel - miscast and set SL gained to CN
-      if (testResults.roll % 11 == 0)
+      if (testResults.roll % 11 === 0)
       {
         testResults.extra.color_green = true;
         spell.data.cn.SL = spell.data.cn.value;
@@ -631,11 +634,11 @@ export class DiceWNG
 
       // Wrath of the gads activates if ones digit is equal or less than current sin
       let unitResult = Number(testResults.roll.toString().split('').pop())
-      if (unitResult == 0)
+      if (unitResult === 0)
         unitResult = 10;
-      if (testResults.roll % 11 == 0 || unitResult <= currentSin)
+      if (testResults.roll % 11 === 0 || unitResult <= currentSin)
       {
-        if (testResults.roll % 11 == 0)
+        if (testResults.roll % 11 === 0)
           testResults.extra.color_red = true;
 
         testResults.extra.wrath = game.i18n.localize("ROLL.Wrath")
@@ -654,7 +657,7 @@ export class DiceWNG
 
       // Wrath of the gads activates if ones digit is equal or less than current sin      
       let unitResult = Number(testResults.roll.toString().split('').pop())
-      if (unitResult == 0)
+      if (unitResult === 0)
         unitResult = 10;
       if (unitResult <= currentSin)
       {
@@ -736,7 +739,7 @@ export class DiceWNG
 
           for (let elem of elementsToToggle)
           {
-            if (elem.style.display == "none")
+            if (elem.style.display === "none")
               elem.style.display = ""
             else
               elem.style.display = "none"
@@ -808,12 +811,12 @@ export class DiceWNG
     // If draggable skill/talent, right click to open sheet
     html.on("mousedown", ".talent-drag", async ev =>
     {
-      if (ev.button == 2)
+      if (ev.button === 2)
         WNG_Utility.findTalent(ev.target.text).then(talent => talent.sheet.render(true));
     })
     html.on("mousedown", ".skill-drag", async ev =>
     {
-      if (ev.button == 2)
+      if (ev.button === 2)
         WNG_Utility.findSkill(ev.target.text).then(skill => skill.sheet.render(true));
     })
 
@@ -848,19 +851,19 @@ export class DiceWNG
       let newTestData = data.preData;
       newTestData[button.attr("data-edit-type")] = parseInt(ev.target.value)
 
-      if (button.attr("data-edit-type") == "hitloc") // If changing hitloc, keep old value for roll
+      if (button.attr("data-edit-type") === "hitloc") // If changing hitloc, keep old value for roll
         newTestData["roll"] = $(message.data.content).find(".card-content.test-data").attr("data-roll")
       else // If not changing hitloc, use old value for hitloc
         newTestData["hitloc"] = $(message.data.content).find(".card-content.test-data").attr("data-loc")
 
-      if (button.attr("data-edit-type") == "SL") // If changing SL, keep both roll and hitloc
+      if (button.attr("data-edit-type") === "SL") // If changing SL, keep both roll and hitloc
       {
         newTestData["roll"] = $(message.data.content).find(".card-content.test-data").attr("data-roll")
         newTestData.slBonus = 0;
         newTestData.successBonus = 0;
       }
 
-      if (button.attr("data-edit-type") == "target") // If changing target, keep both roll and hitloc
+      if (button.attr("data-edit-type") === "target") // If changing target, keep both roll and hitloc
         newTestData["roll"] = $(message.data.content).find(".card-content.test-data").attr("data-roll")
 
 
@@ -1024,7 +1027,7 @@ export class DiceWNG
 
     for (let elem of elementsToToggle)
     {
-      if (elem.style.display == "none")
+      if (elem.style.display === "none")
         elem.style.display = ""
       else
         elem.style.display = "none"

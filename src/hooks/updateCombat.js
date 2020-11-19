@@ -1,6 +1,8 @@
 /**
  * Displays round/turn summaries as combat turns go by, also focuses on token whose turn is starting
  */
+import {WNG_Utility} from "../utility-wng";
+
 Hooks.on("updateCombat", (combat) => {
     if (game.user.isGM && combat.data.round != 0 && combat.turns && combat.data.active)
     {

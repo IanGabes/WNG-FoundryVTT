@@ -1,5 +1,6 @@
 
 import {ActorSheetWNG} from "./actor-sheet";
+import {WNG_Utility} from "../../utility-wng";
 
 /**
  * Provides the specific interaction handlers for Character Sheets.
@@ -56,7 +57,7 @@ export class ActorSheetWNGCharacter extends ActorSheetWNG {
       item.data[type].value = !item.data[type].value; // Toggle the value
 
       // "Current" is the toggle that actually means something, so needs more processing
-      if (type == "current") {
+      if (type === "current") {
         // Assign characteristics to be available or not based on the current career
         let availableCharacteristics = item.data.characteristics
         let characteristics = this.actor.data.data.characteristics;
@@ -75,8 +76,8 @@ export class ActorSheetWNGCharacter extends ActorSheetWNG {
       }
 
       // Only one career can be current - make all other careers not current
-      if (type == "current" && item.data.current.value == true) {
-        let updateCareers = duplicate(this.actor.data.items.filter(c => c.type == "career" && c._id != item._id))
+      if (type === "current" && item.data.current.value === true) {
+        let updateCareers = duplicate(this.actor.data.items.filter(c => c.type === "career" && c._id !== item._id))
         updateCareers.map(x => x.data.current.value = false)
         await this.actor.updateManyEmbeddedEntities("OwnedItem", updateCareers)
       }
@@ -89,7 +90,7 @@ export class ActorSheetWNGCharacter extends ActorSheetWNG {
       let skill = await WNG_Utility.findSkill(event.target.text);
 
       // Right click - show sheet
-      if (ev.button == 2) {
+      if (ev.button === 2) {
         skill.sheet.render(true);
       } else {
         try {
@@ -128,7 +129,7 @@ export class ActorSheetWNGCharacter extends ActorSheetWNG {
       let talent = await WNG_Utility.findTalent(event.target.text);
 
       // Right click - show sheet
-      if (ev.button == 2) {
+      if (ev.button === 2) {
         talent.sheet.render(true);
       } else {
         try {
@@ -180,11 +181,11 @@ export class ActorSheetWNGCharacter extends ActorSheetWNG {
       let type = $(ev.target).attr("data-target");
 
       // Skills
-      if (type == "skill") {
+      if (type === "skill") {
         let itemId = $(ev.currentTarget).parents(".item").attr("data-item-id");
         let item = duplicate(this.actor.getEmbeddedEntity("OwnedItem", itemId))
 
-        if (ev.button == 0) {
+        if (ev.button === 0) {
           // Calculate the advancement cost based on the current number of advances, subtract that amount, advance by 1
           let cost = WNG_Utility._calculateAdvCost(item.data.advances.value, type)
           data.details.experience.spent = Number(data.details.experience.spent) + cost;
@@ -194,9 +195,9 @@ export class ActorSheetWNGCharacter extends ActorSheetWNG {
             "data.advances.value": item.data.advances.value
           });
           this.actor.update({"data.details.experience.spent": data.details.experience.spent});
-        } else if (ev.button = 2) {
+        } else if (ev.button == 2) {
           // Do the reverse, calculate the advancement cost (after subtracting 1 advancement), add that exp back
-          if (item.data.advances.value == 0)
+          if (item.data.advances.value === 0)
             return;
           item.data.advances.value--;
           let cost = WNG_Utility._calculateAdvCost(item.data.advances.value, type)
@@ -206,12 +207,12 @@ export class ActorSheetWNGCharacter extends ActorSheetWNG {
         }
       }
       // Talents
-      else if (type == "talent") {
-        if (ev.button == 0) {
+      else if (type === "talent") {
+        if (ev.button === 0) {
           // All career talents are stored in flags, retrieve the one clicked - use to calculate exp
           let itemId = $(ev.currentTarget).parents(".item").attr("data-item-id");
           let item = duplicate(this.actor.getEmbeddedEntity("OwnedItem", itemId))
-          let preparedTalent = this.actor.data.flags.careerTalents.find(t => t.name == item.name)
+          let preparedTalent = this.actor.data.flags.careerTalents.find(t => t.name === item.name)
           let spent = 0;
           if (preparedTalent.data.advances.value < preparedTalent.numMax) {
             spent = this.actor.data.data.details.experience.spent + (preparedTalent.data.advances.value + 1) * 100
@@ -224,10 +225,10 @@ export class ActorSheetWNGCharacter extends ActorSheetWNG {
               })
         }
         // If right click, ask to refund EXP or not
-        else if (ev.button == 2) {
+        else if (ev.button === 2) {
           let itemId = $(ev.currentTarget).parents(".item").attr("data-item-id");
           let item = duplicate(this.actor.getEmbeddedEntity("OwnedItem", itemId))
-          let preparedTalent = this.actor.data.flags.careerTalents.find(t => t.name == item.name)
+          let preparedTalent = this.actor.data.flags.careerTalents.find(t => t.name === item.name)
           let spent = 0;
           spent = this.actor.data.data.details.experience.spent - (preparedTalent.data.advances.value) * 100
 
@@ -275,7 +276,7 @@ export class ActorSheetWNGCharacter extends ActorSheetWNG {
         let characteristic = type;
         let currentChar = this.actor.data.data.characteristics[characteristic];
 
-        if (ev.button == 0) {
+        if (ev.button === 0) {
           // Calculate the advancement cost based on the current number of advances, subtract that amount, advance by 1
           let cost = WNG_Utility._calculateAdvCost(currentChar.advances, "characteristic");
 
@@ -286,9 +287,9 @@ export class ActorSheetWNGCharacter extends ActorSheetWNG {
                 "data.characteristics": data.characteristics,
                 "data.details.experience": data.details.experience
               });
-        } else if (ev.button == 2) {
+        } else if (ev.button === 2) {
           // Calculate the advancement cost based on advances -1, add that amount back into exp
-          if (currentChar.advances == 0)
+          if (currentChar.advances === 0)
             return
           let cost = WNG_Utility._calculateAdvCost(currentChar.advances - 1, "characteristic");
 

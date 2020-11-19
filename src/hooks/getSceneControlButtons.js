@@ -1,8 +1,10 @@
 /**
  * Add Status right click option for combat tracker combatants
  */
+import {WNG_Utility} from "../utility-wng";
+
 Hooks.on("getSceneControlButtons", (buttons) => {
-    let group = buttons.find(b => b.name == "lighting")
+    let group = buttons.find(b => b.name === "lighting")
     group.tools.push({
       button: true,
       icon : "fas fa-circle",

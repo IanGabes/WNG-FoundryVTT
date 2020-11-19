@@ -7,6 +7,8 @@
  * interactivity and events are handled here.
  */
 
+import {WNG} from "../config-wng";
+
 export class ItemSheetWNG extends ItemSheet
 {
   constructor(item, options)
@@ -103,7 +105,7 @@ export class ItemSheetWNG extends ItemSheet
         for (let lore in WNG.magicLores)
         {
           // If lore value matches config, use that (Update the actor with the "key" value)
-          if (inputLore == WNG.magicLores[lore])
+          if (inputLore === WNG.magicLores[lore])
           {
             await this.item.update({'data.lore.value': lore});
             return;
@@ -199,13 +201,13 @@ export class ItemSheetWNG extends ItemSheet
     // If the user changes a grouped skill that is in their current career,
     // offer to propagate that change to the career as well.
     html.on("change", ".item-name", ev => {
-      if (this.item.type != "skill" || !this.item.actor || this.item.data.data.grouped.value != "isSpec")
+      if (this.item.type !== "skill" || !this.item.actor || this.item.data.data.grouped.value !== "isSpec")
         return;
       // If no change
-      if (ev.target.value == this.item.name)
+      if (ev.target.value === this.item.name)
         return
       
-      let currentCareer = duplicate(this.item.actor.data.items.filter(i => i.type == "career").find(i => i.data.current.value));
+      let currentCareer = duplicate(this.item.actor.data.items.filter(i => i.type === "career").find(i => i.data.current.value));
 
       // If career has the skill that was changed, change the name in the career
       if(currentCareer && currentCareer.data.skills.includes(this.item.name))

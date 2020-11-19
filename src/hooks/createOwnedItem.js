@@ -1,20 +1,22 @@
 /**
  * Applies various logic depending on actor type and created items
- * 
+ *
  * Criticals - apply wound values
- * 
+ *
  * Armour, weapons, and wearables - automatically set to worn for non-characters
  * Talents, traits - apply characteristic bonuses if appropriate.
- * 
+ *
  * This file also contains deleteOwnedItem, which undoes the talent/trait bonuses
  */
+import {WNG} from "../config-wng";
+
 Hooks.on("createOwnedItem", (actor, id, item) => {
   try {
     // If critical, subtract wounds value from actor's
-    if (item.type == "critical")
+    if (item.type === "critical")
     {
       let newWounds;
-      if (item.data.wounds.value.toLowerCase() == "death")
+      if (item.data.wounds.value.toLowerCase() === "death")
         newWounds = 0;
       newWounds = actor.data.data.status.wounds.value - Number(item.data.wounds.value)
       if (newWounds < 0) newWounds = 0; 
@@ -30,7 +32,7 @@ Hooks.on("createOwnedItem", (actor, id, item) => {
   }
 
     // If talent - see if it's a characteristic increasing talent, if so, apply the bonus.
-    if (item.type == "talent")
+    if (item.type === "talent")
     {
       let charToIncrease = WNG.talentBonuses[item.name.toLowerCase().trim()] // TODO: investigate why trim is needed here
       if (charToIncrease)
@@ -40,7 +42,7 @@ Hooks.on("createOwnedItem", (actor, id, item) => {
       }
     }
     // If trait, see if it gives a bonus, if so, apply that bonus.
-    if (item.type == "trait")
+    if (item.type === "trait")
     {
       if (actor.data.data.excludedTraits && actor.data.data.excludedTraits.length && actor.data.data.excludedTraits.includes(item._id))
         return

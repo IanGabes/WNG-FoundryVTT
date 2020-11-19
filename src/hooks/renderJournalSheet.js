@@ -1,6 +1,8 @@
 /**
  * Adds tooltips to journal sheet buttons and adds listeners for pseudo entities
  */
+import {WNG_Utility} from "../utility-wng";
+
 Hooks.on("renderJournalSheet", (obj, html, data) => {
     $(html).find(".close").attr("title", "Close");
     $(html).find(".entry-image").attr("title", "Image");

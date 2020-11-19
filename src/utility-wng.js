@@ -7,6 +7,7 @@
  *
  */
 import {WNG} from "./config-wng";
+import {WNG_Tables} from "./tables-wng";
 
 export class WNG_Utility
 {
@@ -54,7 +55,7 @@ export class WNG_Utility
       layer.partial = true;
     if (armor.properties.flaws.includes("Weakpoints"))
       layer.weakpoints = true;
-    if (armor.data.armorType.value == "plate" || armor.data.armorType.value == "mail")
+    if (armor.data.armorType.value === "plate" || armor.data.armorType.value === "mail")
       layer.metal = true;
 
     AP[loc].layers.push(layer);
@@ -188,7 +189,7 @@ export class WNG_Utility
   {
     for (let key in obj)
     {
-      if (obj[key] == value)
+      if (obj[key] === value)
         return key;
     }
     throw "Could not find key corresponding to " + value
@@ -212,14 +213,14 @@ export class WNG_Utility
   static async findSkill(skillName)
   {
     let skillList = [];
-    let packs = game.packs.filter(p => p.metadata.tag == "skill")
+    let packs = game.packs.filter(p => p.metadata.tag === "skill")
     for (let pack of packs)
     {
       await pack.getIndex().then(index => skillList = index);
       // Search for specific skill (won't find unlisted specializations)
-      let searchResult = skillList.find(s => s.name == skillName)
+      let searchResult = skillList.find(s => s.name === skillName)
       if (!searchResult)
-        searchResult = skillList.find(s => s.name.split("(")[0].trim() == skillName.split("(")[0].trim())
+        searchResult = skillList.find(s => s.name.split("(")[0].trim() === skillName.split("(")[0].trim())
 
       if (searchResult)
       {
@@ -251,14 +252,14 @@ export class WNG_Utility
   static async findTalent(talentName)
   {
     let talentList = [];
-    let packs = game.packs.filter(p => p.metadata.tag == "talent")
+    let packs = game.packs.filter(p => p.metadata.tag === "talent")
     for (let pack of packs)
     {
       await pack.getIndex().then(index => talentList = index);
       // Search for specific talent (won't find unlisted specializations)
-      let searchResult = talentList.find(t => t.name == talentName)
+      let searchResult = talentList.find(t => t.name === talentName)
       if (!searchResult)
-        searchResult = talentList.find(t => t.name.split("(")[0].trim() == talentName.split("(")[0].trim())
+        searchResult = talentList.find(t => t.name.split("(")[0].trim() === talentName.split("(")[0].trim())
 
       if (searchResult)
       {
@@ -280,12 +281,12 @@ export class WNG_Utility
    */
   static async findItem(itemName, itemType, location = null)
   {
-    let items = game.items.entities.filter(i => i.type == itemType)
+    let items = game.items.entities.filter(i => i.type === itemType)
 
     // Search imported items first
     for (let i of items)
     {
-      if (i.name == itemName && i.type == itemType)
+      if (i.name === itemName && i.type === itemType)
         return i;
     }
     let itemList
@@ -295,13 +296,13 @@ export class WNG_Utility
     {
       let pack = game.packs.find(p =>
       {
-        location.split(".")[0] == p.metadata.package &&
-          location.split(".")[1] == p.metadata.name
+        location.split(".")[0] === p.metadata.package &&
+          location.split(".")[1] === p.metadata.name
       })
       if (pack)
       {
         await pack.getIndex().then(index => itemList = index);
-        let searchResult = itemList.find(t => t.name == itemName)
+        let searchResult = itemList.find(t => t.name === itemName)
         if (searchResult)
           return await pack.getEntity(searchResult.id)
       }
@@ -311,7 +312,7 @@ export class WNG_Utility
     for (let p of game.packs)
     {
       await p.getIndex().then(index => itemList = index);
-      let searchResult = itemList.find(t => t.name == itemName)
+      let searchResult = itemList.find(t => t.name === itemName)
       if (searchResult)
         return await p.getEntity(searchResult.id)
     }
@@ -613,7 +614,7 @@ export class WNG_Utility
       let matchCounter = 0;
       for (let i = 0; i < key.length; i++)
       {
-        if (key[i] == query[i])
+        if (key[i] === query[i])
         {
           matchCounter++;
         }
@@ -645,16 +646,16 @@ export class WNG_Utility
   {
     let returnSkills = [];
 
-    const pack = game.packs.find(p => p.collection == "wng.skills")
+    const pack = game.packs.find(p => p.collection === "wng.skills")
     let skills = [];
     await pack.getIndex().then(index => skills = index);
     for (let sk of skills)
     {
       let skillItem = undefined;
       await pack.getEntity(sk.id).then(skill => skillItem = skill);
-      if (skillItem.data.data.advanced.value == "bsc")
+      if (skillItem.data.data.advanced.value === "bsc")
       {
-        if (skillItem.data.data.grouped.value != "noSpec")
+        if (skillItem.data.data.grouped.value !== "noSpec")
         {
           let startParen = skillItem.data.name.indexOf("(")
           skillItem.data.name = skillItem.data.name.substring(0, startParen).trim();
@@ -674,11 +675,11 @@ export class WNG_Utility
   static async allMoneyItems()
   {
     let moneyItems = []
-    const trappings = game.packs.find(p => p.collection == "wng.trappings")
+    const trappings = game.packs.find(p => p.collection === "wng.trappings")
     let trappingsIndex = [];
     await trappings.getIndex().then(index => trappingsIndex = index);
 
-    let money = trappingsIndex.filter(t => t.name.toLowerCase() == "gold crown" || t.name.toLowerCase() == "silver shilling" || t.name.toLowerCase() == "brass penny")
+    let money = trappingsIndex.filter(t => t.name.toLowerCase() === "gold crown" || t.name.toLowerCase() === "silver shilling" || t.name.toLowerCase() === "brass penny")
 
     for (let m of money)
     {
@@ -722,18 +723,18 @@ export class WNG_Utility
     let html;
     let chatOptions = this.chatDataSetup("", game.settings.get("core", "rollMode"))
 
-    if (event.button == 0)
+    if (event.button === 0)
     {
-      if (event.target.text == game.i18n.localize("ROLL.CritCast"))
+      if (event.target.text === game.i18n.localize("ROLL.CritCast"))
       {
         html = WNG_Tables.criticalCastMenu($(event.currentTarget).attr("data-table"));
       }
 
-      else if (event.target.text == game.i18n.localize("ROLL.TotalPower"))
+      else if (event.target.text === game.i18n.localize("ROLL.TotalPower"))
         html = WNG_Tables.restrictedCriticalCastMenu();
 
       // Not really a table but whatever
-      else if ($(event.currentTarget).attr("data-table") == "misfire")
+      else if ($(event.currentTarget).attr("data-table") === "misfire")
       {
         let damage = $(event.currentTarget).attr("data-damage")
         html = `<b>${game.i18n.localize("Misfire")}</b>: ${game.i18n.localize("ROLL.MisfireText1")} ${damage} ${game.i18n.localize("ROLL.MisfireText2")}`;
@@ -751,9 +752,9 @@ export class WNG_Utility
     }
 
     // If right click, open table modifier menu
-    else if (event.button == 2)
+    else if (event.button === 2)
     {
-      renderTemplate('systems/wng/templates/chat/table-dialog.html').then(html =>
+      renderTemplate('systems/wng/assets/templates/chat/table-dialog.html').then(html =>
       {
         new Dialog(
         {
@@ -852,13 +853,13 @@ export class WNG_Utility
     if (!actor) actor = game.actors.get(speaker.actor);
     let item
     // Not technically an item, used for convenience
-    if (itemType == "characteristic")
+    if (itemType === "characteristic")
     {
       return actor.setupCharacteristic(itemName)
     }
     else
     {
-      item = actor ? actor.items.find(i => i.name === itemName && i.type == itemType) : null;
+      item = actor ? actor.items.find(i => i.name === itemName && i.type === itemType) : null;
     }
     if (!item) return ui.notifications.warn(`${game.i18n.localize("Error.MacroItemMissing")} ${itemName}`);
 

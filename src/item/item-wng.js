@@ -1,12 +1,15 @@
 /**
  * The ItemWNG class only provides two core functionalities
- * 
+ *
  * 1. Expansion data - what data is shown for the dropdown expansions
  * 2. Chat data - what data is in the chat card when the item is posted
- * 
+ *
  * Expansion and chat data is defined for each different item type
- * 
+ *
  */
+
+import {WNG_Utility} from "../utility-wng";
+import {WNG} from "../config-wng";
 
 export class ItemWNG extends Item
 {
@@ -192,7 +195,7 @@ export class ItemWNG extends Item
     if (data.APdamage)
       properties.push(`${game.i18n.localize("ITEM.ShieldDamaged")} ${data.APdamage} points`)
 
-    properties = properties.filter(p => p != game.i18n.localize("Special"));
+    properties = properties.filter(p => p !== game.i18n.localize("Special"));
     if (data.special.value)
       properties.push(`${game.i18n.localize("Special")}: ` + data.special.value);
 
@@ -229,7 +232,7 @@ export class ItemWNG extends Item
 
     for (let prop of WNG_Utility._prepareQualitiesFlaws(this.data).map(i => i = "<a class ='item-property'>" + i + "</a>"))
       properties.push(prop);
-    properties = properties.filter(p => p != game.i18n.localize("Special"));
+    properties = properties.filter(p => p !== game.i18n.localize("Special"));
     if (data.special.value)
       properties.push(`${game.i18n.localize("Special")}: ` + data.special.value);
 
@@ -255,7 +258,7 @@ export class ItemWNG extends Item
     if (chatData.img.includes("/blank.png"))
       chatData.img = null;
 
-    renderTemplate('systems/wng/templates/chat/post-item.html', chatData).then(html =>
+    renderTemplate('systems/wng/assets/templates/chat/post-item.html', chatData).then(html =>
     {
       let chatOptions = WNG_Utility.chatDataSetup(html)
       // Setup drag and drop data
@@ -291,7 +294,7 @@ export class ItemWNG extends Item
   {
     const data = duplicate(this.data.data);
     let properties = []
-    properties.push(data.advanced == "adv" ? `<b>${game.i18n.localize("Advanced")}</b>` : `<b>${game.i18n.localize("Basic")}</b>`)
+    properties.push(data.advanced === "adv" ? `<b>${game.i18n.localize("Advanced")}</b>` : `<b>${game.i18n.localize("Basic")}</b>`)
     return properties;
   }
 
@@ -299,11 +302,10 @@ export class ItemWNG extends Item
   _moneyChatData()
   {
     const data = duplicate(this.data.data);
-    let properties = [
+    return [
       `<b>${game.i18n.localize("ITEM.PenniesValue")}</b>: ${data.coinValue.value}`,
       `<b>${game.i18n.localize("Encumbrance")}</b>: ${data.encumbrance.value}`,
     ]
-    return properties;
   }
 
   // Psychology Chat Data
@@ -482,7 +484,7 @@ export class ItemWNG extends Item
       properties.push(`<b>${game.i18n.localize("Flaws")}</b>: ${weaponProperties.flaws.join(", ")}`)
 
 
-    properties = properties.filter(p => p != game.i18n.localize("Special"));
+    properties = properties.filter(p => p !== game.i18n.localize("Special"));
     if (data.special.value)
       properties.push(`<b>${game.i18n.localize("Special")}</b>: ` + data.special.value);
 
@@ -508,7 +510,7 @@ export class ItemWNG extends Item
 
     for (let apVal in data.currentAP)
     {
-      if (data.currentAP[apVal] == -1)
+      if (data.currentAP[apVal] === -1)
         data.currentAP[apVal] = data.maxAP[apVal];
     }
 
@@ -565,7 +567,7 @@ export class ItemWNG extends Item
       properties.push(`<b>${game.i18n.localize("Flaws")}</b>: ${ammoProperties.flaws.join(", ")}`)
 
 
-    properties = properties.filter(p => p != game.i18n.localize("Special"));
+    properties = properties.filter(p => p !== game.i18n.localize("Special"));
     if (data.special.value)
       properties.push(`<b>${game.i18n.localize("Special")}</b>: ` + data.special.value);
 

@@ -158,7 +158,7 @@ export default function initializeWNG(){
         break;
       }
   
-      let decimals = (initMethod == "default") ? 2 : 0;
+      let decimals = (initMethod === "default") ? 2 : 0;
       CONFIG.Combat.initiative = {
         formula: formula,
         decimals: decimals

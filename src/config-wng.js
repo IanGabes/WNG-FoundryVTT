@@ -1002,14 +1002,14 @@ WNG.intensityDifficulty = {
 };
 
 // Damage Types
-const DAMAGE_TYPE = {
+export const DAMAGE_TYPE = {
 	NORMAL: 0,
 	IGNORE_AP: 1,
 	IGNORE_TB: 2,
 	IGNORE_ALL: 3
 };
 
-const PSEUDO_ENTITIES = [
+export const PSEUDO_ENTITIES = [
 	"Table",
 	"Keywords",
     "Condition",

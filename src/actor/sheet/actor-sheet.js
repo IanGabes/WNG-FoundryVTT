@@ -1,7 +1,7 @@
 /**
  * Provides the data and general interaction with Actor Sheets - Abstract class.
  *
- * ActorSheetWNG provides the general interaction and data organization shared among all 
+ * ActorSheetWNG provides the general interaction and data organization shared among all
  * actor sheets, as this is an abstract class, inherited by either Character, NPC, or Creature
  * specific actor sheet classes. When rendering an actor sheet, getData() is called, which is
  * a large and key function that prepares the actor data for display, processing the raw data
@@ -13,6 +13,8 @@
  * @see   ActorSheetWNGNPC - NPC sheet class
  * @see   ActorSheetWNGCreature - Creature sheet class
  */
+import {WNG_Utility} from "../../utility-wng";
+
 export class ActorSheetWNG extends ActorSheet {
 
 
@@ -122,7 +124,7 @@ export class ActorSheetWNG extends ActorSheet {
   {
     let sign = value.split('')[0] // Sign is the first character entered
     let wounds;
-    if (sign == "+" || sign == "-") // Relative
+    if (sign === "+" || sign === "-") // Relative
       wounds = eval(this.actor.data.data.status.wounds.value + parseInt(value))
     else                            // Absolute
       wounds = parseInt(value);
@@ -173,7 +175,7 @@ export class ActorSheetWNG extends ActorSheet {
     // This disgusting mess allows characteristics to be tabbed through. (Used only by Creature and NPC sheets, placed here to maintain DRY code)
     // This specific function is for keydown, specifically looking for tabs (which shouldn't update immediately or else it disrupts the user), see the listener below for more behavior
     html.find(".ch-edit").keydown(event => {
-    if (event.keyCode == 9) // If Tabbing out of a characteristic input, save the new value (and future values) in updateObj
+    if (event.keyCode === 9) // If Tabbing out of a characteristic input, save the new value (and future values) in updateObj
     {
       let characteristics = this.actor.data.data.characteristics
       let ch = event.currentTarget.attributes["data-char"].value;
@@ -183,7 +185,7 @@ export class ActorSheetWNG extends ActorSheet {
         this.updateObj = duplicate(this.actor.data.data.characteristics);;
 
 
-      if (!(newValue == characteristics[ch].initial + characteristics[ch].advances)) // don't update a characteristic if it wasn't changed
+      if (!(newValue === characteristics[ch].initial + characteristics[ch].advances)) // don't update a characteristic if it wasn't changed
       {
         this.updateObj[ch].initial = newValue;
         this.updateObj[ch].advances = 0;
@@ -200,7 +202,7 @@ export class ActorSheetWNG extends ActorSheet {
   html.find('.ch-edit').focusout(async event => {
     event.preventDefault();
     // Do not proceed with an update until the listener aboves sets this flag to true or the last characteristic was tabbed
-    if (!this.charUpdateFlag && event.currentTarget.attributes["data-char"].value != "fel") 
+    if (!this.charUpdateFlag && event.currentTarget.attributes["data-char"].value !== "fel")
       return                  // When this flag is true, that means the focus out was not from a tab
 
     // This conditional allows for correctly updating only a single characteristic. If the user editted only one characteristic, the above listener wasn't called, meaning no updateObj
@@ -212,7 +214,7 @@ export class ActorSheetWNG extends ActorSheet {
     let ch = event.currentTarget.attributes["data-char"].value;
     let newValue  = Number(event.target.value);
 
-    if (!(newValue == characteristics[ch].initial + characteristics[ch].advances))
+    if (!(newValue === characteristics[ch].initial + characteristics[ch].advances))
     {
       this.updateObj[ch].initial = newValue;
       this.updateObj[ch].advances = 0;
@@ -226,7 +228,7 @@ export class ActorSheetWNG extends ActorSheet {
   // Similar to the handlers above, but for skills (and all actor types) 
   html.find('.skill-advances').keydown(async event => {
     // Wait to update if user tabbed to another skill
-    if (event.keyCode == 9)
+    if (event.keyCode === 9)
     {
       this.skillUpdateFlag = false;
     }
@@ -234,7 +236,7 @@ export class ActorSheetWNG extends ActorSheet {
     {
       this.skillUpdateFlag = true;
     }
-    if (event.keyCode == 13)
+    if (event.keyCode === 13)
     {
       if (!this.skillsToEdit)
         this.skillsToEdit = []
@@ -312,12 +314,12 @@ export class ActorSheetWNG extends ActorSheet {
   // Skill Tests (right click to open skill sheet)
   html.find('.skill-total, .skill-select').mousedown(ev => {
     let itemId = $(ev.currentTarget).parents(".item").attr("data-item-id");
-    let skill = this.actor.items.find(i => i.data._id == itemId);
+    let skill = this.actor.items.find(i => i.data._id === itemId);
 
-    if (ev.button == 0)
+    if (ev.button === 0)
       this.actor.setupSkill(skill.data);
 
-    else if (ev.button == 2)
+    else if (ev.button === 2)
       skill.sheet.render(true);
   })
 
@@ -333,10 +335,10 @@ export class ActorSheetWNG extends ActorSheet {
   // Unarmed attack button (fist in the combat tab)
   html.find('.fist-icon').click(async event => {
     event.preventDefault();
-    let pack = game.packs.find(p => p.collection == "wng.trappings");
+    let pack = game.packs.find(p => p.collection === "wng.trappings");
     let weapons;
     await pack.getIndex().then(index => weapons = index);
-    let unarmedId = weapons.find(w => w.name.toLowerCase() == "unarmed");
+    let unarmedId = weapons.find(w => w.name.toLowerCase() === "unarmed");
     let unarmed = await pack.getEntity(unarmedId.id);
     this.actor.setupWeapon(unarmed.data)
     // Roll Fist Attack
@@ -344,7 +346,7 @@ export class ActorSheetWNG extends ActorSheet {
 
     // Dodge (Arrow in the combat tab)
     html.find('.dodge-icon').click(async event => {
-      let skill = this.actor.items.find(s => s.data.name == "Dodge" && s.type == "skill")
+      let skill = this.actor.items.find(s => s.data.name === "Dodge" && s.type === "skill")
       if (skill)
         this.actor.setupSkill(skill.data)
       else 
@@ -354,10 +356,10 @@ export class ActorSheetWNG extends ActorSheet {
     // Dodge (Arrow in the combat tab)
     html.find('.improvised-icon').click(async event => {
       event.preventDefault();
-      let pack = game.packs.find(p => p.collection == "wng.trappings");
+      let pack = game.packs.find(p => p.collection === "wng.trappings");
       let weapons;
       await pack.getIndex().then(index => weapons = index);
-      let improvId = weapons.find(w => w.name.toLowerCase() == "improvised weapon");
+      let improvId = weapons.find(w => w.name.toLowerCase() === "improvised weapon");
       let improv = await pack.getEntity(improvId.id);
       this.actor.setupWeapon(improv.data)
     })
@@ -365,10 +367,10 @@ export class ActorSheetWNG extends ActorSheet {
     // Stomp (Creature)
     html.find('.stomp-icon').click(async event => {
       event.preventDefault();
-      let pack = game.packs.find(p => p.collection == "wng.traits");
+      let pack = game.packs.find(p => p.collection === "wng.traits");
       let traits;
       await pack.getIndex().then(index => traits = index);
-      let stompId = traits.find(w => w.name.toLowerCase() == "weapon");
+      let stompId = traits.find(w => w.name.toLowerCase() === "weapon");
       let stomp = await pack.getEntity(stompId.id);
       stomp.data.name = "Stomp"
       stomp.data.data.specification.value = 0;
@@ -383,7 +385,7 @@ export class ActorSheetWNG extends ActorSheet {
   // Roll a trait (right click to show dropdown description)
   html.find('.trait-roll').mousedown(event => {
     event.preventDefault();
-    if (event.button == 2)
+    if (event.button === 2)
     {
       this._onItemSummary(event);
       return;
@@ -396,7 +398,7 @@ export class ActorSheetWNG extends ActorSheet {
   // Roll a spell (right click to show dropdown description)
   html.find('.spell-roll').mousedown(event => {
     event.preventDefault();
-    if (event.button == 2)
+    if (event.button === 2)
     {
       this._onItemSummary(event);
       return;
@@ -409,7 +411,7 @@ export class ActorSheetWNG extends ActorSheet {
   // Roll a prayer (right click to show dropdown description)
   html.find('.prayer-roll').mousedown(event => {
     event.preventDefault();
-    if (event.button == 2)
+    if (event.button === 2)
     {
       this._onItemSummary(event);
       return;
@@ -424,7 +426,7 @@ export class ActorSheetWNG extends ActorSheet {
     let itemId = $(ev.currentTarget).parents(".item").attr("data-item-id");
     let APlocation =  $(ev.currentTarget).parents(".armour-box").attr("data-location");
     let item = duplicate(this.actor.getEmbeddedEntity("OwnedItem", itemId))
-    if (item.data.currentAP[APlocation] == -1)
+    if (item.data.currentAP[APlocation] === -1)
       item.data.currentAP[APlocation] = item.data.maxAP[APlocation];
     switch (event.button)
     {
@@ -449,9 +451,9 @@ export class ActorSheetWNG extends ActorSheet {
     if (!item.data.weaponDamage)
       item.data["weaponDamage"] = 0;
 
-    if (ev.button == 2)
+    if (ev.button === 2)
       item.data.weaponDamage++;
-    else if (ev.button == 0)
+    else if (ev.button === 0)
       item.data.weaponDamage--;
 
     if (item.data.weaponDamage < 0)
@@ -464,10 +466,10 @@ export class ActorSheetWNG extends ActorSheet {
     let location = $(ev.currentTarget).closest(".column").find(".armour-box").attr("data-location")
     if (!location) location = $(ev.currentTarget).closest(".column").attr("data-location");
     if (!location) return;
-    let armourTrait = this.actor.items.find(i => (i.data.name.toLowerCase() == "armour" || i.data.name.toLowerCase() == "armor") && i.data.type == "trait")
+    let armourTrait = this.actor.items.find(i => (i.data.name.toLowerCase() === "armour" || i.data.name.toLowerCase() === "armor") && i.data.type === "trait")
     if (armourTrait)
       armourTrait = duplicate(armourTrait.data);
-    let armourItems = this.actor.items.filter(i => i.data.type == "armour")
+    let armourItems = this.actor.items.filter(i => i.data.type === "armour")
     let armourToDamage;
 
     // Add damage values if trait hasn't been damaged before
@@ -479,19 +481,19 @@ export class ActorSheetWNG extends ActorSheet {
     if (armourTrait)
     {
       // Left click decreases APdamage (makes total AP increase)
-      if (ev.button == 0)
+      if (ev.button === 0)
       {
-        if (armourTrait.APdamage[location] != 0)
+        if (armourTrait.APdamage[location] !== 0)
         {
             armourTrait.APdamage[location]--;
             usedTrait = true;
         }
       }
       // Right click increases Apdamage (makes total AP decrease)
-      if (ev.button == 2)
+      if (ev.button === 2)
       {
         // Don't increase APdamage past total AP value
-        if (armourTrait.APdamage[location] != Number(armourTrait.data.specification.value))
+        if (armourTrait.APdamage[location] !== Number(armourTrait.data.specification.value))
         {
           armourTrait.APdamage[location]++;
           usedTrait = true;
@@ -510,19 +512,19 @@ export class ActorSheetWNG extends ActorSheet {
       // Find the first armor item that has AP at the damaged area
       for (let a of armourItems)
       {
-        if (ev.button == 2)
+        if (ev.button === 2)
         {
           // If damaging the item, only select items that have AP at the location
-          if (a.data.data.maxAP[location] != 0 && a.data.data.currentAP[location] != 0)
+          if (a.data.data.maxAP[location] !== 0 && a.data.data.currentAP[location] !== 0)
           {
             armourToDamage = duplicate(a.data);
             break;
           }
         }
-        else if (ev.button == 0)
+        else if (ev.button === 0)
         {
           // If repairing, select only items that *should* have AP there, ie has a maxAP, and isn't at maxAP
-          if (a.data.data.maxAP[location] != 0 && a.data.data.currentAP[location] != -1 && a.data.data.currentAP[location] != a.data.data.maxAP[location])
+          if (a.data.data.maxAP[location] !== 0 && a.data.data.currentAP[location] !== -1 && a.data.data.currentAP[location] !== a.data.data.maxAP[location])
           {
             armourToDamage = duplicate(a.data);
             break;
@@ -533,17 +535,17 @@ export class ActorSheetWNG extends ActorSheet {
         return
 
       // Replace -1 flag with maxAP
-      if (armourToDamage.data.currentAP[location] == -1)
+      if (armourToDamage.data.currentAP[location] === -1)
         armourToDamage.data.currentAP[location] = armourToDamage.data.maxAP[location]
       
-      if (ev.button == 2)
+      if (ev.button === 2)
       {
-        if (armourToDamage.data.currentAP[location] != 0)
+        if (armourToDamage.data.currentAP[location] !== 0)
           armourToDamage.data.currentAP[location]--          
       }
-      if (ev.button == 0)
+      if (ev.button === 0)
       {
-        if (armourToDamage.data.currentAP[location] != armourToDamage.data.maxAP[location])
+        if (armourToDamage.data.currentAP[location] !== armourToDamage.data.maxAP[location])
           armourToDamage.data.currentAP[location]++        
       }
       this.actor.updateEmbeddedEntity("OwnedItem", armourToDamage)
@@ -564,7 +566,7 @@ export class ActorSheetWNG extends ActorSheet {
       if (!shield.data.APdamage)
         shield.data.APdamage = 0;
       // Right click - damage
-      if (ev.button == 2)
+      if (ev.button === 2)
       {
         if (shield.data.APdamage < Number(shieldQualityValue)) // Don't damage more than shield value
         {
@@ -573,9 +575,9 @@ export class ActorSheetWNG extends ActorSheet {
         }
       }
       // Left click - repair
-      if (ev.button == 0)
+      if (ev.button === 0)
       {
-        if (shield.data.APdamage != 0)
+        if (shield.data.APdamage !== 0)
         {
           shield.data.APdamage--;
           shieldDamaged = true;
@@ -619,26 +621,26 @@ export class ActorSheetWNG extends ActorSheet {
   html.find('.auto-calc-toggle').mousedown(async ev => {
     let toggle = event.target.attributes["toggle-type"].value;
 
-    if (event.button == 2)
+    if (event.button === 2)
     {
       let newFlags = duplicate(this.actor.data.flags);
 
-      if (toggle == "walk")
+      if (toggle === "walk")
         newFlags.autoCalcWalk = !newFlags.autoCalcWalk;
 
-      else if (toggle == "run")
+      else if (toggle === "run")
         newFlags.autoCalcRun = !newFlags.autoCalcRun;
 
-      else if (toggle == "wounds")
+      else if (toggle === "wounds")
         newFlags.autoCalcWounds = !newFlags.autoCalcWounds;
 
-      else if (toggle == "critW")
+      else if (toggle === "critW")
         newFlags.autoCalcCritW = !newFlags.autoCalcCritW;
 
-      else if (toggle == "corruption")
+      else if (toggle === "corruption")
         newFlags.autoCalcCorruption = !newFlags.autoCalcCorruption;
 
-      else if (toggle == "encumbrance")
+      else if (toggle === "encumbrance")
         newFlags.autoCalcEnc = !newFlags.autoCalcEnc;
         
       this.actor.update({'flags' : newFlags})
@@ -652,7 +654,7 @@ export class ActorSheetWNG extends ActorSheet {
     let type = ev.target.attributes.class.value.split(" ")[0].trim(); // Incubation or duration
 
     // If left click - TODO: Enum
-    if (ev.button == 0)
+    if (ev.button === 0)
     { // Parse disease length and roll it
       try
       {
@@ -668,7 +670,7 @@ export class ActorSheetWNG extends ActorSheet {
       this.actor.updateEmbeddedEntity("OwnedItem", disease);
     }
     // If right click
-    else if (ev.button == 2)
+    else if (ev.button === 2)
     {
       if(disease.data[type].roll) // If the disease has been rolled - decrement the value
       {
@@ -683,7 +685,7 @@ export class ActorSheetWNG extends ActorSheet {
   // Increment/Decrement Fate/Fortune/Resilience/Resolve
   html.find('.metacurrency-value').mousedown(async ev =>  {
     let type = $(ev.currentTarget).attr("data-point-type");
-    let newValue = ev.button == 0 ? this.actor.data.data.status[type].value + 1 : this.actor.data.data.status[type].value - 1 
+    let newValue = ev.button === 0 ? this.actor.data.data.status[type].value + 1 : this.actor.data.data.status[type].value - 1
     this.actor.update({[`data.status.${type}.value`] : newValue})
   });
 
@@ -699,7 +701,7 @@ export class ActorSheetWNG extends ActorSheet {
   // Update Inventory Item
   html.find('.item-edit').click(ev => {
     let itemId = $(ev.currentTarget).parents(".item").attr("data-item-id");
-    const item = this.actor.items.find(i => i.data._id == itemId)
+    const item = this.actor.items.find(i => i.data._id === itemId)
     item.sheet.render(true);
   });
 
@@ -757,11 +759,11 @@ export class ActorSheetWNG extends ActorSheet {
   html.find('.item-toggle').click(ev => {
     let itemId = $(ev.currentTarget).parents(".item").attr("data-item-id");
     let item = duplicate(this.actor.getEmbeddedEntity("OwnedItem", itemId))
-    if (item.type == "armour")
+    if (item.type === "armour")
       item.data.worn.value = !item.data.worn.value;
-    else if (item.type == "weapon")
+    else if (item.type === "weapon")
       item.data.equipped = !item.data.equipped;
-    else if (item.type == "trapping" && item.data.trappingType.value == "clothingAccessories")
+    else if (item.type === "trapping" && item.data.trappingType.value === "clothingAccessories")
       item.data.worn = !item.data.worn;
     this.actor.updateEmbeddedEntity("OwnedItem", item);
   });
@@ -803,15 +805,15 @@ export class ActorSheetWNG extends ActorSheet {
   // Clicking the 'Qty.' label in an inventory section - aggregates all items with the same name
   html.find(".aggregate").click(async ev => {
     let itemType = $(ev.currentTarget).attr("data-type")
-    let items = duplicate(this.actor.data.items.filter(x => x.type == itemType))
+    let items = duplicate(this.actor.data.items.filter(x => x.type === itemType))
     
     for (let i of items)
     {
-      let duplicates = items.filter(x => x.name == i.name) // Find all the items with the same name
+      let duplicates = items.filter(x => x.name === i.name) // Find all the items with the same name
       if (duplicates.length > 1)
       {
-        let newQty = duplicates.reduce((prev, current) => prev + current.data.quantity.value, 0) // Sum the quantity of all items with the same name
-        i.data.quantity.value = newQty                                                           // Change the quantity to the sum 
+        // Sum the quantity of all items with the same name and change the quantity to that sum
+        i.data.quantity.value = duplicates.reduce((prev, current) => prev + current.data.quantity.value, 0)
       }            
     }
 
@@ -820,7 +822,7 @@ export class ActorSheetWNG extends ActorSheet {
     for (let i of items)
     {
       // Add item to noDuplicates if the array doesn't already contain the item
-      if (!noDuplicates.find(x => x.name == i.name))
+      if (!noDuplicates.find(x => x.name === i.name))
       {
         noDuplicates.push(i);
         await this.actor.updateEmbeddedEntity("OwnedItem", {"_id" : i._id, "data.quantity.value" : i.data.quantity.value})
@@ -833,7 +835,7 @@ export class ActorSheetWNG extends ActorSheet {
   
   // Right click - duplicate option for trappings
   html.find(".inventory .item .item-name").mousedown(ev => {
-    if (ev.button == 2)
+    if (ev.button === 2)
     {
       new Dialog({
         title: "Duplicate Item",
@@ -863,7 +865,7 @@ export class ActorSheetWNG extends ActorSheet {
 
   // Entering a recognized species sets the characteristics to the average values
   html.find('.input.species').change(async event => {
-    if (this.actor.data.type == "character")
+    if (this.actor.data.type === "character")
       return
     if (game.settings.get("wng", "npcSpeciesCharacteristics"))
     {
@@ -910,7 +912,7 @@ export class ActorSheetWNG extends ActorSheet {
           let creatureMethod = false;
           let characteristics = duplicate (this.actor.data.data.characteristics);
 
-          if (this.actor.data.type == "creature" || !species)
+          if (this.actor.data.type === "creature" || !species)
             creatureMethod = true;
 
           // This if will do another test to see if creatureMethod should be used - If the user has modified the initial values, use creatureMethod
@@ -921,7 +923,7 @@ export class ActorSheetWNG extends ActorSheet {
             // If this loop results in turning creatureMethod to true, that means an NPCs statistics have been edited manually, use -10 + 2d10 method
             for (let char in characteristics)
             {
-              if (characteristics[char].initial != averageCharacteristics[char])
+              if (characteristics[char].initial !== averageCharacteristics[char])
                 creatureMethod = true;
             }
           }
@@ -945,7 +947,7 @@ export class ActorSheetWNG extends ActorSheet {
             let characteristics = duplicate (this.actor.data.data.characteristics);
             for (let char in characteristics)
             {
-              if (characteristics[char].initial == 0)
+              if (characteristics[char].initial === 0)
                 continue
 
               characteristics[char].initial -= 10;
@@ -980,7 +982,7 @@ export class ActorSheetWNG extends ActorSheet {
   // Post Item to chat
   html.find(".item-post").click(ev => {
     let itemId = $(ev.currentTarget).parents(".item").attr("data-item-id");
-    const item = this.actor.items.find(i => i.data._id == itemId)
+    const item = this.actor.items.find(i => i.data._id === itemId)
     item.postItem();
   })
 
@@ -1069,19 +1071,19 @@ export class ActorSheetWNG extends ActorSheet {
     var dropID = $(event.target).parents(".item").attr("data-item-id"); // Only relevant if container drop
 
     // Inventory Tab - Containers
-    if ($(event.target).parents(".item").attr("inventory-type") == "container")
+    if ($(event.target).parents(".item").attr("inventory-type") === "container")
     {
       var dragItem = JSON.parse(dragData)
-      if (dragItem.data._id == dropID) // Prevent placing a container within itself (we all know the cataclysmic effects that can cause)
+      if (dragItem.data._id === dropID) // Prevent placing a container within itself (we all know the cataclysmic effects that can cause)
         throw "";
-      else if (dragItem.data.type == "container" && $(event.target).parents(".item").attr("last-container")) 
+      else if (dragItem.data.type === "container" && $(event.target).parents(".item").attr("last-container"))
           throw game.i18n.localize("SHEET.NestedWarning")
 
-      else if (dragItem.data.type == "container") 
+      else if (dragItem.data.type === "container")
       {
         // If container A has both container B and container C, prevent placing container B into container C without first removing B from A
         // This resolves a lot of headaches around container loops and issues of that natures
-        if (JSON.parse(dragData).root == $(event.target).parents(".item").attr("root")) 
+        if (JSON.parse(dragData).root === $(event.target).parents(".item").attr("root"))
         {
           ui.notifications.error("Remove the container before changing its location");
           throw game.i18n.localize("SHEET.LocationWarning");
@@ -1090,11 +1092,11 @@ export class ActorSheetWNG extends ActorSheet {
       dragItem.data.data.location.value = dropID; // Change location value of item to the id of the container it is in
 
       //  this will unequip/remove items like armor and weapons when moved into a container
-      if (dragItem.data.type == "armour")
+      if (dragItem.data.type === "armour")
         dragItem.data.data.worn.value = false;
-      if (dragItem.data.type == "weapon")
+      if (dragItem.data.type === "weapon")
         dragItem.data.data.equipped = false;
-      if (dragItem.data.type == "trapping" && dragItem.data.data.trappingType.value == "clothingAccessories")
+      if (dragItem.data.type === "trapping" && dragItem.data.data.trappingType.value === "clothingAccessories")
         dragItem.data.data.worn = false;
 
 
@@ -1111,12 +1113,12 @@ export class ActorSheetWNG extends ActorSheet {
       let transfer = JSON.parse(dragData)
 
       let data = duplicate(this.actor.data.data);
-      if (transfer.type == "attributes") // Characteristsics, movement, metacurrency, etc.
+      if (transfer.type === "attributes") // Characteristsics, movement, metacurrency, etc.
       {
         data.details.species.value = transfer.payload.species;
         data.details.move.value = transfer.payload.movement;
 
-        if (this.actor.data.type == "character") // Other actors don't care about these values
+        if (this.actor.data.type === "character") // Other actors don't care about these values
         {
           data.status.fate.value = transfer.payload.fate;
           data.status.fortune.value = transfer.payload.fate;
@@ -1130,7 +1132,7 @@ export class ActorSheetWNG extends ActorSheet {
         }
         await this.actor.update({"data" : data})
       }
-      else if (transfer.type == "details") // hair, name, eyes
+      else if (transfer.type === "details") // hair, name, eyes
       {
         data.details.eyecolour.value = transfer.payload.eyes
         data.details.haircolour.value = transfer.payload.hair
@@ -1149,12 +1151,12 @@ export class ActorSheetWNG extends ActorSheet {
     {
       let transfer = JSON.parse(dragData)
       let item;
-      if (transfer.lookupType == "skill")
+      if (transfer.lookupType === "skill")
       {
         // Advanced find function, returns the skill the user expects it to return, even with skills not included in the compendium (Lore (whatever))
         item = await WNG_Utility.findSkill(transfer.name)
       }
-      else if (transfer.lookupType == "talent")
+      else if (transfer.lookupType === "talent")
       {
         // Advanced find function, returns the talent the user expects it to return, even with talents not included in the compendium (Etiquette (whatever))
         item = await WNG_Utility.findTalent(transfer.name)
@@ -1182,33 +1184,33 @@ export class ActorSheetWNG extends ActorSheet {
       let amt;
       // Failure means divide by two, so mark whether we should add half a gold or half a silver, just round pennies
       let halfS = false, halfG = false
-      if (type == "b")
+      if (type === "b")
         amt = Math.round(moneyString.slice(0, -1));
-      else if (type == "s")
+      else if (type === "s")
       {
         if (moneyString.slice(0, -1).includes("."))
           halfS = true;
         amt = Math.floor(moneyString.slice(0, -1))
       }
-      else if (type == "g")
+      else if (type === "g")
       {
         if (moneyString.slice(0, -1).includes("."))
           halfG = true;
         amt = Math.floor(moneyString.slice(0, -1))
       }
-      let money = duplicate(this.actor.data.items.filter(i => i.type == "money"));
+      let money = duplicate(this.actor.data.items.filter(i => i.type === "money"));
 
       let moneyItem;
       switch(type)
       {
         case 'b' : 
-        moneyItem = money.find(i => i.name == "Brass Penny");
+        moneyItem = money.find(i => i.name === "Brass Penny");
         break;
         case 's' : 
-        moneyItem = money.find(i => i.name == "Silver Shilling");
+        moneyItem = money.find(i => i.name === "Silver Shilling");
         break;
         case 'g' : 
-        moneyItem = money.find(i => i.name == "Gold Crown");
+        moneyItem = money.find(i => i.name === "Gold Crown");
         break;
       }
 
@@ -1220,9 +1222,9 @@ export class ActorSheetWNG extends ActorSheet {
 
       // add halves
       if (halfS)
-         money.find(i => i.name == "Brass Penny").data.quantity.value += 6;
+         money.find(i => i.name === "Brass Penny").data.quantity.value += 6;
       if (halfG)
-        money.find(i => i.name == "Silver Shilling").data.quantity.value += 10;
+        money.find(i => i.name === "Silver Shilling").data.quantity.value += 10;
 
       await this.actor.updateManyEmbeddedEntities("OwnedItem", money);
     }
@@ -1246,7 +1248,7 @@ export class ActorSheetWNG extends ActorSheet {
   {
     event.preventDefault();
     let li = $(event.currentTarget).parents(".item"),
-      item = this.actor.items.find(i => i.data._id == li.attr("data-item-id")),
+      item = this.actor.items.find(i => i.data._id === li.attr("data-item-id")),
       // Call the item's expandData() function which gives us what to display
       expandData = item.getExpandData( 
       {
@@ -1281,7 +1283,7 @@ export class ActorSheetWNG extends ActorSheet {
       // Roll a career income skill
       div.on("click", ".career-income", ev =>
       {
-        let skill = this.actor.items.find(i => i.data.name === ev.target.text.trim() && i.data.type == "skill");
+        let skill = this.actor.items.find(i => i.data.name === ev.target.text.trim() && i.data.type === "skill");
         let career = this.actor.getEmbeddedEntity("OwnedItem", $(ev.target).attr("data-career-id"));
         if (!skill)
         {
@@ -1322,7 +1324,7 @@ export class ActorSheetWNG extends ActorSheet {
     property = property.replace(/,/g, '').trim(); // Remove commas/whitespace
   
     let propertyKey = "";
-    if (property == "Special Ammo") // Special Ammo comes from user-entry in an Ammo's Special box
+    if (property === "Special Ammo") // Special Ammo comes from user-entry in an Ammo's Special box
     {
       let item = duplicate(this.actor.getEmbeddedEntity("OwnedItem", li.attr("data-item-id")))
       let ammo = duplicate(this.actor.getEmbeddedEntity("OwnedItem", item.data.currentAmmo.value))
@@ -1333,7 +1335,7 @@ export class ActorSheetWNG extends ActorSheet {
       });
       propertyKey = "Special Ammo";
     }
-    else if (property == "Special") // Special comes from user-entry in a Weapon's Special box
+    else if (property === "Special") // Special comes from user-entry in a Weapon's Special box
     {
       let item = duplicate(this.actor.getEmbeddedEntity("OwnedItem", li.attr("data-item-id")))
       // Add the special value to the object so that it can be looked up
@@ -1456,7 +1458,7 @@ export class ActorSheetWNG extends ActorSheet {
   
   
     // Conditional for creating skills from the skills tab - sets to the correct skill type depending on column
-    if (event.currentTarget.attributes["data-type"].value == "skill")
+    if (event.currentTarget.attributes["data-type"].value === "skill")
     {
       data = mergeObject(data,
       {
@@ -1465,25 +1467,25 @@ export class ActorSheetWNG extends ActorSheet {
     }
   
     // Conditional for creating Trappings from the Trapping tab - sets to the correct trapping type
-    if (event.currentTarget.attributes["data-type"].value == "trapping")
+    if (event.currentTarget.attributes["data-type"].value === "trapping")
       data = mergeObject(data,
       {
         "data.trappingType.value": event.currentTarget.attributes["item-section"].value
       })
   
     // Conditional for creating spells/prayers from their tabs, create the item with the correct type
-    else if (data.type == "spell" || data.type == "prayer")
+    else if (data.type === "spell" || data.type === "prayer")
     {
       let itemSpecification = event.currentTarget.attributes[`data-${data.type}-type`].value;
   
-      if (data.type == "spell")
+      if (data.type === "spell")
       {
         data = mergeObject(data,
         {
           "data.lore.value": itemSpecification
         });
       }
-      else if (data.type == "prayer")
+      else if (data.type === "prayer")
       {
         data = mergeObject(data,
         {

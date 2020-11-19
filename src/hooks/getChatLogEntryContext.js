@@ -1,6 +1,10 @@
 /**
  * Add right click option to damage chat cards to allow application of damage
  */
+import {ActorWNG} from "../actor/actor-wng";
+import {OpposedWNG} from "../opposed-wng";
+import {DAMAGE_TYPE} from "../config-wng";
+
 Hooks.on("getChatLogEntryContext", (html, options) => {
   let canApply = li => li.find(".opposed-card").length;
   options.push(
