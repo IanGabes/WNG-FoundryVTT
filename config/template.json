@@ -1,61 +1,61 @@
 {
   "Actor" : {
-    "types" : ["character", "threat"],
+    "types" : ["character", "npc", "vehicle"],
     "templates" : {
       "attributes" :{
         "attributes" : {
           "s" : {
             "type" : "Number",
-            "label" : "ATR.S",
-            "abrev" : "ATRAbbrev.S",
+            "label" : "ATTR.S",
+            "abbrev" : "ATTRAbbrev.S",
             "rating" : 0,
             "bonus" : 0,
             "total" : 0
           },
           "t" : {
             "type" : "Number",
-            "label" : "ATR.T",
-            "abrev" : "ATRAbbrev.T",
+            "label" : "ATTR.T",
+            "abbrev" : "ATTRAbbrev.T",
             "rating" : 0,
             "bonus" : 0,
             "total" : 0
           },
           "a" : {
             "type" : "Number",
-            "label" : "ATR.A",
-            "abrev" : "ATRAbbrev.A",
+            "label" : "ATTR.A",
+            "abbrev" : "ATTRAbbrev.A",
             "rating" : 0,
             "bonus" : 0,
             "total" : 0
           },
           "i" : {
             "type" : "Number",
-            "label" : "ATR.I",
-            "abrev" : "ATRAbbrev.I",
+            "label" : "ATTR.I",
+            "abbrev" : "ATTRAbbrev.I",
             "rating" : 0,
             "bonus" : 0,
             "total" : 0
           },
           "will" : {
             "type" : "Number",
-            "label" : "ATR.Will",
-            "abrev" : "ATRAbbrev.Will",
+            "label" : "ATTR.Will",
+            "abbrev" : "ATTRAbbrev.Will",
             "rating" : 0,
             "bonus" : 0,
             "total" : 0
           },
           "int" : {
             "type" : "Number",
-            "label" : "ATR.Int",
-            "abrev" : "ATRAbbrev.Int",
+            "label" : "ATTR.Int",
+            "abbrev" : "ATTRAbbrev.Int",
             "rating" : 0,
             "bonus" : 0,
             "total" : 0
           },
           "fel" : {
             "type" : "Number",
-            "label" : "ATR.Fel",
-            "abrev" : "ATRAbbrev.Fel",
+            "label" : "ATTR.Fel",
+            "abbrev" : "ATTRAbbrev.Fel",
             "rating" : 0,
             "bonus" : 0,
             "total" : 0
@@ -359,19 +359,28 @@
       "templates" : ["attributes", "skills", "combat", "mental", "social", "objective", "details", "keywords", "tier", "rank"],
       "wrath" : 0
       },
-    "threat" : {
+    "npc" : {
       "templates" : ["attributes", "skills", "combat", "mental", "keywords", "tier"],
       "threat" : "",
+      "metacurrency" : 0,
       "bonuses" : "",
-      "abilities" : "",
-      "battlecry" :"",
-      "action" : "",
-      "ruin" : "",
-      "wrath" : "",
-      "complication" : "",
-      "reaction" : "",
-      "determination" : "",
-      "annihilation" : ""
+      "abilities" : {
+        "battlecry" :"",
+        "action" : "",
+        "ruin" : "",
+        "wrathcritical" : "",
+        "complication" : "",
+        "reaction" : "",
+        "determination" : "",
+        "annihilation" : ""
+      },
+      "moboptions" : "",
+      "mobabilities" : ""
+    },
+    "vehicle" : {
+      "templates" : ["attributes", "skills", "combat", "mental", "keywords", "tier"],
+      "crew" : "",
+      "traits" : ""
     }
   },
   "Item" : {
