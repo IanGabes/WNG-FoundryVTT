@@ -23,6 +23,8 @@ Here are the tools this repository needs to run, generally speaking:
   - `nvm` is a tool that will help you install and manage NodeJS installations.
 - **NPM** (Node Package Manager)
   - `npm` is a tool that manages and installs our dependencies for us.
+- **Bulma**
+  - Bulma is a CSS framework that does the heavy layout lifting for us.
 - **Webpack**
   - Webpack is a build system that runs on NodeJS. This repository is set up in a way that is easier for programmers to navigate, webpack will transform our repo into something Foundry can understand, automating tasks for us. Webpack will bundle our javascript code into a single file, compile our SASS code to regular CSS, and package up all of our images and templates into the `dist` folder.
 - **Git**

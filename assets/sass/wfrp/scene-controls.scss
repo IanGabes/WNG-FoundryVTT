@@ -5,9 +5,9 @@
 #controls .scene-control.active, #controls .control-tool.active, #controls .scene-control:hover, #controls .control-tool:hover {
   cursor: default;
   color: #FFF;
-  background: url(../img/ui/sidebar_button-background_red.png) repeat !important;
+  background: url(../../img/ui/sidebar_button-background_red.png) repeat !important;
   background-origin: padding-box !important;
-  border-image: url(../img/ui/footer-button.png) 10 repeat !important;
+  border-image: url(../../img/ui/footer-button.png) 10 repeat !important;
   border-image-width: 4px !important;
   border-image-outset: 0px !important;
   box-shadow: 0 0 3px #ff6400 !important;
@@ -29,9 +29,9 @@
   cursor: pointer !important;
   cursor: default !important;
   color: #FFF !important;
-  background: url(../img/ui/sidebar_button-background_cyan.png) repeat !important;
+  background: url(../../img/ui/sidebar_button-background_cyan.png) repeat !important;
   background-origin: padding-box !important;
-  border-image: url(../img/ui/footer-button.png) 10 repeat !important;
+  border-image: url(../../img/ui/footer-button.png) 10 repeat !important;
   border-image-width: 4px !important;
   border-image-outset: 0px !important;
 }

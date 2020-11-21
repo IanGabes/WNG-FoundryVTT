@@ -12,7 +12,7 @@
   overflow: auto;
   min-height: 437px !important;
   max-height: 437px;
-  background: url(../img/ui/frames/window-app-background-bookshelf.png);
+  background: url(../../img/ui/frames/window-app-background-bookshelf.png);
 }
 #module-management .window-content .modules-list {
   list-style: none;
@@ -101,10 +101,10 @@
   margin: 0px;
   line-height: normal;
   border: 1px solid black;
-  border-image: url(../img/ui/footer-button.png) 10 repeat;
+  border-image: url(../../img/ui/footer-button.png) 10 repeat;
   border-image-width: 4px;
   border-image-outset: 0px;
-  background: url(../img/ui/sidebar_button-background_red.png) repeat;
+  background: url(../../img/ui/sidebar_button-background_red.png) repeat;
   font-family: var(--major-button-font-family);
   font-size: 17px;
   font-weight: var(--major-button-font-weight);
@@ -128,7 +128,7 @@
 #client-settings {
   border: 1px solid blue;
   border-width: 10px;
-  border-image: url(../img/ui/game-settings-border.png) 5 repeat;
+  border-image: url(../../img/ui/game-settings-border.png) 5 repeat;
   border-image-slice: 162 81 67 80;
   border-image-width: 162px 81px 67px 80px;
   border-image-outset: 0px;
@@ -148,7 +148,7 @@
 #client-settings .window-header .close {
   color: #00e5ff00;
   text-align: center;
-  background: url(../img/ui/buttons/button-close.png);
+  background: url(../../img/ui/buttons/button-close.png);
   height: 30px;
   width: 30px;
   position: absolute;
@@ -163,7 +163,7 @@
   margin: 0px 70px 57px 70px;
   padding: 0px;
   border: none;
-  background: url(../img/ui/game-settings-background.png);
+  background: url(../../img/ui/game-settings-background.png);
   background-size: 199%;
   background-position-x: center;
 }
@@ -268,10 +268,10 @@
   font-weight: 500;
   font-size: 19px;
   text-shadow: 1px 1px 6px black;
-  border-image: url(../img/ui/footer-button.png) 10 repeat;
+  border-image: url(../../img/ui/footer-button.png) 10 repeat;
   border-image-width: 4px;
   border-image-outset: 0px;
-  background: url(../img/ui/sidebar_button-background_red.png) repeat;
+  background: url(../../img/ui/sidebar_button-background_red.png) repeat;
   background-origin: padding-box;
 }
 #client-settings .window-content .far.fa-save {
@@ -291,7 +291,7 @@
 #controls-reference .window-content {
   padding: 7px 2px 7px 7px;
   max-height: none;
-  background: url(../img/ui/frames/window-app-background-system-background.png);
+  background: url(../../img/ui/frames/window-app-background-system-background.png);
 }
 #controls-reference .window-content div {
   overflow-y: scroll;

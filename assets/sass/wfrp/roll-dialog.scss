@@ -40,7 +40,7 @@
   margin: 0px;
   line-height: 30px;
   border: none;
-  background: url(../img/ui/window-app-dialog-header.png) repeat;
+  background: url(../../img/ui/window-app-dialog-header.png) repeat;
 }
 .window-app.dialog.characteristic-roll-dialog .window-header .window-title,
 .window-app.dialog.skill-roll-dialog .window-header .window-title,
@@ -79,7 +79,7 @@
 .window-app.dialog.prayer-roll-dialog .window-header .close {
   color: #00e5ff00;
   text-align: center;
-  background: url(../img/ui/buttons/button-close.png);
+  background: url(../../img/ui/buttons/button-close.png);
   height: 30px;
   width: 30px;
   position: absolute;
@@ -88,7 +88,7 @@
 }
 
 .window-app.dialog.characteristic-roll-dialog .window-content {
-  background: url(../img/ui/window-app-dialog-backgrounds-characteristic.png);
+  background: url(../../img/ui/window-app-dialog-backgrounds-characteristic.png);
   background-position: -43px -120px;
   display: flex;
   flex-direction: column;
@@ -104,13 +104,13 @@
   color: #ececec;
   border: 1px solid blue;
   border-width: 10px;
-  border-image: url(../img/ui/window-app-dialog-content.png) 5 repeat;
+  border-image: url(../../img/ui/window-app-dialog-content.png) 5 repeat;
   border-image-slice: 10 13 13 13;
   border-image-width: 10px 13px 13px 13px;
   border-image-outset: 8px;
 }
 .window-app.dialog.skill-roll-dialog .window-content {
-  background: url(../img/ui/window-app-dialog-backgrounds-skill.png);
+  background: url(../../img/ui/window-app-dialog-backgrounds-skill.png);
   background-position: -43px -120px;
   display: flex;
   flex-direction: column;
@@ -126,13 +126,13 @@
   color: #ececec;
   border: 1px solid blue;
   border-width: 10px;
-  border-image: url(../img/ui/window-app-dialog-content.png) 5 repeat;
+  border-image: url(../../img/ui/window-app-dialog-content.png) 5 repeat;
   border-image-slice: 10 13 13 13;
   border-image-width: 10px 13px 13px 13px;
   border-image-outset: 8px;
 }
 .window-app.dialog.weapon-roll-dialog .window-content {
-  background: url(../img/ui/window-app-dialog-backgrounds-weapon.png);
+  background: url(../../img/ui/window-app-dialog-backgrounds-weapon.png);
   background-position: -43px -120px;
   display: flex;
   flex-direction: column;
@@ -148,13 +148,13 @@
   color: #ececec;
   border: 1px solid blue;
   border-width: 10px;
-  border-image: url(../img/ui/window-app-dialog-content.png) 5 repeat;
+  border-image: url(../../img/ui/window-app-dialog-content.png) 5 repeat;
   border-image-slice: 10 13 13 13;
   border-image-width: 10px 13px 13px 13px;
   border-image-outset: 8px;
 }
 .window-app.dialog.spell-roll-dialog .window-content {
-  background: url(../img/ui/window-app-dialog-backgrounds-spell.png);
+  background: url(../../img/ui/window-app-dialog-backgrounds-spell.png);
   background-size: 102%;
   background-position: -5px -10px;
   display: flex;
@@ -171,13 +171,13 @@
   color: #ececec;
   border: 1px solid blue;
   border-width: 10px;
-  border-image: url(../img/ui/window-app-dialog-content.png) 5 repeat;
+  border-image: url(../../img/ui/window-app-dialog-content.png) 5 repeat;
   border-image-slice: 10 13 13 13;
   border-image-width: 10px 13px 13px 13px;
   border-image-outset: 8px;
 }
 .window-app.dialog.channel-roll-dialog .window-content {
-  background: url(../img/ui/window-app-dialog-backgrounds-channel.png);
+  background: url(../../img/ui/window-app-dialog-backgrounds-channel.png);
   background-size: 102%;
   background-position: -5px -10px;
   display: flex;
@@ -194,13 +194,13 @@
   color: #ececec;
   border: 1px solid blue;
   border-width: 10px;
-  border-image: url(../img/ui/window-app-dialog-content.png) 5 repeat;
+  border-image: url(../../img/ui/window-app-dialog-content.png) 5 repeat;
   border-image-slice: 10 13 13 13;
   border-image-width: 10px 13px 13px 13px;
   border-image-outset: 8px;
 }
 .window-app.dialog.prayer-roll-dialog .window-content {
-  background: url(../img/ui/window-app-dialog-backgrounds-prayer.png);
+  background: url(../../img/ui/window-app-dialog-backgrounds-prayer.png);
   background-position: -43px -120px;
   display: flex;
   flex-direction: column;
@@ -216,7 +216,7 @@
   color: #ececec;
   border: 1px solid blue;
   border-width: 10px;
-  border-image: url(../img/ui/window-app-dialog-content.png) 5 repeat;
+  border-image: url(../../img/ui/window-app-dialog-content.png) 5 repeat;
   border-image-slice: 10 13 13 13;
   border-image-width: 10px 13px 13px 13px;
   border-image-outset: 8px;
@@ -318,7 +318,7 @@
   border: 1px solid #736953a6;
   border-radius: 0px;
   box-shadow: 0px 0px 10px inset black;
-  background: url(../img/ui/frames/parchment-texture.png);
+  background: url(../../img/ui/frames/parchment-texture.png);
 }
 .window-app.dialog.characteristic-roll-dialog .window-content .dialog-content .dialog-row .talent-selector select option,
 .window-app.dialog.skill-roll-dialog .window-content .dialog-content .dialog-row .talent-selector select option,
@@ -365,10 +365,10 @@
   font-weight: 500;
   font-size: 15px;
   padding-top: 5px;
-  border-image: url(../img/ui/footer-button.png) 10 repeat;
+  border-image: url(../../img/ui/footer-button.png) 10 repeat;
   border-image-width: 4px;
   border-image-outset: 0px;
-  background: url(../img/ui/sidebar_button-background_red.png) repeat;
+  background: url(../../img/ui/sidebar_button-background_red.png) repeat;
   background-origin: padding-box;
 }
 

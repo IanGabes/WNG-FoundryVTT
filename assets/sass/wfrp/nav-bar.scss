@@ -5,9 +5,9 @@
 #navigation #scene-list .scene.view, #navigation #scene-list .scene.context {
   cursor: default;
   color: #FFF;
-  background: url(../img/ui/sidebar_button-background_red.png) repeat;
+  background: url(../../img/ui/sidebar_button-background_red.png) repeat;
   background-origin: padding-box;
-  border-image: url(../img/ui/footer-button.png) 10 repeat;
+  border-image: url(../../img/ui/footer-button.png) 10 repeat;
   border-image-width: 4px;
   border-image-outset: 0px;
   box-shadow: 0 0 3px #ff6400;
@@ -16,9 +16,9 @@
 #navigation #nav-toggle {
   cursor: default;
   color: #FFF;
-  background: url(../img/ui/sidebar_button-background_cyan.png) repeat;
+  background: url(../../img/ui/sidebar_button-background_cyan.png) repeat;
   background-origin: padding-box;
-  border-image: url(../img/ui/footer-button.png) 10 repeat;
+  border-image: url(../../img/ui/footer-button.png) 10 repeat;
   border-image-width: 4px;
   border-image-outset: 0px;
   font-family: CaslonPro;
@@ -31,9 +31,9 @@
 #navigation #scene-list .scene.nav-item {
   cursor: default;
   color: #FFF;
-  background: url(../img/ui/sidebar_button-background_cyan.png) repeat;
+  background: url(../../img/ui/sidebar_button-background_cyan.png) repeat;
   background-origin: padding-box;
-  border-image: url(../img/ui/footer-button.png) 10 repeat;
+  border-image: url(../../img/ui/footer-button.png) 10 repeat;
   border-image-width: 4px;
   border-image-outset: 0px;
   font-family: CaslonPro;
@@ -42,7 +42,7 @@
   padding-top: 2px;
 }
 #navigation #scene-list .scene.nav-item.active {
-  background: url(../img/ui/sidebar_button-background_red.png) repeat;
+  background: url(../../img/ui/sidebar_button-background_red.png) repeat;
 }
 #navigation #scene-list .scene li.scene-player {
   float: left;

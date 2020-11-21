@@ -5,7 +5,7 @@
 
 /* ==================== (A) WINDOW FRAMEWORK ================== */
 .app.window-app.sheet.wng.actor.npc-sheet {
-  background: url(../img/ui/frames/actor-sheet-npc.png) no-repeat;
+  background: url(../../img/ui/frames/actor-sheet-npc.png) no-repeat;
   box-shadow: none;
   margin: 0px;
   max-height: none !important;
@@ -32,7 +32,7 @@
 .app.window-app.sheet.wng.actor.npc-sheet .window-header .configure-sheet {
   color: #00e5ff00;
   text-align: center;
-  background: url(../img/ui/buttons/button-configure-sheet.png);
+  background: url(../../img/ui/buttons/button-configure-sheet.png);
   height: 30px;
   width: 30px;
   position: absolute;
@@ -45,7 +45,7 @@
 .app.window-app.sheet.wng.actor.npc-sheet .window-header .configure-token {
   color: #00e5ff00;
   text-align: center;
-  background: url(../img/ui/buttons/button-configure-token.png);
+  background: url(../../img/ui/buttons/button-configure-token.png);
   height: 30px;
   width: 30px;
   position: absolute;
@@ -59,7 +59,7 @@
 .app.window-app.sheet.wng.actor.npc-sheet .window-header .close {
   color: #00e5ff00;
   text-align: center;
-  background: url(../img/ui/buttons/button-close.png);
+  background: url(../../img/ui/buttons/button-close.png);
   height: 30px;
   width: 30px;
   position: absolute;
@@ -713,7 +713,7 @@
   /* padding: 0px; */
   margin: 0px;
   border: 1px solid;
-  border-image: url(../img/ui/actor-sheet-tab-border.png) 4 repeat;
+  border-image: url(../../img/ui/actor-sheet-tab-border.png) 4 repeat;
   border-image-width: 4px;
   border-image-outset: 0px;
   font-family: var(--tab-header-font-family);

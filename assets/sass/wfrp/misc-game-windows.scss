@@ -18,7 +18,7 @@
   padding: 0px 30px;
   margin: 0px;
   border: 1px solid blue;
-  border-image: url(../img/ui/frames/window-app-header-blank.png) 5 repeat;
+  border-image: url(../../img/ui/frames/window-app-header-blank.png) 5 repeat;
   border-image-slice: 19 21 19 21 fill;
   border-image-width: 19px 21px 19px 21px;
   border-image-outset: 0px;
@@ -45,7 +45,7 @@
   overflow: hidden;
   border: 1px solid blue;
   border-radius: 0px;
-  border-image: url(../img/ui/frames/window-app-title-blank.png) 5 repeat;
+  border-image: url(../../img/ui/frames/window-app-title-blank.png) 5 repeat;
   border-image-slice: 13 69 11 69 fill;
   border-image-width: 13px 69px 11px 69px;
   border-image-outset: 9px 0px 9px 0px;
@@ -55,7 +55,7 @@
 .app.window-app .window-header .close {
   color: #00c2d800;
   text-align: center;
-  background: url(../img/ui/buttons/button-close.png);
+  background: url(../../img/ui/buttons/button-close.png);
   height: 30px;
   width: 30px;
   position: absolute;
@@ -64,7 +64,7 @@
   overflow: hidden;
 }
 .app.window-app .window-content {
-  background: url(../img/ui/frames/window-app-background-generic.png);
+  background: url(../../img/ui/frames/window-app-background-generic.png);
   background-position: -43px -120px;
   display: flex;
   flex-direction: column;
@@ -75,7 +75,7 @@
   box-shadow: 0px 0px 20px black inset;
   border: 1px solid blue;
   border-width: 10px;
-  border-image: url(../img/ui/window-app-dialog-content.png) 5 repeat;
+  border-image: url(../../img/ui/window-app-dialog-content.png) 5 repeat;
   border-image-slice: 10 13 13 13;
   border-image-width: 10px 13px 13px 13px;
   border-image-outset: 0px;
@@ -209,11 +209,11 @@
   margin: 0 3px 4px 3px;
 
   border: 1px solid black;
-  border-image: url(../img/ui/footer-button.png) 10 repeat;
+  border-image: url(../../img/ui/footer-button.png) 10 repeat;
   border-image-width: 4px;
   border-image-outset: 0px;
   box-shadow: none;
-  background: url(../img/ui/sidebar_button-background_red.png) repeat;
+  background: url(../../img/ui/sidebar_button-background_red.png) repeat;
   background-origin: padding-box;
 
   font-family: var(--major-button-font-family);
@@ -245,7 +245,7 @@
   flex-grow: 0;
   color: transparent;
   border: none;
-  background: url(../img/ui/frames/window-app-title-permissions.png);
+  background: url(../../img/ui/frames/window-app-title-permissions.png);
   min-width: 235px;
   max-width: 235px;
   min-height: 45px;
@@ -357,7 +357,7 @@
   padding: 15px;
   border: 1px solid blue;
   border-width: 10px;
-  border-image: url(../img/ui/frames/window-app-journal-sheet-content.png) 5 repeat;
+  border-image: url(../../img/ui/frames/window-app-journal-sheet-content.png) 5 repeat;
   border-image-slice: 25 fill;
   border-image-width: 25px;
   border-image-outset: 0px;
@@ -423,7 +423,7 @@
 .app.window-app.image-popout .window-header .share-image {
   color: #00e5ff00;
   text-align: center;
-  background: url(../img/ui/buttons/button-show-players.png);
+  background: url(../../img/ui/buttons/button-show-players.png);
   height: 30px;
   width: 30px;
   position: absolute;
@@ -432,7 +432,7 @@
   overflow: hidden;
 }
 .window-app.app.image-popout .window-content {
-  background: url(../img/ui/frames/parchment-texture.png);
+  background: url(../../img/ui/frames/parchment-texture.png);
   background-position: -43px -120px;
   display: flex;
   flex-direction: column;
@@ -447,7 +447,7 @@
   color: #000000;
   border: 1px solid blue;
   border-width: 10px;
-  border-image: url(../img/ui/frames/window-app-journal-sheet-content.png) 5 repeat;
+  border-image: url(../../img/ui/frames/window-app-journal-sheet-content.png) 5 repeat;
   border-image-slice: 25;
   border-image-width: 25px;
   border-image-outset: 0px 0px 0px 0px;
@@ -898,7 +898,7 @@
   line-height: normal;
   color: #dcdcdc00;
   border-radius: 0px;
-  background: url(../img/ui/frames/window-app-title-journal-entry.png);
+  background: url(../../img/ui/frames/window-app-title-journal-entry.png);
   opacity: 1;
   z-index: 4;
   min-width: 235px;
@@ -913,7 +913,7 @@
 .window-app.app.journal-sheet .window-header .share-image {
   color: #00c2d800;
   text-align: center;
-  background: url(../img/ui/buttons/button-show-players.png);
+  background: url(../../img/ui/buttons/button-show-players.png);
   height: 30px;
   width: 30px;
   position: absolute;
@@ -924,7 +924,7 @@
 .window-app.app.journal-sheet .window-header .entry-text {
   color: #00c2d800;
   text-align: center;
-  background: url(../img/ui/buttons/button-text.png);
+  background: url(../../img/ui/buttons/button-text.png);
   height: 30px;
   width: 30px;
   position: absolute;
@@ -935,7 +935,7 @@
 .window-app.app.journal-sheet .window-header .entry-image {
   color: #00c2d800;
   text-align: center;
-  background: url(../img/ui/buttons/button-image.png);
+  background: url(../../img/ui/buttons/button-image.png);
   height: 30px;
   width: 30px;
   position: absolute;
@@ -945,7 +945,7 @@
 }
 
 .window-app.app.journal-sheet .window-content {
-  background: url(../img/ui/frames/parchment-texture.png);
+  background: url(../../img/ui/frames/parchment-texture.png);
   background-position: -43px -120px;
   display: flex;
   flex-direction: column;
@@ -960,7 +960,7 @@
   color: #000000;
   border: 1px solid blue;
   border-width: 10px;
-  border-image: url(../img/ui/frames/window-app-journal-sheet-content.png) 5 repeat;
+  border-image: url(../../img/ui/frames/window-app-journal-sheet-content.png) 5 repeat;
   border-image-slice: 25;
   border-image-width: 25px;
   border-image-outset: 0px 0px 0px 0px;
@@ -980,7 +980,7 @@
 .window-app.app.journal-sheet .window-content input[name="name"],
 .window-app.app.journal-sheet .window-content input[name="title"] {
   border: 1px solid blue;
-  border-image: url(../img/ui/item-sheet-header.png) repeat;
+  border-image: url(../../img/ui/item-sheet-header.png) repeat;
   border-image-slice: 5;
   border-image-width: 4px;
   border-image-outset: 0px;
@@ -1027,11 +1027,11 @@
   font-size: 15px;
   padding-top: 5px;
   margin: 3px 0px 0px 1px !important;
-  border-image: url(../img/ui/footer-button.png) 10 repeat;
+  border-image: url(../../img/ui/footer-button.png) 10 repeat;
   border-image-width: 4px;
   border-image-outset: 0px;
   /* box-shadow: inset 0 0 20px #000000; */
-  background: url(../img/ui/sidebar_button-background_red.png) repeat;
+  background: url(../../img/ui/sidebar_button-background_red.png) repeat;
   background-origin: padding-box;
 }
 
@@ -1089,11 +1089,11 @@
   font-size: 15px;
   padding-top: 3px;
   margin: 0px 3px 2px 0px;
-  border-image: url(../img/ui/footer-button.png) 10 repeat;
+  border-image: url(../../img/ui/footer-button.png) 10 repeat;
   border-image-width: 4px;
   border-image-outset: 0px;
   /* box-shadow: inset 0 0 20px #000000; */
-  background: url(../img/ui/sidebar_button-background_red.png) repeat;
+  background: url(../../img/ui/sidebar_button-background_red.png) repeat;
   background-origin: padding-box;
 }
 .window-app.journal-sheet.image-popout .form-group button i {
@@ -1125,10 +1125,10 @@
   line-height: 20px;
   width: calc(100% - 45px);
   margin: 3px;
-  background: url(../img/ui/frames/parchment-texture.png);
+  background: url(../../img/ui/frames/parchment-texture.png);
   box-shadow: inset 0 0 10px #000000;
   border: 2px groove #564d3a;
-  border-image: url(../img/ui/chat-controls-border.png) 4 repeat;
+  border-image: url(../../img/ui/chat-controls-border.png) 4 repeat;
   border-image-width: 4px;
   border-image-outset: 2px 2px 2px 2px;
   font-family: var(--actor-input-font-family);
@@ -1149,7 +1149,7 @@
   position: relative;
   top: -6px;
   left: 3px;
-  background: url(../img/ui/frames/search-field-icon.png);
+  background: url(../../img/ui/frames/search-field-icon.png);
   color: #ffffff00;
 }
 .window-app.app .sidebar-tab.compendium .pack-content {
@@ -1161,11 +1161,11 @@
 /* ================== 13. FILE PICKER ======================= */
 .app.window-app.filepicker .form-group .back {
   border: 1px solid black;
-  border-image: url(../img/ui/footer-button.png) 10 repeat;
+  border-image: url(../../img/ui/footer-button.png) 10 repeat;
   border-image-width: 4px;
   border-image-outset: 0px;
   box-shadow: none;
-  background: url(../img/ui/sidebar_button-background_red.png) repeat;
+  background: url(../../img/ui/sidebar_button-background_red.png) repeat;
 }
 .app.window-app.filepicker .form-group .back i {
   color: #dadadadb;
@@ -1175,7 +1175,7 @@
   border-left: 1px solid #736953a6;
 }
 .app.window-app.filepicker .file-directory {
-  background: url(../img/ui/frames/parchment-texture.png) repeat;
+  background: url(../../img/ui/frames/parchment-texture.png) repeat;
   border: 3px ridge #5d513e;
   border-radius: 0px;
   box-shadow: 0px 0px 33px black inset;

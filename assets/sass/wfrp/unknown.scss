@@ -60,7 +60,7 @@
   margin: 0px;
   line-height: 30px;
   border: none;
-  background: url(../img/ui/window-app-dialog-header.png) repeat;
+  background: url(../../img/ui/window-app-dialog-header.png) repeat;
 }
 .window-app.dialog.cast-channel .window-header .window-title {
   position: absolute;
@@ -89,7 +89,7 @@
 .window-app.dialog.cast-channel .window-header .close {
   color: #00e5ff00;
   text-align: center;
-  background: url(../img/ui/buttons/button-close.png);
+  background: url(../../img/ui/buttons/button-close.png);
   height: 30px;
   width: 30px;
   position: absolute;
@@ -99,7 +99,7 @@
 }
 
 .window-app.dialog.cast-channel .window-content {
-  background: url(../img/ui/window-app-dialog-backgrounds-characteristic.png);
+  background: url(../../img/ui/window-app-dialog-backgrounds-characteristic.png);
   background-position: -43px -120px;
   display: flex;
   flex-direction: column;
@@ -115,7 +115,7 @@
   color: #ececec;
   border: 1px solid blue;
   border-width: 10px;
-  border-image: url(../img/ui/window-app-dialog-content.png) 5 repeat;
+  border-image: url(../../img/ui/window-app-dialog-content.png) 5 repeat;
   border-image-slice: 10 13 13 13;
   border-image-width: 10px 13px 13px 13px;
   border-image-outset: 8px;
@@ -169,10 +169,10 @@
   font-size: 15px;
   padding-top: 5px;
   margin: 0px;
-  border-image: url(../img/ui/footer-button.png) 10 repeat;
+  border-image: url(../../img/ui/footer-button.png) 10 repeat;
   border-image-width: 4px;
   border-image-outset: 0px;
-  background: url(../img/ui/sidebar_button-background_red.png) repeat;
+  background: url(../../img/ui/sidebar_button-background_red.png) repeat;
   background-origin: padding-box;
 }
 
@@ -530,7 +530,7 @@ h4.message-sender.sender-image {
 .app.window-app.sheet.wng.actor .window-header .import {
   color: #00e5ff00;
   text-align: center;
-  background: url(../img/ui/buttons/button-import.png);
+  background: url(../../img/ui/buttons/button-import.png);
   height: 30px;
   width: 30px;
   position: absolute;

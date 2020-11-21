@@ -62,6 +62,7 @@ export class ActorWNG extends Actor {
    *
    * @param {String} characteristicId     The characteristic id (e.g. "ws") - id's can be found in config.js
    *
+   * @param options
    */
   setupCharacteristic(characteristicId, options = {}) {
     let char = this.data.data.characteristics[characteristicId];

@@ -8,7 +8,7 @@
 .app.window-app.sheet.item-sheet .close {
   color: #00e5ff00;
   text-align: center;
-  background: url(../img/ui/buttons/button-close.png);
+  background: url(../../img/ui/buttons/button-close.png);
   height: 30px;
   width: 30px;
   position: absolute;
@@ -23,7 +23,7 @@
 .app.window-app.sheet.item-sheet .post {
   color: #00e5ff00;
   text-align: center;
-  background: url(../img/ui/buttons/button-post.png);
+  background: url(../../img/ui/buttons/button-post.png);
   height: 30px;
   width: 30px;
   position: absolute;
@@ -40,7 +40,7 @@
   box-shadow: none;
   background: none;
   border: 1px solid blue;
-  border-image: url(../img/ui/item-sheet.png);
+  border-image: url(../../img/ui/item-sheet.png);
   border-image-slice: 59;
   border-image-width: 59px;
   border-image-outset: 0px;
@@ -51,77 +51,77 @@
 }
 .app.window-app.sheet.item-sheet.career-sheet {
   border: 1px solid blue;
-  border-image: url(../img/ui/item-sheet-red.png);
+  border-image: url(../../img/ui/item-sheet-red.png);
   border-image-slice: 59;
   border-image-width: 59px;
   border-image-outset: 0px;
 }
 .app.window-app.sheet.item-sheet.disease-sheet {
   border: 1px solid blue;
-  border-image: url(../img/ui/item-sheet-green.png);
+  border-image: url(../../img/ui/item-sheet-green.png);
   border-image-slice: 59;
   border-image-width: 59px;
   border-image-outset: 0px;
 }
 .app.window-app.sheet.item-sheet.equipment-sheet {
   border: 1px solid blue;
-  border-image: url(../img/ui/item-sheet.png);
+  border-image: url(../../img/ui/item-sheet.png);
   border-image-slice: 59;
   border-image-width: 59px;
   border-image-outset: 0px;
 }
 .app.window-app.sheet.item-sheet.injury-sheet {
   border: 1px solid blue;
-  border-image: url(../img/ui/item-sheet-black.png);
+  border-image: url(../../img/ui/item-sheet-black.png);
   border-image-slice: 59;
   border-image-width: 59px;
   border-image-outset: 0px;
 }
 .app.window-app.sheet.item-sheet.mutation-sheet {
   border: 1px solid blue;
-  border-image: url(../img/ui/item-sheet-black.png);
+  border-image: url(../../img/ui/item-sheet-black.png);
   border-image-slice: 59;
   border-image-width: 59px;
   border-image-outset: 0px;
 }
 .app.window-app.sheet.item-sheet.prayer-sheet {
   border: 1px solid blue;
-  border-image: url(../img/ui/item-sheet-white.png);
+  border-image: url(../../img/ui/item-sheet-white.png);
   border-image-slice: 59;
   border-image-width: 59px;
   border-image-outset: 0px;
 }
 .app.window-app.sheet.item-sheet.psychology-sheet {
   border: 1px solid blue;
-  border-image: url(../img/ui/item-sheet-black.png);
+  border-image: url(../../img/ui/item-sheet-black.png);
   border-image-slice: 59;
   border-image-width: 59px;
   border-image-outset: 0px;
 }
 .app.window-app.sheet.item-sheet.skill-sheet {
   border: 1px solid blue;
-  border-image: url(../img/ui/item-sheet-yellow.png);
+  border-image: url(../../img/ui/item-sheet-yellow.png);
   border-image-slice: 59;
   border-image-width: 59px;
   border-image-outset: 0px;
 }
 .app.window-app.sheet.item-sheet.spell-sheet {
   border: 1px solid blue;
-  border-image: url(../img/ui/item-sheet-purple.png);
+  border-image: url(../../img/ui/item-sheet-purple.png);
   border-image-slice: 59;
   border-image-width: 59px;
   border-image-outset: 0px;
 }
 .app.window-app.sheet.item-sheet.talent-sheet {
   border: 1px solid blue;
-  border-image: url(../img/ui/item-sheet-blue.png);
+  border-image: url(../../img/ui/item-sheet-blue.png);
   border-image-slice: 59;
   border-image-width: 59px;
   border-image-outset: 0px;
 }
 .app.window-app.sheet.item-sheet.creature-trait-sheet {
   border: 1px solid blue;
-  border-image: url(../img/ui/item-sheet-blue.png);
+  border-image: url(../../img/ui/item-sheet-blue.png);
   border-image-slice: 59;
   border-image-width: 59px;
   border-image-outset: 0px;
@@ -139,7 +139,7 @@
   display: inline-block;
   flex-direction: column;
   flex-wrap: nowrap;
-  background: url(../img/ui/frames/parchment-texture.png);
+  background: url(../../img/ui/frames/parchment-texture.png);
   padding: 8px;
   color: #111;
   overflow-y: hidden;
@@ -178,7 +178,7 @@
   padding: 1px 3px;
   margin: 0;
   border: 1px solid blue;
-  border-image: url(../img/ui/item-sheet-header.png) repeat;
+  border-image: url(../../img/ui/item-sheet-header.png) repeat;
   border-image-slice: 5;
   border-image-width: 4px;
   border-image-outset: 0px;
@@ -305,7 +305,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 169px;
@@ -316,7 +316,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 169px;
@@ -344,7 +344,7 @@
   border-image-outset: 0px;
   color: #403f3e;
   border: 1px solid blue;
-  border-image: url(../img/ui/actor-sheet-tab-border.png) 4 repeat;
+  border-image: url(../../img/ui/actor-sheet-tab-border.png) 4 repeat;
   border-image-width: 4px;
   padding: 3px 0px 0px 0px;
 }
@@ -541,7 +541,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -552,7 +552,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -607,7 +607,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -618,7 +618,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -671,7 +671,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -682,7 +682,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -743,7 +743,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -754,7 +754,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -850,7 +850,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -861,7 +861,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -896,7 +896,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -907,7 +907,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -1003,7 +1003,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -1014,7 +1014,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -1120,7 +1120,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -1131,7 +1131,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -1227,7 +1227,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;
@@ -1238,7 +1238,7 @@
   margin: 0px;
   height: 25px;
   width: 7px;
-  background: url(../img/ui/item-sheet-tab-edges.png) repeat;
+  background: url(../../img/ui/item-sheet-tab-edges.png) repeat;
   background-position-x: right;
   position: absolute;
   top: 161px;

@@ -1,0 +1,50 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="container">
+        <header>
+            <div class="level">
+                <div class="level-left level-item">
+                    <div class="level">
+                        <span class="level-item level-left">{{localize "Character Name"}}</span>
+                        <input class="level-item level-left"
+                               style="box-shadow: none !important;"
+                               name="name" type="text"
+                               value="{{actor.name}}"
+                               placeholder="{{localize 'Character Name'}}" />
+                    </div>
+                    <div class="level">
+                        <span class="level-item level-left">{{localize "Player Name"}}</span>
+                        <input class="level-item level-left"
+                               style="box-shadow: none !important;"
+                               name="name" type="text"
+                               value="{{actor.name}}"
+                               placeholder="{{localize 'Player Name'}}" />
+                    </div>
+                </div>
+                <div class="level-right level-item">
+                    <img class="charimg profile"
+                         src="{{actor.img}}"
+                         title="{{actor.name}}"
+                         height="95" width="95"
+                         data-edit="img">
+                </div>
+            </div>
+            <div>
+
+            </div>
+        </header>
+        <div>
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+        </div>
+        <!-- WARGEAR  -->
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</form>

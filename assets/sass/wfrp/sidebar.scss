@@ -15,7 +15,7 @@
     width: 456px;
     margin: 0px;
     padding: 0px;
-    background: url(../img/ui/sidebar.png) repeat;
+    background: url(../../img/ui/sidebar.png) repeat;
     background-position-y: 45px;
     border-radius: 0px;
     box-shadow: 0 0 0px #000;
@@ -37,7 +37,7 @@
     padding: 19px 0px 0px 2px;
     margin: 3px 0px 0px 0px;
     border: 1px solid black;
-    border-image: url(../img/ui/frames/sidebar-collapsed.png);
+    border-image: url(../../img/ui/frames/sidebar-collapsed.png);
     border-image-slice: 9 fill;
     border-image-width: 9px;
     border-image-outset: 0px 0px 0px 0px;
@@ -83,10 +83,10 @@
     line-height: 20px;
     width: calc(100% - 45px);
     margin: 3px;
-    background: url(../img/ui/frames/parchment-texture.png);
+    background: url(../../img/ui/frames/parchment-texture.png);
     box-shadow: inset 0 0 10px #000000;
     border: 2px groove #564d3a;
-    border-image: url(../img/ui/chat-controls-border.png) 4 repeat;
+    border-image: url(../../img/ui/chat-controls-border.png) 4 repeat;
     border-image-width: 4px;
     border-image-outset: 2px 2px 2px 2px;
     font-family: var(--actor-input-font-family);
@@ -109,7 +109,7 @@
     position: relative;
     top: -6px;
     left: 3px;
-    background: url(../img/ui/frames/search-field-icon.png);
+    background: url(../../img/ui/frames/search-field-icon.png);
     color: #ffffff00;
 }
 .sidebar-popout .directory-header .header-control,
@@ -128,7 +128,7 @@
     position: relative;
     top: 2px;
     left: 3px;
-    background: url(../img/ui/buttons/sidebar-search-buttons-collapse-all.png);
+    background: url(../../img/ui/buttons/sidebar-search-buttons-collapse-all.png);
     color: #ffffff00;
     font-size: 23px;
     padding-top: 6px;
@@ -186,11 +186,11 @@
     padding: 2px 0px 0px 0px;
     height: 34px;
     border: 1px solid black;
-    border-image: url(../img/ui/footer-button.png) 10 repeat;
+    border-image: url(../../img/ui/footer-button.png) 10 repeat;
     border-image-width: 4px;
     border-image-outset: 0px;
     box-shadow: 4px 4px 1px #00000085;
-    background: url(../img/ui/sidebar_button-background_red.png) repeat;
+    background: url(../../img/ui/sidebar_button-background_red.png) repeat;
     background-origin: padding-box;
     color: #dadada;
     font-family: CaslonAntique;
@@ -227,7 +227,7 @@
     padding: 0px 0px 0px 82px;
     border: none;
     box-shadow: none;
-    background: url(../img/ui/sidebar-border.png) repeat;
+    background: url(../../img/ui/sidebar-border.png) repeat;
 }
 
 #sidebar-tabs > .item {
@@ -266,11 +266,11 @@
     border-bottom: none;
     text-shadow: 0 0 10px #ff000000;
     visibility: visible;
-    background: url(../img/ui/sidebar-button-settings-active.png);
-    background: url(../img/ui/sidebar-button-collapse.png);
+    background: url(../../img/ui/sidebar-button-settings-active.png);
+    background: url(../../img/ui/sidebar-button-collapse.png);
 }
 #sidebar.collapsed .collapse {
-    background: url(../img/ui/sidebar-button-collapse-active.png);
+    background: url(../../img/ui/sidebar-button-collapse-active.png);
 }
 #sidebar-tabs .item > i {
     height: inherit;
@@ -304,7 +304,7 @@
     border-bottom: none;
     text-shadow: 0 0 10px #ff000000;
     visibility: visible;
-    background: url(../img/ui/sidebar-button-chat-active.png);
+    background: url(../../img/ui/sidebar-button-chat-active.png);
 }
 #sidebar-tabs > .item.active .fas.fa-fist-raised {
     position: relative;
@@ -318,7 +318,7 @@
     border-bottom: none;
     text-shadow: 0 0 10px #ff000000;
     visibility: visible;
-    background: url(../img/ui/sidebar-button-combat-active.png);
+    background: url(../../img/ui/sidebar-button-combat-active.png);
 }
 #sidebar-tabs > .item.active .fas.fa-map {
     position: relative;
@@ -332,7 +332,7 @@
     border-bottom: none;
     text-shadow: 0 0 10px #ff000000;
     visibility: visible;
-    background: url(../img/ui/sidebar-button-scenes-active.png);
+    background: url(../../img/ui/sidebar-button-scenes-active.png);
 }
 #sidebar-tabs > .item.active .fas.fa-users {
     position: relative;
@@ -346,7 +346,7 @@
     border-bottom: none;
     text-shadow: 0 0 10px #ff000000;
     visibility: visible;
-    background: url(../img/ui/sidebar-button-actors-active.png);
+    background: url(../../img/ui/sidebar-button-actors-active.png);
 }
 #sidebar-tabs > .item.active .fas.fa-suitcase {
     position: relative;
@@ -360,7 +360,7 @@
     border-bottom: none;
     text-shadow: 0 0 10px #ff000000;
     visibility: visible;
-    background: url(../img/ui/sidebar-button-items-active.png);
+    background: url(../../img/ui/sidebar-button-items-active.png);
 }
 #sidebar-tabs > .item.active .fas.fa-book-open {
     position: relative;
@@ -374,7 +374,7 @@
     border-bottom: none;
     text-shadow: 0 0 10px #ff000000;
     visibility: visible;
-    background: url(../img/ui/sidebar-button-journal-active.png)
+    background: url(../../img/ui/sidebar-button-journal-active.png)
 }
 #sidebar-tabs > .item.active .fas.fa-th-list {
     position: relative;
@@ -388,7 +388,7 @@
     border-bottom: none;
     text-shadow: 0 0 10px #ff000000;
     visibility: visible;
-    background: url(../img/ui/sidebar-button-tables-active.png);
+    background: url(../../img/ui/sidebar-button-tables-active.png);
 }
 #sidebar-tabs > .item.active .fas.fa-music {
     position: relative;
@@ -402,7 +402,7 @@
     border-bottom: none;
     text-shadow: 0 0 10px #ff000000;
     visibility: visible;
-    background: url(../img/ui/sidebar-button-playlists-active.png);
+    background: url(../../img/ui/sidebar-button-playlists-active.png);
 }
 #sidebar-tabs > .item.active .fas.fa-atlas {
     position: relative;
@@ -416,7 +416,7 @@
     border-bottom: none;
     text-shadow: 0 0 10px #ff000000;
     visibility: visible;
-    background: url(../img/ui/sidebar-button-compendium-active.png);
+    background: url(../../img/ui/sidebar-button-compendium-active.png);
 }
 #sidebar-tabs > .item.active .fas.fa-cogs {
     position: relative;
@@ -430,38 +430,38 @@
     border-bottom: none;
     text-shadow: 0 0 10px #ff000000;
     visibility: visible;
-    background: url(../img/ui/sidebar-button-settings-active.png);
+    background: url(../../img/ui/sidebar-button-settings-active.png);
 }
 
 #sidebar-tabs > [data-tab~="chat"] {
-    background: url(../img/ui/sidebar-button-chat.png);
+    background: url(../../img/ui/sidebar-button-chat.png);
 }
 #sidebar-tabs > [data-tab~="combat"] {
-    background: url(../img/ui/sidebar-button-combat.png);
+    background: url(../../img/ui/sidebar-button-combat.png);
 }
 #sidebar-tabs > [data-tab~="scenes"] {
-    background: url(../img/ui/sidebar-button-scenes.png);
+    background: url(../../img/ui/sidebar-button-scenes.png);
 }
 #sidebar-tabs > [data-tab~="actors"] {
-    background: url(../img/ui/sidebar-button-actors.png);
+    background: url(../../img/ui/sidebar-button-actors.png);
 }
 #sidebar-tabs > [data-tab~="items"] {
-    background: url(../img/ui/sidebar-button-items.png);
+    background: url(../../img/ui/sidebar-button-items.png);
 }
 #sidebar-tabs > [data-tab~="journal"] {
-    background: url(../img/ui/sidebar-button-journal.png);
+    background: url(../../img/ui/sidebar-button-journal.png);
 }
 #sidebar-tabs > [data-tab~="tables"] {
-    background: url(../img/ui/sidebar-button-tables.png);
+    background: url(../../img/ui/sidebar-button-tables.png);
 }
 #sidebar-tabs > [data-tab~="playlists"] {
-    background: url(../img/ui/sidebar-button-playlists.png);
+    background: url(../../img/ui/sidebar-button-playlists.png);
 }
 #sidebar-tabs > [data-tab~="compendium"] {
-    background: url(../img/ui/sidebar-button-compendium.png);
+    background: url(../../img/ui/sidebar-button-compendium.png);
 }
 #sidebar-tabs > [data-tab~="settings"] {
-    background: url(../img/ui/sidebar-button-settings.png);
+    background: url(../../img/ui/sidebar-button-settings.png);
 }
 
 /* ==================== (C) SIDEBAR (CHAT) ==================== */
@@ -480,11 +480,11 @@
 #chat-log .message {
     padding: 4px 1px 4px 1px;
     margin: 25px 16px 25px 21px;
-    border-image: url(../img/ui/frames/chat-message-border.png) 21 repeat;
+    border-image: url(../../img/ui/frames/chat-message-border.png) 21 repeat;
     border-image-width: 10px;
     border-image-outset: 8px;
     border-radius: 0px;
-    background: url(../img/ui/frames/parchment-texture.png) repeat;
+    background: url(../../img/ui/frames/parchment-texture.png) repeat;
     box-shadow: none;
     color: #000000;
     font-family: CaslonPro;
@@ -559,7 +559,7 @@
     height: 30px;
     position: relative;
     top: 7px;
-    background: url(../img/ui/buttons/chat-button-d20.png);
+    background: url(../../img/ui/buttons/chat-button-d20.png);
 }
 
 #sidebar .sidebar-tab #chat-controls div.roll-type-select select {
@@ -571,12 +571,12 @@
     height: 24px;
     top: 7px;
     padding-top: 3px;
-    background: url(../img/ui/frames/parchment-texture.png) repeat;
+    background: url(../../img/ui/frames/parchment-texture.png) repeat;
     background-position-x: 0%;
     background-position-y: 0%;
     background-position: initial;
     box-shadow: inset 0 0 10px #000000;
-    border-image: url(../img/ui/chat-controls-border.png) 4 repeat;
+    border-image: url(../../img/ui/chat-controls-border.png) 4 repeat;
     border-image-width: 4px;
     border-image-outset: 3px 2px 2px 2px;
     color: #520000;
@@ -589,12 +589,12 @@
     color: #f0f8ff00;
 }
 #sidebar .sidebar-tab #chat-controls .control-buttons .export-log i {
-    background: url(../img/ui/buttons/chat-button-export.png);
+    background: url(../../img/ui/buttons/chat-button-export.png);
     position: relative;
     right: 20px;
 }
 #sidebar .sidebar-tab #chat-controls .control-buttons .delete i {
-    background: url(../img/ui/buttons/chat-button-clear.png);
+    background: url(../../img/ui/buttons/chat-button-clear.png);
     position: relative;
     right: 10px;
 }
@@ -609,9 +609,9 @@
     right: 0px;
     display: flex;
     margin: 0px;
-    background: url(../img/ui/frames/parchment-texture.png) repeat;
+    background: url(../../img/ui/frames/parchment-texture.png) repeat;
     border: 1px solid black;
-    border-image: url(../img/ui/chat-form-border.png) 10 repeat;
+    border-image: url(../../img/ui/chat-form-border.png) 10 repeat;
     border-image-width: 10px;
     border-image-outset: 0px 0px;
     box-shadow: inset 0 0 40px #000000;
@@ -691,7 +691,7 @@
     text-shadow: none;
     position: relative;
     top: 0px;
-    background: url(../img/ui/buttons/combat-button-previous-encounter.png);
+    background: url(../../img/ui/buttons/combat-button-previous-encounter.png);
 }
 #combat-popout #combat-round a[title="Activate Next Encounter"] , #sidebar #combat #combat-round a[title="Activate Next Encounter"] {
     padding: 0px;
@@ -702,7 +702,7 @@
     text-shadow: none;
     position: relative;
     top: 0px;
-    background: url(../img/ui/buttons/combat-button-next-encounter.png);
+    background: url(../../img/ui/buttons/combat-button-next-encounter.png);
 }
 #combat-popout #combat-round .combat-control , #sidebar #combat #combat-round .combat-control {
     padding: 0px;
@@ -713,7 +713,7 @@
     text-shadow: none;
     position: relative;
     top: 0px;
-    background: url(../img/ui/buttons/combat-button-reset-initiative.png);
+    background: url(../../img/ui/buttons/combat-button-reset-initiative.png);
 }
 #combat-popout #combat-round .combat-settings , #sidebar #combat #combat-round .combat-settings {
     padding: 0px;
@@ -724,7 +724,7 @@
     text-shadow: none;
     position: relative;
     top: 0px;
-    background: url(../img/ui/buttons/combat-button-tracker-settings.png);
+    background: url(../../img/ui/buttons/combat-button-tracker-settings.png);
 }
 #combat-popout #combat-round a[title="Create Encounter"] , #sidebar #combat #combat-round a[title="Create Encounter"] {
     padding: 0px;
@@ -735,7 +735,7 @@
     text-shadow: none;
     position: relative;
     top: 2px;
-    background: url(../img/ui/buttons/combat-button-create-encounter.png);
+    background: url(../../img/ui/buttons/combat-button-create-encounter.png);
 }
 #combat-popout #combat-round a[title="Roll NPCs"] , #sidebar #combat #combat-round a[title="Roll NPCs"] {
     padding: 0px;
@@ -746,7 +746,7 @@
     text-shadow: none;
     position: relative;
     top: 2px;
-    background: url(../img/ui/buttons/combat-button-roll-npcs.png);
+    background: url(../../img/ui/buttons/combat-button-roll-npcs.png);
 }
 #combat-popout #combat-round a[title="Roll All"] , #sidebar #combat #combat-round a[title="Roll All"] {
     padding: 0px;
@@ -757,7 +757,7 @@
     text-shadow: none;
     position: relative;
     top: 2px;
-    background: url(../img/ui/buttons/combat-button-roll-all.png);
+    background: url(../../img/ui/buttons/combat-button-roll-all.png);
 }
 #combat-popout #combat-round a[title="Delete Encounter"] , #sidebar #combat #combat-round a[title="Delete Encounter"] {
     padding: 0px;
@@ -768,7 +768,7 @@
     text-shadow: none;
     position: relative;
     top: 2px;
-    background: url(../img/ui/buttons/combat-button-delete-encounter.png);
+    background: url(../../img/ui/buttons/combat-button-delete-encounter.png);
 }
 
 #combat-popout #combat-tracker , #sidebar #combat #combat-tracker {
@@ -791,13 +791,13 @@
     display: block;
     width: 40px;
     height: 48px;
-    background: url(../img/ui/buttons/d10.png) no-repeat 50% 50%;
+    background: url(../../img/ui/buttons/d10.png) no-repeat 50% 50%;
     background-size: 32px;
     margin: 0 0.5em;
     opacity: 1.0;
 }
 #combat-popout li.combatant .roll:hover , #sidebar #combat li.combatant .roll:hover {
-    background-image: url(../img/ui/buttons/d10-highlight.png);
+    background-image: url(../../img/ui/buttons/d10-highlight.png);
 }
 #combat-popout li.combatant .token-initiative , #sidebar #combat li.combatant .token-initiative {
     flex: 0 0 48px;
@@ -823,11 +823,11 @@
     padding: 2px 0px 0px 0px;
     height: 34px;
     border: 1px solid black;
-    border-image: url(../img/ui/footer-button.png) 10 repeat;
+    border-image: url(../../img/ui/footer-button.png) 10 repeat;
     border-image-width: 4px;
     border-image-outset: 0px;
     box-shadow: 4px 4px 1px #00000085;
-    background: url(../img/ui/sidebar_button-background_red.png) repeat;
+    background: url(../../img/ui/sidebar_button-background_red.png) repeat;
     background-origin: padding-box;
     color: #dadada;
     font-family: CaslonAntique;
@@ -1166,11 +1166,11 @@
     padding: 3px 0px;
     width: -webkit-fill-available;
     border: 1px solid black;
-    border-image: url(../img/ui/footer-button.png) 10 repeat;
+    border-image: url(../../img/ui/footer-button.png) 10 repeat;
     border-image-width: 4px;
     border-image-outset: 0px;
     box-shadow: 4px 4px 1px #00000085;
-    background: url(../img/ui/sidebar_button-background_red.png) repeat;
+    background: url(../../img/ui/sidebar_button-background_red.png) repeat;
     background-origin: padding-box;
     font-family: var(--major-button-font-family);
     font-size: var(--major-button-font-size);

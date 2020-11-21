@@ -26,11 +26,11 @@
   border: none;
   border-radius: 4px;
   justify-content: center;
-  background: url(../img/ui/frames/hotkeybox-macro-list.png);
+  background: url(../../img/ui/frames/hotkeybox-macro-list.png);
   box-shadow: 2px 2px 5px #000000;
 }
 #hotbar #action-bar .macro {
-  border-image: url(../img/ui/frames/hotkeybox.png) 21 repeat;
+  border-image: url(../../img/ui/frames/hotkeybox.png) 21 repeat;
   border-image-slice: 6 6 6 6 fill;
   border-image-width: 6px 6px 6px 6px;
   border-image-outset: 0px 0px 0px 0px;
