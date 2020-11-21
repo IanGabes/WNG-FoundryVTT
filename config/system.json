@@ -14,9 +14,9 @@
       "path": "lang/en.json"
     }
   ],
-  "initiative": "@characteristics.i.value + @characteristics.ag.value/100",
-  "gridDistance": 2,
-  "gridUnits": "yd",
+  "initiative": "@attributes.i.total",
+  "gridDistance": 1,
+  "gridUnits": "m",
   "primaryTokenAttribute": "",
   "secondaryTokenAttribute": "",
   "minimumCoreVersion" : "0.5.2",
