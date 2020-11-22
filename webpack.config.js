@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 module.exports = {
-  watch: true,
+
   entry: [
     './src/wng.js',
     './assets/sass/wng.scss'],

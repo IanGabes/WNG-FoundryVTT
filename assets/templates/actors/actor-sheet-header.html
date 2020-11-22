@@ -1,0 +1,105 @@
+<header>
+    <div class="columns is-vcentered is-centered">
+        <div class="column is-four-fifths">
+            <!-- Character Name -->
+            <div class="level">
+                <label class="level-item level-left sheet-label">
+                    <span>{{localize "Character Name"}}</span>
+                    <input name="character-name"
+                           type="text"
+                           value="{{actor.name}}"
+                           placeholder="{{localize 'Character Name'}}" />
+                </label>
+            </div>
+            <!-- Player Name -->
+            <div class="level">
+                <label class="level-item level-left sheet-label">
+                    <span class="level-item level-left">{{localize "Player Name"}}</span>
+                    <input name="player-name"
+                           type="text"
+                           value="{{actor.name}}"
+                           placeholder="{{localize 'Player Name'}}" />
+                </label>
+            </div>
+            <!-- Tier, Species, Faction -->
+            <div class="columns">
+                <div class="column is-one-fifth">
+                    <label class="level level-left numeric-input">
+                        <span>{{localize "Tier"}}</span>
+                        <input name="tier"
+                               type="number"
+                               value=0
+                               placeholder="0" />
+                    </label>
+                </div>
+                <div class="column is-two-fifth">
+                    <label class="level">
+                        <span>{{localize "Species"}}</span>
+                        <input name="species"
+                               type="text"
+                               value="{{actor.name}}"
+                               placeholder="{{localize 'Tier'}}" />
+                    </label>
+                </div>
+                <div class="column is-two-fifth">
+                <label class="level">
+                    <span>{{localize "Faction"}}</span>
+                    <input name="faction"
+                           type="text"
+                           value="{{actor.name}}"
+                           placeholder="{{localize 'Tier'}}" />
+                </label>
+                </div>
+            </div>
+        </div>
+        <div class="column is-one-fifth">
+            <div class="is-flex is-justify-content-center">
+                <img class="charimg profile"
+                     alt="{{localize 'Player Profile Image'}}"
+                     src="{{actor.img}}"
+                     title="{{actor.name}}"
+                     height="95" width="95"
+                     data-edit="img">
+            </div>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column is-one-fifth">
+            <label class="level numeric-input level-left">
+                <span>{{localize "Rank"}}</span>
+                <input name="rank"
+                       type="Number"
+                       value=0
+                       placeholder=0 />
+            </label>
+        </div>
+        <div class="column is-two-fifths">
+            <label class="level">
+                <span>{{localize "Archetype"}}</span>
+                <input name="archetype"
+                       type="text"
+                       value="{{actor.name}}"
+                       placeholder="{{localize 'Archetype'}}" />
+            </label>
+        </div>
+        <div class="column is-two-fifths">
+            <label class="level">
+                <span>{{localize "Background"}}</span>
+                <input name="background"
+                       type="text"
+                       value="{{actor.name}}"
+                       placeholder="{{localize 'Background'}}" />
+            </label>
+        </div>
+    </div>
+    <div>
+        <label class="level level">
+            <span>{{localize "Keywords"}}</span>
+            <input name="keywords"
+                   type="text"
+                   value="CATACHAN"
+                   placeholder="{{localize 'CATACHAN'}}" />
+
+        </label>
+    </div>
+</header>
