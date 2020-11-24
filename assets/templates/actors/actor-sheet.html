@@ -46,24 +46,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Rating</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bonus</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
+                                    {{#each data.attributes}}
+                                        <tr>
+                                            <td>{{this.label}}</td>
+                                            <td>{{this.rating}}</td>
+                                            <td>{{this.bonus}}</td>
+                                            <td>{{this.total}}</td>
+                                        </tr>
+                                    {{/each}}
                                 </tbody>
                             </table>
                         </div>

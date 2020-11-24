@@ -1,321 +1,326 @@
 {
-  "Actor" : {
-    "types" : ["character", "npc", "vehicle"],
-    "templates" : {
+  "Actor": {
+    "types": [
+      "character",
+      "npc",
+      "vehicle"
+    ],
+    "templates": {
+      "attributes": {
         "attributes" : {
-          "strength" : {
-            "type" : "number",
-            "label" : "Strength",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
+          "strength": {
+            "type": "number",
+            "label": "Strength",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
           },
-          "toughness" : {
-            "type" : "number",
+          "toughness": {
+            "type": "number",
             "label": "Toughness",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
           },
-          "agility" : {
-            "type" : "number",
-            "label" : "Agility",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
+          "agility": {
+            "type": "number",
+            "label": "Agility",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
           },
-          "initiative" : {
-            "type" : "number",
-            "label" : "Initiative",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
+          "initiative": {
+            "type": "number",
+            "label": "Initiative",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
           },
-          "willpower" : {
-            "type" : "number",
-            "label" : "Willpower",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
+          "willpower": {
+            "type": "number",
+            "label": "Willpower",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
           },
-          "intellect" : {
-            "type" : "number",
-            "label" : "Intellect",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
+          "intellect": {
+            "type": "number",
+            "label": "Intellect",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
           },
-          "fellowship" : {
-            "type" : "Number",
-            "label" : "Fellowship",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          }
-        }
-      },  
-      "skills" :{
-        "skills" : {
-          "ath" : {
-            "type" : "Number",
-            "label" : "SKILL.Ath",
-            "attribute" : "s",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "aw" : {
-            "type" : "Number",
-            "label" : "SKILL.Aw",
-            "attribute" : "int",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "bs" : {
-            "type" : "Number",
-            "label" : "SKILL.BS",
-            "attribute" : "a",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "cun" : {
-            "type" : "Number",
-            "label" : "SKILL.Cun",
-            "attribute" : "fel",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "dec" : {
-            "type" : "Number",
-            "label" : "SKILL.Dec",
-            "attribute" : "fel",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "ins" : {
-            "type" : "Number",
-            "label" : "SKILL.Ins",
-            "attribute" : "fel",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "int" : {
-            "type" : "Number",
-            "label" : "SKILL.Int",
-            "attribute" : "will",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "inv" : {
-            "type" : "Number",
-            "label" : "SKILL.Inv",
-            "attribute" : "int",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "lead" : {
-            "type" : "Number",
-            "label" : "SKILL.Lead",
-            "attribute" : "will",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "med" : {
-            "type" : "Number",
-            "label" : "SKILL.Med",
-            "attribute" : "int",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "per" : {
-            "type" : "Number",
-            "label" : "SKILL.Per",
-            "attribute" : "fel",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "pil" : {
-            "type" : "Number",
-            "label" : "SKILL.Pil",
-            "attribute" : "a",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "psy" : {
-            "type" : "Number",
-            "label" : "SKILL.Psy",
-            "attribute" : "will",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "sch" : {
-            "type" : "Number",
-            "label" : "SKILL.Sch",
-            "attribute" : "int",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "sth" : {
-            "type" : "Number",
-            "label" : "SKILL.Sth",
-            "attribute" : "a",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "surv" : {
-            "type" : "Number",
-            "label" : "SKILL.Surv",
-            "attribute" : "will",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "tech" : {
-            "type" : "Number",
-            "label" : "SKILL.Tech",
-            "attribute" : "int",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
-          },
-          "ws" : {
-            "type" : "Number",
-            "label" : "SKILL.WS",
-            "attribute" : "i",
-            "rating" : 0,
-            "bonus" : 0,
-            "total" : 0
+          "fellowship": {
+            "type": "Number",
+            "label": "Fellowship",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
           }
         }
       },
-      "combat" : {
-        "combat" : {
-          "wounds" : {
-            "value" : 0,
-            "bonus" : 0,
-            "max" : 0
+      "skills": {
+        "skills": {
+          "ath": {
+            "type": "Number",
+            "label": "SKILL.Ath",
+            "attribute": "s",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
           },
-          "shock" : {
-            "value" : 0,
-            "bonus" : 0,
-            "max" : 0
+          "aw": {
+            "type": "Number",
+            "label": "SKILL.Aw",
+            "attribute": "int",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
           },
-          "defence" : {
-            "value" : 0,
-            "bonus" : 0,
-            "total" : 0
+          "bs": {
+            "type": "Number",
+            "label": "SKILL.BS",
+            "attribute": "a",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
           },
-          "resilience" : {
-            "value" : 0,
-            "bonus" : 0,
-            "armour" : 0,
-            "total" : 0
+          "cun": {
+            "type": "Number",
+            "label": "SKILL.Cun",
+            "attribute": "fel",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
           },
-          "determination" : {
-            "value" : 0,
-            "bonus" : 0,
-            "total" : 0
+          "dec": {
+            "type": "Number",
+            "label": "SKILL.Dec",
+            "attribute": "fel",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
           },
-          "stealthscore" : {
-            "value" : 0,
-            "bonus" : 0,
-            "total" : 0
+          "ins": {
+            "type": "Number",
+            "label": "SKILL.Ins",
+            "attribute": "fel",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
+          },
+          "int": {
+            "type": "Number",
+            "label": "SKILL.Int",
+            "attribute": "will",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
+          },
+          "inv": {
+            "type": "Number",
+            "label": "SKILL.Inv",
+            "attribute": "int",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
+          },
+          "lead": {
+            "type": "Number",
+            "label": "SKILL.Lead",
+            "attribute": "will",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
+          },
+          "med": {
+            "type": "Number",
+            "label": "SKILL.Med",
+            "attribute": "int",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
+          },
+          "per": {
+            "type": "Number",
+            "label": "SKILL.Per",
+            "attribute": "fel",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
+          },
+          "pil": {
+            "type": "Number",
+            "label": "SKILL.Pil",
+            "attribute": "a",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
+          },
+          "psy": {
+            "type": "Number",
+            "label": "SKILL.Psy",
+            "attribute": "will",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
+          },
+          "sch": {
+            "type": "Number",
+            "label": "SKILL.Sch",
+            "attribute": "int",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
+          },
+          "sth": {
+            "type": "Number",
+            "label": "SKILL.Sth",
+            "attribute": "a",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
+          },
+          "surv": {
+            "type": "Number",
+            "label": "SKILL.Surv",
+            "attribute": "will",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
+          },
+          "tech": {
+            "type": "Number",
+            "label": "SKILL.Tech",
+            "attribute": "int",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
+          },
+          "ws": {
+            "type": "Number",
+            "label": "SKILL.WS",
+            "attribute": "i",
+            "rating": 0,
+            "bonus": 0,
+            "total": 0
           }
         }
       },
-      "mental" : {
-        "mental" : {
-          "passaware" : {
-            "label" : "Passive Awareness",
-            "value" : 0,
-            "bonus" : 0,
-            "total" : 0
+      "combat": {
+        "combat": {
+          "wounds": {
+            "value": 0,
+            "bonus": 0,
+            "max": 0
           },
-          "corruption" : {
-            "label" : "Corruption",
-            "current" : 0,
-            "level" : 0
+          "shock": {
+            "value": 0,
+            "bonus": 0,
+            "max": 0
           },
-          "conviction" : {
-            "label" : "Conviction",
-            "value" : 0,
-            "bonus" : 0,
-            "total" : 0
+          "defence": {
+            "value": 0,
+            "bonus": 0,
+            "total": 0
           },
-          "resolve" : {
-            "label" : "Resolve",
-            "value" : 0,
-            "bonus" : 0,
-            "total" : 0
+          "resilience": {
+            "value": 0,
+            "bonus": 0,
+            "armour": 0,
+            "total": 0
+          },
+          "determination": {
+            "value": 0,
+            "bonus": 0,
+            "total": 0
+          },
+          "stealthscore": {
+            "value": 0,
+            "bonus": 0,
+            "total": 0
           }
         }
       },
-      "social" : {
-        "social" : {
-          "influence" : {
-            "label" : "Influence",
-            "value" : 0,
-            "bonus" : 0,
-            "total" : 0
+      "mental": {
+        "mental": {
+          "passaware": {
+            "label": "Passive Awareness",
+            "value": 0,
+            "bonus": 0,
+            "total": 0
           },
-          "wealth" : {
-            "label" : "Wealth",
-            "value" : 0
+          "corruption": {
+            "label": "Corruption",
+            "current": 0,
+            "level": 0
+          },
+          "conviction": {
+            "label": "Conviction",
+            "value": 0,
+            "bonus": 0,
+            "total": 0
+          },
+          "resolve": {
+            "label": "Resolve",
+            "value": 0,
+            "bonus": 0,
+            "total": 0
           }
         }
       },
-      "objective" : {
-        "objective" : {
-          "objective" : [],
-          "focus" : "",
-          "complete" : ""
+      "social": {
+        "social": {
+          "influence": {
+            "label": "Influence",
+            "value": 0,
+            "bonus": 0,
+            "total": 0
+          },
+          "wealth": {
+            "label": "Wealth",
+            "value": 0
+          }
         }
       },
-      "details" : {
-        "details" :{
-          "gender" : {
-            "label" : "Gender",
-            "value" : ""
+      "objective": {
+        "objective": {
+          "objective": [],
+          "focus": "",
+          "complete": ""
+        }
+      },
+      "details": {
+        "details": {
+          "gender": {
+            "label": "Gender",
+            "value": ""
           },
-          "species" : {
-            "label" : "Species",
-            "value" : ""
+          "species": {
+            "label": "Species",
+            "value": ""
           },
-          "faction" : {
-            "label" : "Faction",
-            "value" : ""
+          "faction": {
+            "label": "Faction",
+            "value": ""
           },
-          "archetype" : {
-            "label" : "Archetype",
-            "value" : ""
+          "archetype": {
+            "label": "Archetype",
+            "value": ""
           },
-          "background" : {
-            "label" : "Background",
-            "value" : ""
+          "background": {
+            "label": "Background",
+            "value": ""
           },
-          "size" : {
-            "label" : "Size",
-            "value" : ""
+          "size": {
+            "label": "Size",
+            "value": ""
           },
-          "speed" : {
-            "label" : "Speed",
-            "value" : 0,
-            "bonus" : 0,
-            "total" : 0
+          "speed": {
+            "label": "Speed",
+            "value": 0,
+            "bonus": 0,
+            "total": 0
           },
           "biography": {
             "type": "String",
@@ -327,56 +332,78 @@
             "label": "GM Notes",
             "value": ""
           },
-          "faith" : {
-            "label" : "Faith",
-            "max" : 0,
-            "current" : 0
+          "faith": {
+            "label": "Faith",
+            "max": 0,
+            "current": 0
           },
-          "xp" : {
-            "label" : "XP",
-            "current" : 0,
-            "total" : 0
+          "xp": {
+            "label": "XP",
+            "current": 0,
+            "total": 0
           }
         }
       },
-      "keywords" : {"keywords" : []},
-      "tier" : {"tier" : 1},
-      "rank" : {"rank" : 1},
-      "framework" : {
-        "goal" : "",
-        "bonus" : ""
+      "keywords": {
+        "keywords": []
+      },
+      "tier": {
+        "tier": 1
+      },
+      "rank": {
+        "rank": 1
+      },
+      "framework": {
+        "goal": "",
+        "bonus": ""
       }
     },
-    "character" : {
-      "templates" : ["attributes", "skills", "combat", "mental", "social", "objective", "details", "keywords", "tier", "rank"],
-      "wrath" : 0
-      },
-    "npc" : {
-      "templates" : ["attributes", "skills", "combat", "mental", "keywords", "tier"],
-      "threat" : "",
-      "metacurrency" : 0,
-      "bonuses" : "",
-      "abilities" : {
-        "battlecry" :"",
-        "action" : "",
-        "ruin" : "",
-        "wrathcritical" : "",
-        "complication" : "",
-        "reaction" : "",
-        "determination" : "",
-        "annihilation" : ""
-      },
-      "moboptions" : "",
-      "mobabilities" : ""
+    "character": {
+      "templates": [
+        "attributes"
+      ],
+      "wrath": 0
     },
-    "vehicle" : {
-      "templates" : ["attributes", "skills", "combat", "mental", "keywords", "tier"],
-      "crew" : "",
-      "traits" : ""
+    "npc": {
+      "templates": [
+        "attributes",
+        "skills",
+        "combat",
+        "mental",
+        "keywords",
+        "tier"
+      ],
+      "threat": "",
+      "metacurrency": 0,
+      "bonuses": "",
+      "abilities": {
+        "battlecry": "",
+        "action": "",
+        "ruin": "",
+        "wrathcritical": "",
+        "complication": "",
+        "reaction": "",
+        "determination": "",
+        "annihilation": ""
+      },
+      "moboptions": "",
+      "mobabilities": ""
+    },
+    "vehicle": {
+      "templates": [
+        "attributes",
+        "skills",
+        "combat",
+        "mental",
+        "keywords",
+        "tier"
+      ],
+      "crew": "",
+      "traits": ""
     }
   },
-  "Item" : {
-    "types" : [
+  "Item": {
+    "types": [
       "ammunition",
       "armour",
       "archetype",
@@ -390,88 +417,160 @@
       "upgrade",
       "weapon"
     ],
-    "templates" : {
-      "keywords" : {"keywords" : []} ,
-      "value" : {"value" : 0},
-      "rarity" : {"rarity" : ""},
-      "traits" : {"traits" : []},
-      "effect" : {"effect" : ""},
-      "group" : {"group" : ""},
-      "quantity" : {"quantity" : 0},
-      "XP" : {"XP" : 0}
-    },
-    "data" : {"description" : ""},
-    "ammunition" : {
-      "templates" : ["keywords", "value", "rarity", "effect", "group", "quantity"],
-      "type" : ""
-    },
-    "armour" : {
-      "templates" : ["keywords", "value", "rarity", "traits", "group"],
-      "type" : "",
-      "AR" : 0
-    },
-    "archetype" : {
-      "templates" : ["keywords", "XP"],
-      "tier" : 1,
-      "attributes" : [],
-      "skills" : [],
-      "ability" : "",
-      "wargear" : "",
-      "influence" : 0
-    },
-    "augmetics" : {
-      "templates" : ["keywords", "value", "rarity", "effect"],
-      "type" : ""
-    },
-    "equipment" : {
-      "templates" : ["keywords", "value", "rarity", "effect", "group", "quantity"]
-    },
-    "injury" : {
-      "templates" : ["effect"],
-      "severity" : ""
-    },
-    "mutation" : {
-      "templates" : ["effect"]
-    },
-    "power" : {
-      "templates" : [ "keywords", "effect", "group", "XP"],
-      "type" : "",
-      "requirements" : "",
-      "DN" : 0,
-      "activation" : "",
-      "duration" : "",
-      "range" : "",
-      "multi": false,
-      "potency" : ""
-    },
-    "species" : {
-      "templates" : ["keywords", "XP"],
-      "attributes" : [],
-      "skills" : [],
-      "ability" : "",
-      "speed" : 0,
-      "size" : ""
-    },
-    "talent" : {
-      "templates" : ["effect", "XP"],
-      "requirements" : ""
-    },
-    "upgrade" : {
-      "templates" : ["keywords", "value", "rarity", "effect"]
-    },
-    "weapon" : {
-      "templates" : ["keywords", "value", "rarity", "traits", "group"],
-      "type" : "",
-      "damage" : 0,
-      "ED" : 0,
-      "AP" : 0,
-      "range" : {
-        "melee" : 0,
-        "short" : 0,
-        "medium" : 0,
-        "long" : 0
+    "templates": {
+      "keywords": {
+        "keywords": []
       },
-      "salvo" : 0
+      "value": {
+        "value": 0
+      },
+      "rarity": {
+        "rarity": ""
+      },
+      "traits": {
+        "traits": []
+      },
+      "effect": {
+        "effect": ""
+      },
+      "group": {
+        "group": ""
+      },
+      "quantity": {
+        "quantity": 0
+      },
+      "XP": {
+        "XP": 0
+      }
+    },
+    "data": {
+      "description": ""
+    },
+    "ammunition": {
+      "templates": [
+        "keywords",
+        "value",
+        "rarity",
+        "effect",
+        "group",
+        "quantity"
+      ],
+      "type": ""
+    },
+    "armour": {
+      "templates": [
+        "keywords",
+        "value",
+        "rarity",
+        "traits",
+        "group"
+      ],
+      "type": "",
+      "AR": 0
+    },
+    "archetype": {
+      "templates": [
+        "keywords",
+        "XP"
+      ],
+      "tier": 1,
+      "attributes": [],
+      "skills": [],
+      "ability": "",
+      "wargear": "",
+      "influence": 0
+    },
+    "augmetics": {
+      "templates": [
+        "keywords",
+        "value",
+        "rarity",
+        "effect"
+      ],
+      "type": ""
+    },
+    "equipment": {
+      "templates": [
+        "keywords",
+        "value",
+        "rarity",
+        "effect",
+        "group",
+        "quantity"
+      ]
+    },
+    "injury": {
+      "templates": [
+        "effect"
+      ],
+      "severity": ""
+    },
+    "mutation": {
+      "templates": [
+        "effect"
+      ]
+    },
+    "power": {
+      "templates": [
+        "keywords",
+        "effect",
+        "group",
+        "XP"
+      ],
+      "type": "",
+      "requirements": "",
+      "DN": 0,
+      "activation": "",
+      "duration": "",
+      "range": "",
+      "multi": false,
+      "potency": ""
+    },
+    "species": {
+      "templates": [
+        "keywords",
+        "XP"
+      ],
+      "attributes": [],
+      "skills": [],
+      "ability": "",
+      "speed": 0,
+      "size": ""
+    },
+    "talent": {
+      "templates": [
+        "effect",
+        "XP"
+      ],
+      "requirements": ""
+    },
+    "upgrade": {
+      "templates": [
+        "keywords",
+        "value",
+        "rarity",
+        "effect"
+      ]
+    },
+    "weapon": {
+      "templates": [
+        "keywords",
+        "value",
+        "rarity",
+        "traits",
+        "group"
+      ],
+      "type": "",
+      "damage": 0,
+      "ED": 0,
+      "AP": 0,
+      "range": {
+        "melee": 0,
+        "short": 0,
+        "medium": 0,
+        "long": 0
+      },
+      "salvo": 0
     }
   }
 }

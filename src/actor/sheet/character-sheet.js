@@ -39,7 +39,6 @@ export class ActorSheetWNGCharacter extends ActorSheetWNG {
 
         $(".sheet.wng.actor.character-sheet .tabs li").each((i, o) =>
         {
-            console.log($(o));
             if(!$(o).hasClass('is-active')){
                 $("section#"+$(o).attr("id")).hide();
             }
@@ -51,7 +50,6 @@ export class ActorSheetWNGCharacter extends ActorSheetWNG {
      * @param {Event} event
      */
     swapTabs(event){
-
         if ($(event.currentTarget).hasClass("is-active")){
             return;
         }

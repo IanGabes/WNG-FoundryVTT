@@ -5,15 +5,8 @@ import {WNG} from './config-wng';
 import {ActorSheetWNGCharacter} from "./actor/sheet/character-sheet";
 import initializeWNG from "./hooks/init";
 
-
-// Treat the custom default token as a true default token
-// If you change the actor image from the default token, it will automatically set the same image to be the token image
-Hooks.on("preUpdateActor", (data, updatedData) =>{
-    if (data.data.token.img === "systems/wng/tokens/unknown.png" && updatedData.img)
-    {
-        updatedData["token.img"] = updatedData.img;
-        data.data.token.img = updatedData.img;
-    }
+Handlebars.registerHelper('json', function(context) {
+    return JSON.stringify(context);
 });
 
 Hooks.on("popout:renderSheet", (sheet) => {
@@ -44,6 +37,7 @@ Hooks.once('init', async function() {
     // Item classes to instead use our extended versions.
     CONFIG.Actor.entityClass = ActorWNG;
     CONFIG.Item.entityClass = ItemWNG;
+    //CONFIG.debug.hooks = true
 
     Actors.unregisterSheet("core", ActorSheet);
     Actors.registerSheet("wng", ActorSheetWNGCharacter,
@@ -51,7 +45,6 @@ Hooks.once('init', async function() {
         types: ["character"],
         makeDefault: true
     });
-
 
     //Items.unregisterSheet("core", ItemSheet);
     //Items.registerSheet("boilerplate", BoilerplateItemSheet, { makeDefault: true });
