@@ -7,7 +7,7 @@
     ],
     "templates": {
       "attributes": {
-        "attributes" : {
+        "attributes": {
           "strength": {
             "type": "number",
             "label": "Strength",
@@ -61,146 +61,146 @@
       },
       "skills": {
         "skills": {
-          "ath": {
+          "athletics": {
             "type": "Number",
-            "label": "SKILL.Ath",
-            "attribute": "s",
+            "label": "Athletics",
+            "attribute": "strength",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "aw": {
+          "awareness": {
             "type": "Number",
-            "label": "SKILL.Aw",
-            "attribute": "int",
+            "label": "Awareness",
+            "attribute": "intellect",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "bs": {
+          "ballisticskill": {
             "type": "Number",
-            "label": "SKILL.BS",
-            "attribute": "a",
+            "label": "Ballistic Skill",
+            "attribute": "agility",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "cun": {
+          "cunning": {
             "type": "Number",
-            "label": "SKILL.Cun",
-            "attribute": "fel",
+            "label": "Cunning",
+            "attribute": "fellowship",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "dec": {
+          "deception": {
             "type": "Number",
-            "label": "SKILL.Dec",
-            "attribute": "fel",
+            "label": "Deception",
+            "attribute": "fellowship",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "ins": {
+          "insight": {
             "type": "Number",
-            "label": "SKILL.Ins",
-            "attribute": "fel",
+            "label": "Insight",
+            "attribute": "fellowship",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "int": {
+          "intimidation": {
             "type": "Number",
-            "label": "SKILL.Int",
-            "attribute": "will",
+            "label": "Intimidation",
+            "attribute": "willpower",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "inv": {
+          "investigation": {
             "type": "Number",
-            "label": "SKILL.Inv",
-            "attribute": "int",
+            "label": "Investigation",
+            "attribute": "intellect",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "lead": {
+          "leadership": {
             "type": "Number",
-            "label": "SKILL.Lead",
-            "attribute": "will",
+            "label": "Leadership",
+            "attribute": "willpower",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "med": {
+          "medicae": {
             "type": "Number",
-            "label": "SKILL.Med",
-            "attribute": "int",
+            "label": "Medicae",
+            "attribute": "intellect",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "per": {
+          "persuasion": {
             "type": "Number",
-            "label": "SKILL.Per",
-            "attribute": "fel",
+            "label": "Persuasion",
+            "attribute": "fellowship",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "pil": {
+          "pilot": {
             "type": "Number",
-            "label": "SKILL.Pil",
-            "attribute": "a",
+            "label": "Pilot",
+            "attribute": "agility",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "psy": {
+          "psychic Mastery": {
             "type": "Number",
-            "label": "SKILL.Psy",
-            "attribute": "will",
+            "label": "Psychic Mastery",
+            "attribute": "willpower",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "sch": {
+          "scholar": {
             "type": "Number",
-            "label": "SKILL.Sch",
-            "attribute": "int",
+            "label": "Scholar",
+            "attribute": "intellect",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "sth": {
+          "stealth": {
             "type": "Number",
-            "label": "SKILL.Sth",
-            "attribute": "a",
+            "label": "Stealth",
+            "attribute": "agility",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "surv": {
+          "survival": {
             "type": "Number",
-            "label": "SKILL.Surv",
-            "attribute": "will",
+            "label": "Survival",
+            "attribute": "willpower",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
           "tech": {
             "type": "Number",
-            "label": "SKILL.Tech",
-            "attribute": "int",
+            "label": "Tech",
+            "attribute": "intellect",
             "rating": 0,
             "bonus": 0,
             "total": 0
           },
-          "ws": {
+          "weaponskill": {
             "type": "Number",
-            "label": "SKILL.WS",
-            "attribute": "i",
+            "label": "Weapon Skill",
+            "attribute": "intellect",
             "rating": 0,
             "bonus": 0,
             "total": 0
@@ -244,7 +244,7 @@
       },
       "mental": {
         "mental": {
-          "passaware": {
+          "conviction": {
             "label": "Passive Awareness",
             "value": 0,
             "bonus": 0,
@@ -314,7 +314,7 @@
           },
           "size": {
             "label": "Size",
-            "value": ""
+            "value": "Normal"
           },
           "speed": {
             "label": "Speed",
@@ -360,9 +360,20 @@
     },
     "character": {
       "templates": [
-        "attributes"
+        "attributes",
+        "skills",
+        "combat",
+        "mental",
+        "social",
+        "objective",
+        "details",
+        "keywords",
+        "tier",
+        "rank",
+        "framework"
       ],
-      "wrath": 0
+      "wrath": 0,
+      "faith": 0
     },
     "npc": {
       "templates": [

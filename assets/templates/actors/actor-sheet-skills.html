@@ -1,0 +1,65 @@
+<div>
+    <div class="level is-justify-content-center">
+        <h2 class="level-item">{{localize "Skills"}}</h2>
+    </div>
+    <div class="columns">
+        <div class="column">
+            <table>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>{{localize "Attribute"}}</td>
+                        <td>{{localize "Rating"}}</td>
+                        <td>{{localize "Bonus"}}</td>
+                        <td>{{localize "Total"}}</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each data.skills}}
+                        {{#if (lte @index 8) }}
+                            <tr>
+                                <th>{{this.label}}</th>
+                                {{! This comment will not show up in the output}}
+                                {{#with (lookup @root.data.attributes this.attribute)~}}
+                                    <td>{{this.label}}</td>
+                                {{/with}}
+                                <td>{{this.rating}}</td>
+                                <td>{{this.bonus}}</td>
+                                <td>{{this.total}}</td>
+                            </tr>
+                        {{/if}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="column">
+                <table>
+                    <thead>
+                    <tr>
+                        <td></td>
+                        <td>{{localize "Attribute"}}</td>
+                        <td>{{localize "Rating"}}</td>
+                        <td>{{localize "Bonus"}}</td>
+                        <td>{{localize "Total"}}</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each data.skills}}
+                        {{#if (gt @index 8) }}
+                            <tr>
+                                <th>{{this.label}}</th>
+                                {{! This comment will not show up in the output}}
+                                {{#with (lookup @root.data.attributes this.attribute)~}}
+                                    <td>{{this.label}}</td>
+                                {{/with}}
+                                <td>{{this.rating}}</td>
+                                <td>{{this.bonus}}</td>
+                                <td>{{this.total}}</td>
+                            </tr>
+                        {{/if}}
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</div>

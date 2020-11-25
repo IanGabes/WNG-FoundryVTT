@@ -9,288 +9,46 @@
                         <span>Character</span>
                     </a>
                 </li>
+                <li id="skills">
+                    <a>
+                        <span class="icon is-small"><i class="fas fa-chart-bar" aria-hidden="true"></i></span>
+                        <span>Skills</span>
+                    </a>
+                </li>
                 <li id="wargear">
                     <a>
                         <span class="icon is-small"><i class="fas fa-bomb" aria-hidden="true"></i></span>
                         <span>Wargear</span>
                     </a>
                 </li>
+                <li id="details">
+                    <a>
+                        <span class="icon is-small"><i class="fas fa-info-circle" aria-hidden="true"></i></span>
+                        <span>Details</span>
+                    </a>
+                </li>
+                <li id="progression">
+                    <a>
+                        <span class="icon is-small"><i class="fas fa-chart-line" aria-hidden="true"></i></span>
+                        <span>Progression</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <section id="character-stats">
-            <div class="columns">
-                <div class="column">
-                    <div id="objectives">
-                        <div class="level is-justify-content-center">
-                            <h2 class="level-item">{{localize "Objectives"}}</h2>
-                        </div>
-                        <label>
-                            <span>{{localize "Attributes"}}</span>
-                            <input type="radio"
-                                   name="objective-completed"
-                                   checked="false">
-                        </label>
-                    </div>
-                    <div id="attributes">
-                        <div class="level is-justify-content-center">
-                            <h2 class="level-item">{{localize "Attributes"}}</h2>
-                        </div>
-                        <div class="level">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <td></td>
-                                        <td>{{localize "Rating"}}</td>
-                                        <td>{{localize "Bonus"}}</td>
-                                        <td>{{localize "Total"}}</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {{#each data.attributes}}
-                                        <tr>
-                                            <td>{{this.label}}</td>
-                                            <td>{{this.rating}}</td>
-                                            <td>{{this.bonus}}</td>
-                                            <td>{{this.total}}</td>
-                                        </tr>
-                                    {{/each}}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="level is-justify-content-center">
-                            <h2 class="level-item">{{localize "Skills"}}</h2>
-                        </div>
-                        <div class="columns">
-                            <div class="column">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <td colspan="2"></td>
-                                            <td>{{localize "Rating"}}</td>
-                                            <td>{{localize "Bonus"}}</td>
-                                            <td>{{localize "Total"}}</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>{{localize "Atheltics"}}</td>
-                                            <td>{{localize "S"}}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>{{localize "Awareness"}}</td>
-                                            <td>{{localize "S"}}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>{{localize "Ballistic Skill"}}</td>
-                                            <td>{{localize "S"}}</td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>{{localize "Cunning"}}</td>
-                                            <td>{{localize "S"}}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>{{localize "Deception"}}</td>
-                                            <td>{{localize "S"}}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>{{localize "Insight"}}</td>
-                                            <td>{{localize "S"}}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>{{localize "Intimidation"}}</td>
-                                            <td>{{localize "S"}}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>{{localize "Investigation"}}</td>
-                                            <td>{{localize "S"}}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>{{localize "Leadership"}}</td>
-                                            <td>{{localize "S"}}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="column">
-                                <table>
-                                    <thead>
-                                    <tr>
-                                        <td colspan="2"></td>
-                                        <td>{{localize "Rating"}}</td>
-                                        <td>{{localize "Bonus"}}</td>
-                                        <td>{{localize "Total"}}</td>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>{{localize "Medicae"}}</td>
-                                        <td>{{localize "S"}}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{localize "Persuasion"}}</td>
-                                        <td>{{localize "S"}}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{localize "Pilot"}}</td>
-                                        <td>{{localize "S"}}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{localize "Psychic Mastery"}}</td>
-                                        <td>{{localize "S"}}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{localize "Scholar"}}</td>
-                                        <td>{{localize "S"}}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{localize "Stealth"}}</td>
-                                        <td>{{localize "S"}}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{localize "Survival"}}</td>
-                                        <td>{{localize "S"}}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{localize "Tech"}}</td>
-                                        <td>{{localize "S"}}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{localize "Weapon Skill"}}</td>
-                                        <td>{{localize "S"}}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-two-fifths">
-                    <div class="columns">
-                        <div class="column is-justify-content-center">
-                            <h2 class="level-item">{{localize "Wrath"}}</h2>
-                        </div>
-                        <div class="column is-justify-content-center">
-                            <h2 class="level-item">{{localize "Faith"}}</h2>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="level is-justify-content-center">
-                            <h2 class="level-item">{{localize "Objective"}}</h2>
-                        </div>
-                        <div>
-
-                        </div>
-                        <div class="columns">
-                            <div class="column">
-                                <div>
-                                    <h4>{{localize "Conviction"}}</h4>
-                                </div>
-                                <div>
-                                    <h4>{{localize "Rsesolve"}}</h4>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div>
-                                    <h4>{{localize "Size"}}</h4>
-                                </div>
-                                <div>
-                                    <h4>{{localize "Speed"}}</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="level is-justify-content-center">
-                            <h2 class="level-item">{{localize "Survival"}}</h2>
-                        </div>
-                        <div>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <td>{{localize "Base"}}</td>
-                                        <td colspan="3">{{localize "Resilience"}}</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td rowspan="2"></td>
-                                        <td>{{localize "Base"}}</td>
-                                        <td>{{localize "Armour"}}</td>
-                                        <td>{{localize "Total"}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{> systems/wng/assets/templates/actors/actor-sheet-character-stats.html}}
+        </section>
+        <section id="skills">
+            {{> systems/wng/assets/templates/actors/actor-sheet-skills.html}}
         </section>
         <section class="section" id="wargear">
-            hey nerd
+            hey nerd wargear
         </section>
-        <!-- WARGEAR  -->
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+        <section class="section" id="details">
+            hey nerd details
+        </section>
+        <section class="section" id="progression">
+            hey nerd progression
+        </section>
     </div>
 </form>
