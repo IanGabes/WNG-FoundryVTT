@@ -31,10 +31,8 @@ Hooks.on("popout:renderSheet", (sheet) => {
 
 Hooks.once('init', async function() {
 
-    /**
-     * Set an initiative formula for the system
-     * @type {String}
-     */
+    initializeWNG();
+
     CONFIG.Combat.initiative = {
       formula: "1d20",
       decimals: 2
@@ -46,8 +44,6 @@ Hooks.once('init', async function() {
             ItemWNG
         }
     }
-
-    initializeWNG();
 
     // Define custom Entity classes. This will override the default Actor and
     // Item classes to instead use our extended versions.
@@ -61,7 +57,6 @@ Hooks.once('init', async function() {
         types: ["character"],
         makeDefault: true
     });
-
 
     //Items.unregisterSheet("core", ItemSheet);
     //Items.registerSheet("boilerplate", BoilerplateItemSheet, { makeDefault: true });

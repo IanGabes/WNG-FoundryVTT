@@ -27,6 +27,7 @@ export class ActorSheetWNGCharacter extends ActorSheetWNG {
      * @type {String}
      */
     get template() {
+        //TODO: limited
         if (!game.user.isGM && this.actor.limited) return "systems/wng/assets/templates/actors/actor-limited.html";
         return "systems/wng/assets/templates/actors/actor-sheet.html";
     }
