@@ -1,13 +1,5 @@
 import {ActorSheetWNG} from "./actor-sheet";
-import {WNG_Utility} from "../../utility-wng";
 
-/**
- * Provides the specific interaction handlers for Character Sheets.
- *
- * ActorSheetWNGCharacter are assigned to character type actors, and the specific interactions
- * character type actors need are defined here, specifically for careers and spending exp.
- *
- */
 export class ActorSheetWNGCharacter extends ActorSheetWNG {
 
     static get defaultOptions() {
