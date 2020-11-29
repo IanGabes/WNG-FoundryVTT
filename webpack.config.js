@@ -3,16 +3,21 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const ASSET_PATH = 'assets/'
 
 module.exports = {
-
+  output: {
+    publicPath: ''
+  },
   entry: [
     './src/wng.js',
-    './assets/sass/wng.scss'],
+    './assets/sass/wng.scss'
+  ],
   context: path.join(__dirname, "./"),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'wng.js'
+    filename: 'wng.js',
+    publicPath: ""
   },
   /* SASS --> CSS */ 
   module: {
@@ -27,7 +32,7 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: { outputPath: 'assets/css/', name: '[name].min.css'}
+            options: { outputPath: 'assets/css/', name: '[name].min.css', publicPath: ''}
           },
           'sass-loader',
         ],

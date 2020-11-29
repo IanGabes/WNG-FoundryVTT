@@ -49,15 +49,15 @@ Hooks.once('init', async function() {
     // Item classes to instead use our extended versions.
     CONFIG.Actor.entityClass = ActorWNG;
     CONFIG.Item.entityClass = ItemWNG;
-    //CONFIG.debug.hooks = true
 
     Actors.unregisterSheet("core", ActorSheet);
     Actors.registerSheet("wng", ActorSheetWNGCharacter,
     {
         types: ["character"],
+        species: ['human', 'astartes'],
         makeDefault: true
     });
 
     //Items.unregisterSheet("core", ItemSheet);
     //Items.registerSheet("boilerplate", BoilerplateItemSheet, { makeDefault: true });
-  });
+});
