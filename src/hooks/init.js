@@ -68,6 +68,7 @@ export default function initializeWNG() {
         "systems/wng/assets/templates/actors/actor-sheet-header.html",
         "systems/wng/assets/templates/actors/actor-sheet-skills.html",
         "systems/wng/assets/templates/actors/actor-sheet-character-stats.html",
+        "systems/wng/assets/templates/actors/actor-sheet-progression.html",
         "systems/wng/assets/templates/entity-create-override.html",
         "systems/wng/assets/templates/components/stat-table-single-value.html"
     ]);

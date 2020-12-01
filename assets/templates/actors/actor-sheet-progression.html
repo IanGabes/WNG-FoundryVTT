@@ -1,4 +1,4 @@
-<!-- Tier, Species, Faction -->
+<!-- Tier, XP, Rank -->
 <div class="columns">
     <div class="column is-one-fifth">
         <label class="level level-left numeric-input">
@@ -9,22 +9,67 @@
                    placeholder="0" />
         </label>
     </div>
-    <div class="column is-two-fifth">
-        <label class="level">
-            <span>{{localize "Species"}}</span>
-            <input name="species"
-                   type="text"
-                   value="{{actor.data.data.details.species.type}}"
-                   placeholder="{{localize 'Tier'}}" />
+    <div class="column is-one-fifth">
+        <label class="level level-left numeric-input">
+            <span>{{localize "Starting XP"}}</span>
+            <input name="startingxp"
+                   type="number"
+                   value=0
+                   placeholder="0" />
         </label>
     </div>
-    <div class="column is-two-fifth">
-        <label class="level">
-            <span>{{localize "Faction"}}</span>
-            <input name="faction"
-                   type="text"
-                   value="{{actor.name}}"
-                   placeholder="{{localize 'Tier'}}" />
+    <div class="column is-one-fifth">
+        <label class="level level-left numeric-input">
+            <span>{{localize "Rank"}}</span>
+            <input name="rank"
+                   type="number"
+                   value=0
+                   placeholder="0" />
         </label>
+    </div>
+    <div class="column is-one-fifth">
+        <label class="level level-left numeric-input">
+            <span>{{localize "Earned XP"}}</span>
+            <input name="earnedxp"
+                   type="number"
+                   value=0
+                   placeholder="0" />
+        </label>
+    </div>
+    <div class="column is-one-fifth">
+        <label class="level level-left numeric-input">
+            <span>{{localize "Spent XP"}}</span>
+            <input name="spentxp"
+                   type="number"
+                   value=0
+                   placeholder="0" />
+        </label>
+    </div>
+</div>
+
+<div id="purchases" class="level is-justify-content-center">
+    <div class="table-container">
+        <table class="is-striped is-fullwidth">
+            <thead>
+                <tr>
+                    <td> Purchase </td>
+                    <td> Cost </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> String </td>
+                    <td> # </td>
+                </tr>
+                <tr>
+                    <td> String </td>
+                    <td> # </td>
+                </tr>
+                <tr>
+                    <td> String </td>
+                    <td> # </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
