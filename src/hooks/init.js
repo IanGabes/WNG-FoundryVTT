@@ -41,12 +41,34 @@ export default function initializeWNG() {
         });
     }
 
+    //Handlebars Helpers
+
+    Handlebars.registerHelper('json', function(context) {
+        return JSON.stringify(context);
+    });
+
+    //https://stackoverflow.com/a/31632215
+    Handlebars.registerHelper({
+        eq: (v1, v2) => v1 === v2,
+        ne: (v1, v2) => v1 !== v2,
+        lt: (v1, v2) => v1 < v2,
+        gt: (v1, v2) => v1 > v2,
+        lte: (v1, v2) => v1 <= v2,
+        gte: (v1, v2) => v1 >= v2,
+        and() {
+            return Array.prototype.every.call(arguments, Boolean);
+        },
+        or() {
+            return Array.prototype.slice.call(arguments, 0, -1).some(Boolean);
+        }
+    });
     // Pre-load templates
     loadTemplates([
         "systems/wng/assets/templates/actors/actor-sheet.html",
         "systems/wng/assets/templates/actors/actor-sheet-header.html",
         "systems/wng/assets/templates/actors/actor-sheet-skills.html",
         "systems/wng/assets/templates/actors/actor-sheet-character-stats.html",
-        "systems/wng/assets/templates/entity-create-override.html"
+        "systems/wng/assets/templates/entity-create-override.html",
+        "systems/wng/assets/templates/components/stat-table-single-value.html"
     ]);
 };

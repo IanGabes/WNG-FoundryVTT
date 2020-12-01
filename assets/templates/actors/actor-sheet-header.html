@@ -1,57 +1,5 @@
 <header>
     <div class="columns is-vcentered is-centered">
-        <div class="column is-four-fifths">
-            <!-- Character Name -->
-            <div class="level">
-                <label class="level-item level-left sheet-label">
-                    <span>{{localize "Character Name"}}</span>
-                    <input name="character-name"
-                           type="text"
-                           value="{{actor.name}}"
-                           placeholder="{{localize 'Character Name'}}" />
-                </label>
-            </div>
-            <!-- Player Name -->
-            <div class="level">
-                <label class="level-item level-left sheet-label">
-                    <span class="level-item level-left">{{localize "Player Name"}}</span>
-                    <input name="player-name"
-                           type="text"
-                           value="{{actor.name}}"
-                           placeholder="{{localize 'Player Name'}}" />
-                </label>
-            </div>
-            <!-- Tier, Species, Faction -->
-            <div class="columns">
-                <div class="column is-one-fifth">
-                    <label class="level level-left numeric-input">
-                        <span>{{localize "Tier"}}</span>
-                        <input name="tier"
-                               type="number"
-                               value=0
-                               placeholder="0" />
-                    </label>
-                </div>
-                <div class="column is-two-fifth">
-                    <label class="level">
-                        <span>{{localize "Species"}}</span>
-                        <input name="species"
-                               type="text"
-                               value="{{actor.data.data.details.species.type}}"
-                               placeholder="{{localize 'Tier'}}" />
-                    </label>
-                </div>
-                <div class="column is-two-fifth">
-                <label class="level">
-                    <span>{{localize "Faction"}}</span>
-                    <input name="faction"
-                           type="text"
-                           value="{{actor.name}}"
-                           placeholder="{{localize 'Tier'}}" />
-                </label>
-                </div>
-            </div>
-        </div>
         <div class="column is-one-fifth">
             <div class="is-flex is-justify-content-center">
                 <img class="charimg profile"
@@ -62,6 +10,107 @@
                      data-edit="img">
             </div>
         </div>
+        <div class="column is-four-fifths">
+            <div class="columns">
+                <div class="column is-four-fifths">
+                    <div class="columns">
+                        <!-- Character Name -->
+                        <div class="column is-two-thirds">
+                            <input name="character-name"
+                                   type="text"
+                                   value="{{actor.name}}"
+                                   placeholder="{{localize 'Character Name'}}" />
+                        </div>
+                        <!-- Player Name -->
+                        <div class="column is-one-third">
+                            <input name="player-name"
+                                   type="text"
+                                   value="{{actor.name}}"
+                                   placeholder="{{localize 'Player Name'}}" />
+                        </div>
+                    </div>
+                    <div class="level">
+                        <input name="keywords"
+                               type="text"
+                               value="CATACHAN"
+                               placeholder="{{localize 'Keywords'}}" />
+                    </div>
+                </div>
+                <div class="column is-one-fifth">
+                    <!-- Wrath -->
+                    {{> systems/wng/assets/templates/components/stat-table-single-value.html header='Wrath' value=data.wrath max=0}}
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    {{> systems/wng/assets/templates/components/stat-table-single-value.html header='Shock' value=data.combat.wounds.value max=0}}
+                </div>
+                <div class="column">
+                    <table>
+                        <thead><tr><th>Soak</th></tr></thead>
+                        <tbody><tr><td>0</td></tr></tbody>
+                    </table>
+                </div>
+                <div class="column">
+                    {{> systems/wng/assets/templates/components/stat-table-single-value.html header='Wounds' value=data.combat.wounds.value max=0}}
+                </div>
+                <div class="column">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>{{localize "Defense"}}</td>
+                                <td colspan="3">{{localize "Resilience"}}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">0</td>
+                                <th>{{localize "Base"}}</th>
+                                <th>{{localize "AR"}}</th>
+                                <th>{{localize "Total"}}</th>
+                            </tr>
+                            <tr>
+                                <td>{{data.combat.resilience.value}}</td>
+                                <td>{{data.combat.resilience.armour}}</td>
+                                <td>{{data.combat.resilience.total}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="column">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th>{{localize "Size"}}</th>
+                            <td>{{data.details.size.value}}</td>
+                        </tr>
+                        <tr>
+                            <th>{{localize "Speed"}}</th>
+                            <td>{{data.details.speed.total}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="level" id="combat-effects">
+        <a class="level-item">
+            <span class="icon is-small"><i class="fas fa-skull-crossbones" aria-hidden="true"></i></span>
+            <span>Posions</span>
+        </a>
+        <a class="level-item">
+            <span class="icon is-small"><i class="fas fa-bacterium" aria-hidden="true"></i></span>
+            <span>Plague</span>
+        </a>
+        <a class="level-item">
+            <span class="icon is-small"><i class="fas fa-bahai" aria-hidden="true"></i></span>
+            <span>Stunned</span>
+        </a>
+        <a class="level-item">
+            <span class="icon is-small"><i class="fas fa-beer" aria-hidden="true"></i></span>
+            <span>Drunk as a Skunk</span>
+        </a>
     </div>
     <div class="columns">
         <div class="column is-one-fifth">

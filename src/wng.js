@@ -5,26 +5,6 @@ import {WNG} from './config-wng';
 import {ActorSheetWNGCharacter} from "./actor/sheet/character-sheet";
 import initializeWNG from "./hooks/init";
 
-Handlebars.registerHelper('json', function(context) {
-    return JSON.stringify(context);
-});
-
-//https://stackoverflow.com/a/31632215
-Handlebars.registerHelper({
-    eq: (v1, v2) => v1 === v2,
-    ne: (v1, v2) => v1 !== v2,
-    lt: (v1, v2) => v1 < v2,
-    gt: (v1, v2) => v1 > v2,
-    lte: (v1, v2) => v1 <= v2,
-    gte: (v1, v2) => v1 >= v2,
-    and() {
-        return Array.prototype.every.call(arguments, Boolean);
-    },
-    or() {
-        return Array.prototype.slice.call(arguments, 0, -1).some(Boolean);
-    }
-});
-
 Hooks.on("popout:renderSheet", (sheet) => {
     sheet.element.css({ width: "610px", height: "740px", padding: "0px"})
 })

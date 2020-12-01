@@ -1,0 +1,30 @@
+<!-- Tier, Species, Faction -->
+<div class="columns">
+    <div class="column is-one-fifth">
+        <label class="level level-left numeric-input">
+            <span>{{localize "Tier"}}</span>
+            <input name="tier"
+                   type="number"
+                   value=0
+                   placeholder="0" />
+        </label>
+    </div>
+    <div class="column is-two-fifth">
+        <label class="level">
+            <span>{{localize "Species"}}</span>
+            <input name="species"
+                   type="text"
+                   value="{{actor.data.data.details.species.type}}"
+                   placeholder="{{localize 'Tier'}}" />
+        </label>
+    </div>
+    <div class="column is-two-fifth">
+        <label class="level">
+            <span>{{localize "Faction"}}</span>
+            <input name="faction"
+                   type="text"
+                   value="{{actor.name}}"
+                   placeholder="{{localize 'Tier'}}" />
+        </label>
+    </div>
+</div>

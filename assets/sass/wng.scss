@@ -1,2 +1,21 @@
 @import "../../node_modules/bulma/bulma.sass";
 @import "wng/actor-character-sheet.scss";
+
+.character-sheet
+{
+  .columns{
+    margin: 0 0;
+  }
+  .column{
+    padding: 5px;
+  }
+  table {
+
+  }
+  tbody{
+    th{
+      font-size: 10px;
+    }
+
+  }
+}
