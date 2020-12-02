@@ -1,73 +1,112 @@
 <!-- Tier, XP, Rank -->
-<div class="columns">
-    <div class="column is-one-fifth">
-        <label class="level level-left numeric-input">
-            <span>{{localize "Tier"}}</span>
-            <input name="tier"
-                   type="number"
-                   value=0
-                   placeholder="0" />
-        </label>
+
+<div class="level">
+    <div class="level-left">
+        <div class="columns">
+            <div class="column">
+                <label class="level numeric-input">
+                    <span>{{localize "Tier"}}</span>
+                    <input name="tier" type="number" value=0 placeholder="0" />
+                </label>
+            </div>
+            <div class="column">
+                <label class="level numeric-input">
+                    <span>{{localize "Starting XP"}}</span>
+                    <input name="startingxp" type="number" value=0 placeholder="0" />
+                </label>
+            </div>
+        </div>
     </div>
-    <div class="column is-one-fifth">
-        <label class="level level-left numeric-input">
-            <span>{{localize "Starting XP"}}</span>
-            <input name="startingxp"
-                   type="number"
-                   value=0
-                   placeholder="0" />
-        </label>
-    </div>
-    <div class="column is-one-fifth">
-        <label class="level level-left numeric-input">
-            <span>{{localize "Rank"}}</span>
-            <input name="rank"
-                   type="number"
-                   value=0
-                   placeholder="0" />
-        </label>
-    </div>
-    <div class="column is-one-fifth">
-        <label class="level level-left numeric-input">
-            <span>{{localize "Earned XP"}}</span>
-            <input name="earnedxp"
-                   type="number"
-                   value=0
-                   placeholder="0" />
-        </label>
-    </div>
-    <div class="column is-one-fifth">
-        <label class="level level-left numeric-input">
-            <span>{{localize "Spent XP"}}</span>
-            <input name="spentxp"
-                   type="number"
-                   value=0
-                   placeholder="0" />
-        </label>
+    <div class="level-right">
+        <div class="columns">
+            <div class="column">
+                <label class="level numeric-input">
+                    <span>{{localize "Rank"}}</span>
+                    <input name="rank" type="number" value=0 placeholder="0" />
+                </label>
+            </div>
+            <div class="column">
+                <label class="level numeric-input">
+                    <span>{{localize "Earned XP"}}</span>
+                    <input name="earnedxp" type="number" value=0 placeholder="0" />
+                </label>
+            </div>
+            <div class="column">
+                <label class="level numeric-input">
+                    <span>{{localize "Spent XP"}}</span>
+                    <input name="spentxp" type="number" value=0 placeholder="0" />
+                </label>
+            </div>
+        </div>
     </div>
 </div>
 
-<div id="purchases" class="level is-justify-content-center">
-    <div class="table-container">
+<div id="purchases">
+    <div class="level is-justify-content-center">
+        <h2 class="level-item">XP Purchases</h2>
+    </div>
+    <div class="level is-justify-content-center">
         <table class="is-striped is-fullwidth">
-            <thead>
+            <thead class="has-text-centered">
                 <tr>
                     <td> Purchase </td>
                     <td> Cost </td>
+                    <td>
+                        <span class="icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                        <span class="icon">
+                            <i class="fas fa-trash"></i>
+                        </span>
+                    </td>
                 </tr>
             </thead>
-            <tbody>
+            <tbody contenteditable>
                 <tr>
-                    <td> String </td>
-                    <td> # </td>
+                    <td class="control has-text-left">
+                        <input class="input" type="text" placeholder="Purchase">
+                    </td>
+                    <td class="control has-text-centered">
+                        <input class="input" type="text" placeholder="Cost">
+                    </td>
                 </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="missionlog">
+    <div class="level is-justify-content-center">
+        <h2 class="level-item">Mission Log</h2>
+    </div>
+    <div class="level is-justify-content-center">
+        <table class="is-striped is-fullwidth">
+            <thead class="has-text-centered">
                 <tr>
-                    <td> String </td>
-                    <td> # </td>
+                    <td> Date </td>
+                    <td> Notes </td>
+                    <td> XP </td>
+                    <td>
+                        <span class="icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                        <span class="icon">
+                            <i class="fas fa-trash"></i>
+                        </span>
+                    </td>
                 </tr>
+            </thead>
+            <tbody contenteditable>
                 <tr>
-                    <td> String </td>
-                    <td> # </td>
+                    <td class="control has-text-centered">
+                        <input class="input" type="text" placeholder="Month DD, YYYY">
+                    </td>
+                    <td class="control has-text-left">
+                        <input class="input" type="text" placeholder="Description">
+                    </td>
+                    <td class="control has-text-centered">
+                        <input class="input" type="text" placeholder="XP Gained">
+                    </td>
                 </tr>
             </tbody>
         </table>
