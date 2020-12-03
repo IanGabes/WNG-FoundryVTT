@@ -1,137 +1,57 @@
 <div class="columns">
-    <div class="column">
-        <div id="objectives">
-            <div class="level is-justify-content-center">
-                <h2 class="level-item">{{localize "Objectives"}}</h2>
-            </div>
-            <label>
-                <span>{{localize "Attributes"}}</span>
-                <input type="radio"
-                       name="objective-completed"
-                       checked="false">
-            </label>
+    <div class="column is-one-fifth">
+        <div class="level is-justify-content-center">
+            <h2 class="level-item">{{localize "Attributes"}}</h2>
         </div>
-        <div id="attributes">
-            <div class="level is-justify-content-center">
-                <h2 class="level-item">{{localize "Attributes"}}</h2>
-            </div>
-            <div class="level">
-                <table>
-                    <thead>
+        <div>
+            {{#each data.attributes}}
+            <table id="attributes-table">
+                <thead>
+                    <tr><td colspan="2">{{this.label}}</td></tr>
+                </thead>
+                <tbody>
                     <tr>
-                        <td></td>
-                        <td>{{localize "Rating"}}</td>
-                        <td>{{localize "Bonus"}}</td>
-                        <td>{{localize "Total"}}</td>
+                        <td>{{this.rating}}</td>
+                        <td>{{this.bonus}}</td>
                     </tr>
-                    </thead>
-                    <tbody>
-                    {{#each data.attributes}}
-                        <tr>
-                            <td>{{this.label}}</td>
-                            <td>{{this.rating}}</td>
-                            <td>{{this.bonus}}</td>
-                            <td>{{this.total}}</td>
-                        </tr>
-                    {{/each}}
-                    </tbody>
-                </table>
-            </div>
+                    <tr>
+                        <td rowspan="2">{{this.total}}</td>
+                height: 90%;    </tr>
+                </tbody>
+            </table>
+            {{/each}}
         </div>
     </div>
     <div class="column is-two-fifths">
         <div class="level is-justify-content-center">
-            <table class="level-item">
-                <tbody>
-                <tr>
-                    <td><h2 class="level-item">{{localize "Wrath"}}</h2></td>
-                    <td>{{data.wrath}}</td>
-                    <td>???</td>
-                    <td><h2 class="level-item">{{localize "Faith"}}</h2></td>
-                    <td>{{data.faith}}</td>
-                    <td>???</td>
-                </tr>
-                </tbody>
-            </table>
+            <h2 class="level-item">{{localize "Skill"}}</h2>
         </div>
-        <div>
-            <table>
-                <thead>
+        <table id="skills-table">
+            <thead>
+            <tr>
+                <td></td>
+                <td>{{localize "Attribute"}}</td>
+                <td>{{localize "Rating"}}</td>
+                <td>{{localize "Bonus"}}</td>
+                <td>{{localize "Total"}}</td>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each data.skills}}
                     <tr>
-                        <td>{{localize "Defense"}}</td>
-                        <td colspan="3">{{localize "Resilience"}}</td>
+                        <th>{{this.label}}</th>
+                        {{! This comment will not show up in the output}}
+                        {{#with (lookup @root.data.attributes this.attribute)~}}
+                            <td>{{this.label}}</td>
+                        {{/with}}
+                        <td>{{this.rating}}</td>
+                        <td>{{this.bonus}}</td>
+                        <td>{{this.total}}</td>
                     </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td rowspan="4"></td>
-                        <td>{{localize "Total"}}</td>
-                        <td>{{localize "Base"}}</td>
-                        <td>{{localize "Armour"}}</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="3">{{data.combat.resilience.total}}</td>
-                        <td rowspan="3">{{data.combat.resilience.value}}</td>
-                        <td rowspan="3">{{data.combat.resilience.armour}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="columns">
-            <div class="column">
-                <table>
-                    <thead>
-                        <tr><td colspan="2">
-                            {{localize "Shock"}}
-                        </td></tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{data.combat.shock.value}}</td>
-                            <td>{{data.combat.shock.max}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="column">
-                <table>
-                    <thead>
-                        <tr><td colspan="2">
-                            {{localize "Wounds"}}
-                        </td></tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{data.combat.wounds.value}}</td>
-                            <td>{{data.combat.wounds.max}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div>
-            <table>
-                <tbody>
-                    <tr>
-                        <th>{{localize "Speed"}}</th>
-                        <td>{{data.details.speed.total}}</td>
-                        <th>{{localize "Size"}}</th>
-                        <td>{{data.details.size.value}}</td>
-                    </tr>
-                    <tr>
-                        <th>{{localize "Conviction"}}</th>
-                        <td>{{data.mental.conviction.total}}</td>
-                        <th>{{localize "Resolve"}}</th>
-                        <td>{{data.mental.resolve.total}}</td>
-                    </tr>
-                    <tr>
-                        <th>{{localize "Stealth"}}</th>
-                        <td>{{data.skills.stealth.total}}</td>
-                        <th>{{localize "Passive Awareness"}}</th>
-                        <td>{{data.mental.passaware.total}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            {{/each}}
+            </tbody>
+        </table>
     </div>
+    <div class="column is-one-fifth"></div>
+    <div class="column is-one-fifth"></div>
 </div>

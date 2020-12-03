@@ -6,7 +6,6 @@
                      alt="{{localize 'Player Profile Image'}}"
                      src="{{actor.img}}"
                      title="{{actor.name}}"
-                     height="95" width="95"
                      data-edit="img">
             </div>
         </div>
@@ -18,6 +17,7 @@
                         <div class="column is-two-thirds">
                             <input name="character-name"
                                    type="text"
+                                   alt="{{localize 'Character Name'}}"
                                    value="{{actor.name}}"
                                    placeholder="{{localize 'Character Name'}}" />
                         </div>
@@ -25,6 +25,7 @@
                         <div class="column is-one-third">
                             <input name="player-name"
                                    type="text"
+                                   alt="{{localize 'Player Name'}}"
                                    value="{{actor.name}}"
                                    placeholder="{{localize 'Player Name'}}" />
                         </div>
@@ -41,13 +42,13 @@
                     {{> systems/wng/assets/templates/components/stat-table-single-value.html header='Wrath' value=data.wrath max=0}}
                 </div>
             </div>
-            <div class="columns">
+            <div class="columns" id="header-stats">
                 <div class="column">
                     {{> systems/wng/assets/templates/components/stat-table-single-value.html header='Shock' value=data.combat.wounds.value max=0}}
                 </div>
                 <div class="column">
                     <table>
-                        <thead><tr><th>Soak</th></tr></thead>
+                        <thead><tr><td>Soak</td></tr></thead>
                         <tbody><tr><td>0</td></tr></tbody>
                     </table>
                 </div>
@@ -111,35 +112,6 @@
             <span class="icon is-small"><i class="fas fa-beer" aria-hidden="true"></i></span>
             <span>Drunk as a Skunk</span>
         </a>
-    </div>
-    <div class="columns">
-        <div class="column is-one-fifth">
-            <label class="level numeric-input level-left">
-                <span>{{localize "Rank"}}</span>
-                <input name="rank"
-                       type="Number"
-                       value=0
-                       placeholder=0 />
-            </label>
-        </div>
-        <div class="column is-two-fifths">
-            <label class="level">
-                <span>{{localize "Archetype"}}</span>
-                <input name="archetype"
-                       type="text"
-                       value="{{actor.name}}"
-                       placeholder="{{localize 'Archetype'}}" />
-            </label>
-        </div>
-        <div class="column is-two-fifths">
-            <label class="level">
-                <span>{{localize "Background"}}</span>
-                <input name="background"
-                       type="text"
-                       value="{{actor.name}}"
-                       placeholder="{{localize 'Background'}}" />
-            </label>
-        </div>
     </div>
     <div>
         <label class="level level">
