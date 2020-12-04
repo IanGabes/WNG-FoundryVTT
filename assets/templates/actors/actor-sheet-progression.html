@@ -79,36 +79,39 @@
     <div class="level is-justify-content-center">
         <h2 class="level-item">Mission Log</h2>
     </div>
-    <div class="level is-justify-content-center">
-        <table class="is-striped is-fullwidth">
-            <thead class="has-text-centered">
-                <tr>
-                    <td> Date </td>
-                    <td> Notes </td>
-                    <td> XP </td>
-                    <td>
-                        <span class="icon">
-                            <i class="fas fa-plus"></i>
-                        </span>
-                        <span class="icon">
-                            <i class="fas fa-trash"></i>
-                        </span>
-                    </td>
-                </tr>
-            </thead>
-            <tbody contenteditable>
-                <tr>
-                    <td class="control has-text-centered">
-                        <input class="input" type="text" placeholder="Month DD, YYYY">
-                    </td>
-                    <td class="control has-text-left">
-                        <input class="input" type="text" placeholder="Description">
-                    </td>
-                    <td class="control has-text-centered">
-                        <input class="input" type="text" placeholder="XP Gained">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="columns has-text-centered">
+        <div class="column is-2">
+            Date
+        </div>
+        <div class="column is-7">
+            Notes
+        </div>
+        <div class="column is-2">
+            XP
+        </div>
+        <div class="column is-1">
+            <button class="button is-small">
+                <span class="icon is-small">
+                    <i class="fas fa-plus"></i>
+                </span>
+            </button>
+            <button class="button is-small">
+                <span class="icon is-small">
+                    <i class="fas fa-trash"></i>
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column is-2">
+            <input class="input" type="text" placeholder="Month DD, YYYY">
+        </div>
+        <div class="column is-7">
+            <input class="input" type="text" placeholder="Description">
+        </div>
+        <div class="column is-2">
+            <input class="input" type="text" placeholder="XP Gained">
+        </div>
+        <div class="column is-1"></div>
     </div>
 </div>
