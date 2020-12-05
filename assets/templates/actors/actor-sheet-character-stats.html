@@ -7,7 +7,7 @@
             {{#each data.attributes}}
             <table id="attributes-table">
                 <thead>
-                    <tr><td colspan="2">{{this.label}}</td></tr>
+                    <tr><td colspan="2">{{this.label}} ({{this.short}})</td></tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -16,7 +16,7 @@
                     </tr>
                     <tr>
                         <td rowspan="2">{{this.total}}</td>
-                height: 90%;    </tr>
+                    </tr>
                 </tbody>
             </table>
             {{/each}}
@@ -42,7 +42,7 @@
                         <th>{{this.label}}</th>
                         {{! This comment will not show up in the output}}
                         {{#with (lookup @root.data.attributes this.attribute)~}}
-                            <td>{{this.label}}</td>
+                            <td>{{this.short}}</td>
                         {{/with}}
                         <td>{{this.rating}}</td>
                         <td>{{this.bonus}}</td>
@@ -52,6 +52,91 @@
             </tbody>
         </table>
     </div>
-    <div class="column is-one-fifth"></div>
-    <div class="column is-one-fifth"></div>
+    <div class="column is-two-fifths">
+        <div class="columns is-flex-direction-column is-full-height">
+            <div><h2 class="level-item">{{localize "Traits"}}</h2></div>
+            <div class="column is-height-one-third">
+                <div class="columns is-flex-direction-column is-full-height">
+                    <div class="column is-half-height">
+                        <div class="columns">
+                            <div class="column">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <th>{{localize data.mental.resolve.label}}</th>
+                                        <td>{{data.mental.resolve.total}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>{{localize data.mental.conviction.label}}</th>
+                                        <td>{{data.mental.conviction.total}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="column">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <th>{{localize "Stealth Score"}}</th>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <th>{{localize "Passive Awareness"}}</th>
+                                        <td>0</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="column">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <th>{{localize data.social.influence.label}}</th>
+                                        <td>{{localize data.social.influence.total}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>{{localize data.social.wealth.label}}</th>
+                                        <td>{{localize data.social.wealth.value}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" column is-half-height">
+                        <div><h2 class="level-item">{{localize "Active Objective"}}</h2></div>
+                        <label class="level">
+                            <input type="checkbox"
+                                   name="objective"
+                                   placeholder="Tickle Sgt. Dan in his sleep"
+                                   {{#if data.objective.complete}}checked{{/if}}>
+                            <span>{{data.objecttive.focus}}</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="column is-height-two-thirds">
+                <div class="columns is-full-height">
+                    <div class="columns column is-flex-direction-column">
+                        <div class="column">
+                            {{> systems/wng/assets/templates/components/scrollable-effects-list.html title="Mutations"}}
+                        </div>
+                        <div class="column">
+                            {{> systems/wng/assets/templates/components/scrollable-effects-list.html title="Traumatic Injuries"}}
+                        </div>
+                    </div>
+                    <div class="columns column is-flex-direction-column">
+                        <!-- Corruption -->
+                        <div class="column">
+
+                        </div>
+                        <div class="column">
+                            {{> systems/wng/assets/templates/components/scrollable-effects-list.html title="Memorable Injuries"}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,5 +1,6 @@
 @import "../../node_modules/bulma/bulma.sass";
 @import "wng/actor-character-sheet.scss";
+@import "utilities.scss";
 
 .character-sheet
 {
@@ -28,7 +29,25 @@
     text-align: center;
   }
 }
-
+.effects-list {
+  height: 100%;
+  border: solid black 1px;
+  .level{
+    margin:0px;
+  }
+  h2{
+    border-bottom: none;
+  }
+  .effects-list-header{
+    background: blanchedalmond;
+  }
+  .scrollable {
+    overflow-y: scroll;
+    div {
+      border-bottom: solid black 1px;
+    }
+  }
+}
 
 #attributes-table {
   * {

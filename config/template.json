@@ -11,6 +11,7 @@
           "strength": {
             "type": "number",
             "label": "Strength",
+            "short": "S",
             "rating": 0,
             "bonus": 0,
             "total": 0
@@ -18,6 +19,7 @@
           "toughness": {
             "type": "number",
             "label": "Toughness",
+            "short": "T",
             "rating": 0,
             "bonus": 0,
             "total": 0
@@ -25,6 +27,7 @@
           "agility": {
             "type": "number",
             "label": "Agility",
+            "short": "A",
             "rating": 0,
             "bonus": 0,
             "total": 0
@@ -32,6 +35,7 @@
           "initiative": {
             "type": "number",
             "label": "Initiative",
+            "short": "I",
             "rating": 0,
             "bonus": 0,
             "total": 0
@@ -39,6 +43,7 @@
           "willpower": {
             "type": "number",
             "label": "Willpower",
+            "short": "W",
             "rating": 0,
             "bonus": 0,
             "total": 0
@@ -46,6 +51,7 @@
           "intellect": {
             "type": "number",
             "label": "Intellect",
+            "short": "Int",
             "rating": 0,
             "bonus": 0,
             "total": 0
@@ -53,6 +59,7 @@
           "fellowship": {
             "type": "Number",
             "label": "Fellowship",
+            "short": "F",
             "rating": 0,
             "bonus": 0,
             "total": 0
@@ -287,7 +294,7 @@
         "objective": {
           "objective": [],
           "focus": "",
-          "complete": ""
+          "complete": false
         }
       },
       "details": {
