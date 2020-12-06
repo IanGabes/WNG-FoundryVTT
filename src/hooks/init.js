@@ -69,8 +69,11 @@ export default function initializeWNG() {
         "systems/wng/assets/templates/actors/actor-sheet-skills.html",
         "systems/wng/assets/templates/actors/actor-sheet-character-stats.html",
         "systems/wng/assets/templates/actors/actor-sheet-progression.html",
+        "systems/wng/assets/templates/actors/actor-sheet-actions.html",
+        "systems/wng/assets/templates/actors/actor-sheet-wargear.html",
         "systems/wng/assets/templates/entity-create-override.html",
         "systems/wng/assets/templates/components/stat-table-single-value.html",
-        "systems/wng/assets/templates/components/scrollable-effects-list.html"
+        "systems/wng/assets/templates/components/scrollable-effects-list.html",
+        "systems/wng/assets/templates/actors/reloads-explosives.html",
     ]);
 };

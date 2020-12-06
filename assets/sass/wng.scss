@@ -12,22 +12,26 @@
     padding: 5px;
   }
   table {
-
-  }
-  thead {
-    td{
-      font-size:12px;
+    thead {
+      th{
+        text-align: center;
+      }
+      td{
+        font-size:12px;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+    tbody{
+      th{
+        font-size: 10px;
+        vertical-align: middle;
+      }
       text-align: center;
-      vertical-align: middle;
     }
   }
-  tbody{
-    th{
-      font-size: 10px;
-      vertical-align: middle;
-    }
-    text-align: center;
-  }
+
+
 }
 .effects-list {
   height: 100%;
