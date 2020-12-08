@@ -1,117 +1,115 @@
 <!-- Tier, XP, Rank -->
 
-<div class="level">
-    <div class="level-left">
-        <div class="columns">
-            <div class="column">
-                <label class="level numeric-input">
-                    <span>{{localize "Tier"}}</span>
-                    <input name="tier" type="number" value=0 placeholder="0" />
-                </label>
-            </div>
-            <div class="column">
-                <label class="level numeric-input">
-                    <span>{{localize "Starting XP"}}</span>
-                    <input name="startingxp" type="number" value=0 placeholder="0" />
-                </label>
-            </div>
-        </div>
-    </div>
-    <div class="level-right">
-        <div class="columns">
-            <div class="column">
-                <label class="level numeric-input">
-                    <span>{{localize "Rank"}}</span>
-                    <input name="rank" type="number" value=0 placeholder="0" />
-                </label>
-            </div>
-            <div class="column">
-                <label class="level numeric-input">
-                    <span>{{localize "Earned XP"}}</span>
-                    <input name="earnedxp" type="number" value=0 placeholder="0" />
-                </label>
-            </div>
-            <div class="column">
-                <label class="level numeric-input">
-                    <span>{{localize "Spent XP"}}</span>
-                    <input name="spentxp" type="number" value=0 placeholder="0" />
-                </label>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="purchases">
-    <div class="level is-justify-content-center">
-        <h2 class="level-item">XP Purchases</h2>
-    </div>
-    <div class="level is-justify-content-center">
-        <table class="is-striped is-fullwidth">
-            <thead class="has-text-centered">
-                <tr>
-                    <td> Purchase </td>
-                    <td> Cost </td>
-                    <td>
-                        <span class="icon">
-                            <i class="fas fa-plus"></i>
-                        </span>
-                        <span class="icon">
-                            <i class="fas fa-trash"></i>
-                        </span>
-                    </td>
-                </tr>
-            </thead>
-            <tbody contenteditable>
-                <tr>
-                    <td class="control has-text-left">
-                        <input class="input" type="text" placeholder="Purchase">
-                    </td>
-                    <td class="control has-text-centered">
-                        <input class="input" type="text" placeholder="Cost">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<div id="missionlog">
-    <div class="level is-justify-content-center">
-        <h2 class="level-item">Mission Log</h2>
-    </div>
-    <div class="columns has-text-centered">
-        <div class="column is-2">
-            Date
-        </div>
-        <div class="column is-7">
-            Notes
+<div id="xpstats">
+    <div class="columns">
+        <div class="column is-1">
+            <table>
+                <tbody>
+                    <th>Tier</th>
+                    <td>0</td>
+                </tbody>
+            </table>
         </div>
         <div class="column is-2">
-            XP
+            <table>
+                <tbody>
+                    <th>Starting XP</th>
+                    <td>0</td>
+                </tbody>
+            </table>
+        </div>
+        <div class="column">
         </div>
         <div class="column is-1">
-            <button class="button is-small">
-                <span class="icon is-small">
-                    <i class="fas fa-plus"></i>
-                </span>
-            </button>
-            <button class="button is-small">
-                <span class="icon is-small">
-                    <i class="fas fa-trash"></i>
-                </span>
-            </button>
-        </div>
-    </div>
-    <div class="columns">
-        <div class="column is-2">
-            <input class="input" type="text" placeholder="Month DD, YYYY">
-        </div>
-        <div class="column is-7">
-            <input class="input" type="text" placeholder="Description">
+            <table>
+                <tbody>
+                    <th>Rank</th>
+                    <td>0</td>
+                </tbody>
+            </table>
         </div>
         <div class="column is-2">
-            <input class="input" type="text" placeholder="XP Gained">
+            <table>
+                <tbody>
+                    <th>Earned XP</th>
+                    <td>0</td>
+                </tbody>
+            </table>
         </div>
-        <div class="column is-1"></div>
+        <div class="column is-2">
+            <table>
+                <tbody>
+                    <th>Spent XP</th>
+                    <td>0</td>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
+<section class="scrollable section">
+    <div id="purchases">
+        <div class="level is-justify-content-center">
+            <h2 class="level-item">XP Purchases</h2>
+            <span class="level-right">
+                <span class="button icon">
+                    <i class="fas fa-plus"></i>
+                </span>
+                <span class="button icon">
+                    <i class="fas fa-trash"></i>
+                </span>
+            </span>
+        </div>
+        <div class="columns has-text-centered">
+            <div class="column is-10">
+                Purchase
+            </div>
+            <div class="column is-2">
+                Cost
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column is-10">
+                <input class="input" type="text" placeholder="Purchase">
+            </div>
+            <div class="column is-2">
+                <input class="input" type="number" placeholder="Cost">
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div id="missionlog">
+        <div class="level is-justify-content-center">
+            <h2 class="level-item">Mission Log</h2>
+            <span class="level-right">
+                <span class="button icon">
+                    <i class="fas fa-plus"></i>
+                </span>
+                <span class="button icon">
+                    <i class="fas fa-trash"></i>
+                </span>
+            </span>
+        </div>
+        <div class="columns has-text-centered">
+            <div class="column is-2">
+                Date
+            </div>
+            <div class="column is-8">
+                Notes
+            </div>
+            <div class="column is-2">
+                XP
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column is-2">
+                <input class="input" type="date" placeholder="Month DD, YYYY">
+            </div>
+            <div class="column is-8">
+                <input class="input" type="text" placeholder="Description">
+            </div>
+            <div class="column is-2">
+                <input class="input" type="number" placeholder="XP Gained">
+            </div>
+        </div>
+    </div>
+</section>
